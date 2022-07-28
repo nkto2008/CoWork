@@ -1,6 +1,5 @@
 const express = require('express');
 const routeruser = require("./routes/user.js")
-const routeradmin = require("./routes/admin.js")
 const dotenv = require('dotenv')
 const mongoose = require('mongoose');
 const morgan = require('morgan')
@@ -23,7 +22,7 @@ app.use(morgan('tiny'))
 
 //BDD connection and server start
 mongoose.connect(
-  `mongodb+srv://${username}:${password}@votaction.scor1.mongodb.net/${dbname}?retryWrites=true&w=majority`,
+  `mongodb+srv://${username}:${password}@cowork.scor1.mongodb.net/${dbname}?retryWrites=true&w=majority`,
   {
     useNewUrlParser: true,
     useFindAndModify: false,
@@ -38,7 +37,7 @@ db.once("open", function () {
 });
 
 app.use(routeruser);
-app.use(routeradmin)
+//app.use(routeradmin)
 
 app.listen(process.env.PORT || 8080, () => {
   console.log(`server listen at ${port}`)

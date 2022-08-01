@@ -23,7 +23,7 @@ app.use(morgan('tiny'))
 
 //BDD connection and server start
 mongoose.connect(
-  `mongodb+srv://${username}:${password}@votaction.scor1.mongodb.net/${dbname}?retryWrites=true&w=majority`,
+  `mongodb+srv://${username}:${password}@cowork.scor1.mongodb.net/${dbname}?retryWrites=true&w=majority`,
   {
     useNewUrlParser: true,
     useFindAndModify: false,

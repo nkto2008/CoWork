@@ -1,0 +1,13 @@
+###
+POST http://localhost:8081/welcome HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "sunwukong@gmail.com",
+    "password": "123456789Wu"
+}
+
+###
+POST http://localhost:8081/bye HTTP/1.1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjJlNzljNjI0ZDQ3MTAyYmIwY2MxNjYwIiwiZW1haWwiOiJzdW53dWtvbmdAZ21haWwuY29tIiwiaWF0IjoxNjU5MzQ2Mjg3LCJleHAiOjE2NTkzNzE0ODd9.C-fr-Xmpy9ZHsrXYrXYi3SI-zDgI3Rhvt4A-VIeLUMo

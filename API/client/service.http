@@ -1,0 +1,23 @@
+###
+POST http://localhost:8081/addService HTTP/1.1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjJlNzljNjI0ZDQ3MTAyYmIwY2MxNjYwIiwiZW1haWwiOiJzdW53dWtvbmdAZ21haWwuY29tIiwiaWF0IjoxNjU5MzQ4MzkyLCJleHAiOjE2NTkzNzM1OTJ9.8NAN8kS0ACJQTPjUaSR74E7uFNt9FAa9RW1bL2rDWvo
+
+{
+    "name": "Gaming Room",
+    "price": 4.50
+}
+
+###
+GET http://localhost:8081/getService HTTP/1.1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjJlNzljNjI0ZDQ3MTAyYmIwY2MxNjYwIiwiZW1haWwiOiJzdW53dWtvbmdAZ21haWwuY29tIiwiaWF0IjoxNjU5MzQ4MzkyLCJleHAiOjE2NTkzNzM1OTJ9.8NAN8kS0ACJQTPjUaSR74E7uFNt9FAa9RW1bL2rDWvo
+
+###
+POST http://localhost:8081/getServiceById HTTP/1.1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjJlNzljNjI0ZDQ3MTAyYmIwY2MxNjYwIiwiZW1haWwiOiJzdW53dWtvbmdAZ21haWwuY29tIiwiaWF0IjoxNjU5MzQ4MzkyLCJleHAiOjE2NTkzNzM1OTJ9.8NAN8kS0ACJQTPjUaSR74E7uFNt9FAa9RW1bL2rDWvo
+
+{
+    "service": "62e7b8d12b8e181dd0f90a2d"
+}

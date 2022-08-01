@@ -1,5 +1,6 @@
 const express = require('express');
 const routeruser = require("./routes/user.js")
+const routeradmin = require("./routes/admin.js")
 const dotenv = require('dotenv')
 const mongoose = require('mongoose');
 const morgan = require('morgan')
@@ -37,7 +38,7 @@ db.once("open", function () {
 });
 
 app.use(routeruser);
-//app.use(routeradmin)
+app.use(routeradmin)
 
 app.listen(process.env.PORT || 8080, () => {
   console.log(`server listen at ${port}`)

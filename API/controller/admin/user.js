@@ -32,8 +32,18 @@ const getUserByRole= async(body,res) => {
 
 }
 
+const deleteUsers= async(body,res) => {
+    const user = await UserModel.findOneAndDelete({_id: body.id})
+    if(user){
+        res.status(200).send("User delete success")
+    }else{
+        res.status(400).send("User not found")
+    }
+
+}
 
 
 
 
-module.exports = {getAllUsers, getUserById, getUserByRole}
+
+module.exports = {getAllUsers, getUserById, getUserByRole, deleteUsers}

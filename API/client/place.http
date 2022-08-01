@@ -1,43 +1,64 @@
 ###
-POST http://localhost:8081/addService HTTP/1.1
+POST http://localhost:8081/createPlace HTTP/1.1
 Content-Type: application/json
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjJlNzljNjI0ZDQ3MTAyYmIwY2MxNjYwIiwiZW1haWwiOiJzdW53dWtvbmdAZ21haWwuY29tIiwiaWF0IjoxNjU5MzQ4MzkyLCJleHAiOjE2NTkzNzM1OTJ9.8NAN8kS0ACJQTPjUaSR74E7uFNt9FAa9RW1bL2rDWvo
 
 {
-    "name": "Gaming Room",
-    "price": 4.50
+    "name": "COWORK BASTILLE",
+    "city": "Paris",
+    "cp": 75004,
+    "horaire":{
+        "lundi":"9h-20h",
+        "mardi": "9h-20h",
+        "mercredi": "9h-20h",
+        "jeudi": "9h-20h",
+        "vendredi": "9h-20h",
+        "samedi": "9h-20h",
+        "dimanche": "11h-20h"
+    }
+}
+
+
+###
+GET http://localhost:8081/getPlace HTTP/1.1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjJlNzljNjI0ZDQ3MTAyYmIwY2MxNjYwIiwiZW1haWwiOiJzdW53dWtvbmdAZ21haWwuY29tIiwiaWF0IjoxNjU5MzQ4MzkyLCJleHAiOjE2NTkzNzM1OTJ9.8NAN8kS0ACJQTPjUaSR74E7uFNt9FAa9RW1bL2rDWvo
+
+###
+POST http://localhost:8081/getPlaceById HTTP/1.1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjJlNzljNjI0ZDQ3MTAyYmIwY2MxNjYwIiwiZW1haWwiOiJzdW53dWtvbmdAZ21haWwuY29tIiwiaWF0IjoxNjU5MzQ4MzkyLCJleHAiOjE2NTkzNzM1OTJ9.8NAN8kS0ACJQTPjUaSR74E7uFNt9FAa9RW1bL2rDWvo
+
+{
+    "id": "62e7ff662403b90630291159"
 }
 
 ###
-GET http://localhost:8081/getService HTTP/1.1
-Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjJlNzljNjI0ZDQ3MTAyYmIwY2MxNjYwIiwiZW1haWwiOiJzdW53dWtvbmdAZ21haWwuY29tIiwiaWF0IjoxNjU5MzQ4MzkyLCJleHAiOjE2NTkzNzM1OTJ9.8NAN8kS0ACJQTPjUaSR74E7uFNt9FAa9RW1bL2rDWvo
-
-###
-POST http://localhost:8081/getServiceById HTTP/1.1
+PATCH http://localhost:8081/updatePlace HTTP/1.1
 Content-Type: application/json
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjJlNzljNjI0ZDQ3MTAyYmIwY2MxNjYwIiwiZW1haWwiOiJzdW53dWtvbmdAZ21haWwuY29tIiwiaWF0IjoxNjU5MzQ4MzkyLCJleHAiOjE2NTkzNzM1OTJ9.8NAN8kS0ACJQTPjUaSR74E7uFNt9FAa9RW1bL2rDWvo
 
 {
-    "service": "62e7d867cd167f34887fe849"
+    "id": "62e7ff662403b90630291159",
+    "name": "COWORK PLACE D'ITALIE",
+    "city": "Paris",
+    "cp": 75013,
+    "horaire":{
+        "lundi":"9h-20h",
+        "mardi": "9h-20h",
+        "mercredi": "9h-20h",
+        "jeudi": "9h-20h",
+        "vendredi": "9h-20h",
+        "samedi": "9h-20h",
+        "dimanche": "11h-20h"
+    }
 }
 
 ###
-PATCH http://localhost:8081/updateService HTTP/1.1
+DELETE http://localhost:8081/deletePlace HTTP/1.1
 Content-Type: application/json
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjJlNzljNjI0ZDQ3MTAyYmIwY2MxNjYwIiwiZW1haWwiOiJzdW53dWtvbmdAZ21haWwuY29tIiwiaWF0IjoxNjU5MzQ4MzkyLCJleHAiOjE2NTkzNzM1OTJ9.8NAN8kS0ACJQTPjUaSR74E7uFNt9FAa9RW1bL2rDWvo
 
 {
-    "name": "Salle Gaming",
-    "price": 5,
-    "id": "62e7d867cd167f34887fe849" 
-}
-
-###
-DELETE http://localhost:8081/deleteService HTTP/1.1
-Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjJlNzljNjI0ZDQ3MTAyYmIwY2MxNjYwIiwiZW1haWwiOiJzdW53dWtvbmdAZ21haWwuY29tIiwiaWF0IjoxNjU5MzQ4MzkyLCJleHAiOjE2NTkzNzM1OTJ9.8NAN8kS0ACJQTPjUaSR74E7uFNt9FAa9RW1bL2rDWvo
-
-{
-    "id": "62e7b8d12b8e181dd0f90a2d"
+    "id": "62e7ff662403b90630291159"
 }

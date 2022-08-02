@@ -6,11 +6,11 @@ const SLPSchema = new mongoose.Schema(
         type: String,
         default: ""
       },
-      idSchedules: {
+      time: {
         type: String,
         default: ""
       },
-      time: {
+      day :{
         type: String,
         default: ""
       }

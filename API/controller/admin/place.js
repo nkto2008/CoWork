@@ -1,5 +1,6 @@
 const PlaceModel = require('../../model/place.js')
 const slpModel = require('../../model/placelinkschedules.js')
+const SchedulesModel = require('../../model/schedules.js')
 
 
 const addPlace = async(body,res) => {
@@ -14,9 +15,9 @@ const addPlace = async(body,res) => {
         }else{
             if(place.save()){
                 let count = 0
-                const arrayTime = ["62e7eb1851e22ff8eed0a9e5","62e7eb2a51e22ff8eed0a9e6","62e7eb3551e22ff8eed0a9e7","62e7eb4151e22ff8eed0a9e8","62e7eb4a51e22ff8eed0a9e9","62e7eb5351e22ff8eed0a9ea","62e7eb6051e22ff8eed0a9eb"]
+                const arrayTime = ["lundi","mardi","mercredi","jeudi","vendredi","samedi","dimanche"]
                 for(let i in horaire){
-                    let arraySchedules = {"idPlace": place._id, "idSchedules": arrayTime[count],"time": body.horaire[i]}
+                    let arraySchedules = {"idPlace": place._id, "day": arrayTime[count],"time": body.horaire[i]}
                     console.log(arraySchedules)
                     let schedules = new slpModel(arraySchedules)
                     schedules.save()
@@ -30,11 +31,18 @@ const addPlace = async(body,res) => {
     }
 
 }
-// !!!!!!!! NEED TO SEND SCHEDULES TOO
+
 const getPlace = async(res) => {
     const places = await PlaceModel.find()
+
     if(places){
-        res.status(200).send(places)
+        var tmp = []
+        for(i in places){
+            var horaire = await slpModel.find({idPlace: places[i]._id})
+            var result = [{"place":places[i],"schedules": horaire}]
+            tmp = tmp.concat(result)
+        }
+        res.status(200).send(tmp)
     }else{
         res.status(400).send("no place found")
     }
@@ -44,7 +52,9 @@ const getPlace = async(res) => {
 const getPlaceById = async(body,res) => {
     const place = await PlaceModel.findOne({_id: body.id})
     if(place){
-        res.status(200).send(place)
+        var horaire = await slpModel.find({idPlace: place._id})
+        var result = {"place":place,"schedules": horaire}
+        res.status(200).send(result)
     }else{
         res.status(400).send("no place found")
     }

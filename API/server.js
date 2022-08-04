@@ -5,7 +5,8 @@ const dotenv = require('dotenv')
 const mongoose = require('mongoose');
 const morgan = require('morgan')
 const bodyparser = require('body-parser')
-
+const swaggerJsDoc = require('swagger-jsdoc')
+const swaggerUiExpress = require('swagger-ui-express')
 
 dotenv.config()
 const app = express()
@@ -15,12 +16,38 @@ const password = process.env.DBPWD
 const dbname = process.env.DBNAME
 
 
+// Options are use by swagger-js-doc
+const options = {
+  definition: {
+    openapi: '3.0.0',
+    info: {
+      title: 'API Documentation',
+      version: '1.0.0',
+      description: 'API Documentation',
+      contact: {
+        name: 'API Documentation',
+        url: '',
+        https: '//swagger.io',
+        email: '',
+      },
+      servers: [
+        {
+          url: 'http://localhost:3000/api/v1',
+        }
+      ],
+    },
+  },
+  apis: [
+    './routes/*.js',
+  ],
+};
 
+const specs = swaggerJsDoc(options)
 
 // Middleware
 app.use(bodyparser.json())
 app.use(morgan('tiny'))
-
+app.use("/api-docs", swaggerUiExpress.serve, swaggerUiExpress.setup(specs))
 //BDD connection and server start
 mongoose.connect(
   `mongodb+srv://${username}:${password}@cowork.scor1.mongodb.net/${dbname}?retryWrites=true&w=majority`,

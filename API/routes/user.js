@@ -4,6 +4,23 @@ const auth = require("../controller/user/auth.js")
 const router = express.Router()
 
 
+router.post('/login', async (req, res) => {
+    await auth.login(req.body, res)
+})
+
+
+
+router.post('/signUp', async (req, res) => {
+    await auth.signUp(req.body, res)
+})
+
+
+
+router.post('/logout', isAuthorized, async (req, res) => {
+    await auth.logout(req, res)
+})
+
+
 // Define the User schema in the swagger, we will use it in endpoints descriptions
 
 /**
@@ -54,7 +71,7 @@ const router = express.Router()
  *         phonenumber: 0601020304
  *         pseudo: Yone_btc
  *         email: yone4life@gmail.com
- *         password: b$10$yvw6V2yM9KmM4kFCD6GJ8ukeuvwZNcJeOGQGeKB.5lr2FfI.D
+ *         password: YoneBtcEth
  */
 
 /**
@@ -75,14 +92,14 @@ const router = express.Router()
  *           description: The user password
  *       example:
  *         email: yone4life@gmail.com
- *         password: b$10$yvw6V2yM9KmM4kFCD6GJ8ukeuvwZNcJeOGQGeKB.5lr2FfI.D
+ *         password: YoneBtcEth
  */
 
 /**
  * @swagger
  * components:
  *   schemas:
- *     UserPost:
+ *     UserToken:
  *       type: object
  *       properties:
  *         token:
@@ -98,9 +115,6 @@ const router = express.Router()
   *   name: User
   *   description: User management
   */
-router.post('/login', async (req, res) => {
-    await auth.login(req.body, res)
-})
 
 
 /**
@@ -117,18 +131,14 @@ router.post('/login', async (req, res) => {
  *             $ref: '#/components/schemas/UserLogin'
  *     responses:
  *       200:
- *         description: The user was successfully created
+ *         description: The user was successfully login
  *         content:
  *           application/json:
  *             schema:
- *                 $ref: '#/components/schemas/UserPost'
+ *                 $ref: '#/components/schemas/UserToken'
  *       500:
  *         description: Internal server error
  */
-
-router.post('/signUp', async (req, res) => {
-    await auth.signUp(req.body, res)
-})
 
 /**
  * @swagger
@@ -153,9 +163,30 @@ router.post('/signUp', async (req, res) => {
  *         description: Internal server error
  */
 
-router.post('/logout', isAuthorized, async (req, res) => {
-    await auth.logout(req, res)
-})
-
+/**
+ * @swagger
+ * /logout:
+ *   post:
+ *     summary: Logout a user
+ *     tags: [User]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             $ref: '#/components/schemas/UserToken'
+ *     responses:
+ *       200:
+ *         description: The user was successfully disconnected
+ *         content:
+ *           text/html:
+ *             schema:
+ *              type: string
+ *             required: true
+ *             description: confirm logout
+ *             example: "you are disconnected"
+ *       500:
+ *         description: Internal server error
+ */
 
 module.exports = router

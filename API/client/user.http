@@ -3,12 +3,12 @@ POST http://localhost:8081/signUp HTTP/1.1
 Content-Type: application/json
 
 {
-    "firstname": "Sun",
-    "phonenumber": "0606060607",
-    "lastname": "wukong",
-    "pseudo": "SunWukong",
-    "email": "sunwukong@gmail.com",
-    "password": "123456789Wu"
+    "firstname": "Gka",
+    "phonenumber": "0606060609",
+    "lastname": "graka",
+    "pseudo": "Gkata",
+    "email": "gkata@gmail.com",
+    "password": "123456"
 }
 
 ###
@@ -16,8 +16,8 @@ POST http://localhost:8081/login HTTP/1.1
 Content-Type: application/json
 
 {
-    "email": "songoku@gmail.com",
-    "password": "123456789Sg"
+    "email": "gkata@gmail.com",
+    "password": "123456"
 }
 
 ###

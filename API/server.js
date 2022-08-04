@@ -33,7 +33,7 @@ const options = {
     },
     servers: [
       {
-        url: 'http://localhost:8081/api/v1',
+        url: 'http://localhost:8081/',
       }
     ],
   },
@@ -47,7 +47,7 @@ const specs = swaggerJsDoc(options)
 // Middleware
 app.use(bodyparser.json())
 app.use(morgan('tiny'))
-app.use("/api-docs", swaggerUiExpress.serve, swaggerUiExpress.setup(specs))
+
 //BDD connection and server start
 mongoose.connect(
   `mongodb+srv://${username}:${password}@cowork.scor1.mongodb.net/${dbname}?retryWrites=true&w=majority`,
@@ -66,6 +66,7 @@ db.once("open", function () {
 
 app.use(routeruser);
 app.use(routeradmin)
+app.use("/api-docs", swaggerUiExpress.serve, swaggerUiExpress.setup(specs))
 
 app.listen(process.env.PORT || 8080, () => {
   console.log(`server listen at ${port}`)

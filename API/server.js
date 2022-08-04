@@ -21,21 +21,21 @@ const options = {
   definition: {
     openapi: '3.0.0',
     info: {
-      title: 'API Documentation',
+      title: 'CoWork API Documentation',
       version: '1.0.0',
-      description: 'API Documentation',
+      description: 'API Documentation for CoWork Project',
       contact: {
-        name: 'API Documentation',
+        name: 'CoWork API',
         url: '',
         https: '//swagger.io',
         email: '',
       },
-      servers: [
-        {
-          url: 'http://localhost:3000/api/v1',
-        }
-      ],
     },
+    servers: [
+      {
+        url: 'http://localhost:8081/api/v1',
+      }
+    ],
   },
   apis: [
     './routes/*.js',

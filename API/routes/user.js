@@ -91,8 +91,8 @@ router.post('/logout', isAuthorized, async (req, res) => {
  *           type: string
  *           description: The user password
  *       example:
- *         email: yone4life@gmail.com
- *         password: YoneBtcEth
+ *         email: gkata@gmail.com
+ *         password: "123456"
  */
 
 /**
@@ -116,6 +116,15 @@ router.post('/logout', isAuthorized, async (req, res) => {
   *   description: User management
   */
 
+ /**
+ * @swagger
+ * components:
+ *   securitySchemes:
+ *    bearerAuth:
+ *     type: http
+ *     scheme: bearer
+ *     bearerFormat: JWT
+ */
 
 /**
  * @swagger
@@ -169,12 +178,8 @@ router.post('/logout', isAuthorized, async (req, res) => {
  *   post:
  *     summary: Logout a user
  *     tags: [User]
- *     requestBody:
- *       required: true
- *       content:
- *         application/json:
- *           schema:
- *             $ref: '#/components/schemas/UserToken'
+ *     security:
+ *      - bearerAuth: []
  *     responses:
  *       200:
  *         description: The user was successfully disconnected

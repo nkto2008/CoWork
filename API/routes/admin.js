@@ -47,6 +47,16 @@ router.post('/bye', isAuthorized, async(req, res) => {
  *         token: JhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjJlYmJlZGZhMmRi...
  */
 
+/**
+ * @swagger
+ * components:
+ *   securitySchemes:
+ *    bearerAuth:
+ *     type: http
+ *     scheme: bearer
+ *     bearerFormat: JWT
+ */
+
  /**
   * @swagger
   * tags:
@@ -84,12 +94,8 @@ router.post('/bye', isAuthorized, async(req, res) => {
  *   post:
  *     summary: Logout a admin
  *     tags: [Admin]
- *     requestBody:
- *       required: true
- *       content:
- *         application/json:
- *           schema:
- *             $ref: '#/components/schemas/AdminToken'
+ *     security:
+ *      - bearerAuth: []
  *     responses:
  *       200:
  *         description: The admin was successfully disconnected

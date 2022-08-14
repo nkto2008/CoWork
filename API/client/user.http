@@ -3,12 +3,12 @@ POST http://localhost:8081/signUp HTTP/1.1
 Content-Type: application/json
 
 {
-    "firstname": "Sun",
-    "phonenumber": "0606060607",
-    "lastname": "wukong",
-    "pseudo": "SunWukong",
-    "email": "sunwukong@gmail.com",
-    "password": "123456789Wu"
+    "firstname": "Gka",
+    "phonenumber": "0606060609",
+    "lastname": "graka",
+    "pseudo": "Gkata",
+    "email": "gkata@gmail.com",
+    "password": "123456"
 }
 
 ###
@@ -16,11 +16,11 @@ POST http://localhost:8081/login HTTP/1.1
 Content-Type: application/json
 
 {
-    "email": "songoku@gmail.com",
-    "password": "123456789Sg"
+    "email": "gkata@gmail.com",
+    "password": "123456"
 }
 
 ###
 POST http://localhost:8081/logout HTTP/1.1
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjJlNzk3ODM2MTUwMTUxYzUwYjI0ZGM4IiwiZW1haWwiOiJzb25nb2t1QGdtYWlsLmNvbSIsImlhdCI6MTY1OTM0NTA1NywiZXhwIjoxNjU5MzcwMjU3fQ.PAk9FH0W8jw9HxAvhxoSeDinVEV1M3h1zxvixueajA8
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjJlYmJlZGZhMmRiNGFiOTRmODUzMDg4IiwiZW1haWwiOiJna2F0YUBnbWFpbC5jb20iLCJpYXQiOjE2NTk2MjE0MTksImV4cCI6MTY1OTY0NjYxOX0.QA1XQUwq8T8awnI6TYJz1_-Srwsn-SpNdQturTwKYa4

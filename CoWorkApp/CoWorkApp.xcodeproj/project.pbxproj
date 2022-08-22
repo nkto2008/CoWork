@@ -15,6 +15,8 @@
 		FA6B273C28AFD8D600507AA4 /* Comfortaa.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA6B273B28AFD8D600507AA4 /* Comfortaa.ttf */; };
 		FA6B273E28AFD8DF00507AA4 /* BungeeShade.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA6B273D28AFD8DF00507AA4 /* BungeeShade.ttf */; };
 		FAEE3C8B28AFEF3800A4A67D /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = FAEE3C8A28AFEF3800A4A67D /* .gitignore */; };
+		FAEE3C9128B3744000A4A67D /* signIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE3C9028B3744000A4A67D /* signIn.swift */; };
+		FAEE3C9528B37F1700A4A67D /* signUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE3C9428B37F1700A4A67D /* signUp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		FA6B273B28AFD8D600507AA4 /* Comfortaa.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Comfortaa.ttf; sourceTree = "<group>"; };
 		FA6B273D28AFD8DF00507AA4 /* BungeeShade.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BungeeShade.ttf; sourceTree = "<group>"; };
 		FAEE3C8A28AFEF3800A4A67D /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		FAEE3C9028B3744000A4A67D /* signIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signIn.swift; sourceTree = "<group>"; };
+		FAEE3C9428B37F1700A4A67D /* signUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signUp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,8 @@
 		FA6B272528AFD09B00507AA4 /* CoWorkApp */ = {
 			isa = PBXGroup;
 			children = (
+				FAEE3C9328B37EE600A4A67D /* Service */,
+				FAEE3C9228B37DDC00A4A67D /* View */,
 				FA6B273628AFD87600507AA4 /* Font */,
 				FA6B272628AFD09B00507AA4 /* CoWorkAppApp.swift */,
 				FAEE3C8A28AFEF3800A4A67D /* .gitignore */,
@@ -90,6 +96,22 @@
 		FAEE3C8828AFDAA400A4A67D /* Products */ = {
 			isa = PBXGroup;
 			name = Products;
+			sourceTree = "<group>";
+		};
+		FAEE3C9228B37DDC00A4A67D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FAEE3C9028B3744000A4A67D /* signIn.swift */,
+				FAEE3C9428B37F1700A4A67D /* signUp.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FAEE3C9328B37EE600A4A67D /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,7 +195,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA6B272928AFD09B00507AA4 /* ContentView.swift in Sources */,
+				FAEE3C9528B37F1700A4A67D /* signUp.swift in Sources */,
 				FA6B272728AFD09B00507AA4 /* CoWorkAppApp.swift in Sources */,
+				FAEE3C9128B3744000A4A67D /* signIn.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

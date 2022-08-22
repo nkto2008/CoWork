@@ -17,6 +17,8 @@
 		FAEE3C8B28AFEF3800A4A67D /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = FAEE3C8A28AFEF3800A4A67D /* .gitignore */; };
 		FAEE3C9128B3744000A4A67D /* signIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE3C9028B3744000A4A67D /* signIn.swift */; };
 		FAEE3C9528B37F1700A4A67D /* signUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE3C9428B37F1700A4A67D /* signUp.swift */; };
+		FAEE3C9828B3904200A4A67D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE3C9728B3904200A4A67D /* User.swift */; };
+		FAEE3C9A28B3951600A4A67D /* UserSignUpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE3C9928B3951600A4A67D /* UserSignUpService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		FAEE3C8A28AFEF3800A4A67D /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		FAEE3C9028B3744000A4A67D /* signIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signIn.swift; sourceTree = "<group>"; };
 		FAEE3C9428B37F1700A4A67D /* signUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signUp.swift; sourceTree = "<group>"; };
+		FAEE3C9728B3904200A4A67D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		FAEE3C9928B3951600A4A67D /* UserSignUpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignUpService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,7 @@
 		FA6B272528AFD09B00507AA4 /* CoWorkApp */ = {
 			isa = PBXGroup;
 			children = (
+				FAEE3C9628B380C100A4A67D /* Model */,
 				FAEE3C9328B37EE600A4A67D /* Service */,
 				FAEE3C9228B37DDC00A4A67D /* View */,
 				FA6B273628AFD87600507AA4 /* Font */,
@@ -110,8 +115,17 @@
 		FAEE3C9328B37EE600A4A67D /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				FAEE3C9928B3951600A4A67D /* UserSignUpService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		FAEE3C9628B380C100A4A67D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FAEE3C9728B3904200A4A67D /* User.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,6 +211,8 @@
 				FA6B272928AFD09B00507AA4 /* ContentView.swift in Sources */,
 				FAEE3C9528B37F1700A4A67D /* signUp.swift in Sources */,
 				FA6B272728AFD09B00507AA4 /* CoWorkAppApp.swift in Sources */,
+				FAEE3C9828B3904200A4A67D /* User.swift in Sources */,
+				FAEE3C9A28B3951600A4A67D /* UserSignUpService.swift in Sources */,
 				FAEE3C9128B3744000A4A67D /* signIn.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

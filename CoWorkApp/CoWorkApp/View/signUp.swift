@@ -19,16 +19,16 @@ struct signUp: View {
             Color("BgColor").edgesIgnoringSafeArea(.all)
             // Need to avoid Divider because a Stack can only contains 10
             VStack (alignment: .leading) {
-
-                    VStack (alignment: .center){
-                        Text("SignUp")
-                            .font(.largeTitle)
-                            .padding(Edge.Set.bottom, 30)
-                        Divider()
-                            .frame(maxWidth: 2000, maxHeight: 0, alignment: .trailing)
-                            .background(Color.black)
-                            .padding(Edge.Set.bottom, 20)
-                    }
+                
+                VStack (alignment: .center){
+                    Text("SignUp")
+                        .font(.largeTitle)
+                        .padding(Edge.Set.bottom, 30)
+                    Divider()
+                        .frame(maxWidth: 2000, maxHeight: 0, alignment: .trailing)
+                        .background(Color.black)
+                        .padding(Edge.Set.bottom, 20)
+                }
                 VStack(alignment: .leading){
                     Text("Fistname")
                     TextField("Your fistname", text: $firstname)
@@ -72,10 +72,18 @@ struct signUp: View {
                             .background(Color.black)
                     }
                 }
+                VStack(alignment: .center){
+                    Button {
+                        // go to login view
+                    } label: {
+                        Text("Already signUp click here !")
+                            .foregroundColor(Color.black)
+                    }
+                }
+                .padding(Edge.Set.leading, 0)
+                .padding()
             }
-            .padding(Edge.Set.leading, 0)
             .padding()
         }
-        .padding()
     }
 }

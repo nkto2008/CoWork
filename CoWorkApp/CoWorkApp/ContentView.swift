@@ -41,7 +41,6 @@ struct ContentView: View {
                         Divider()
                             .frame(maxWidth: 50, maxHeight: 5, alignment: .trailing)
                             .background(Color.black)
-                          
                     }
                 }
             }

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import NavigationStack
 
 struct signUp: View {
     @State private var firstname : String = ""
@@ -14,6 +15,9 @@ struct signUp: View {
     @State private var email : String = ""
     @State private var password : String = ""
     @State private var phone : String = ""
+    
+    @EnvironmentObject private var navigationStack: NavigationStackCompat
+    
     var body: some View {
         ZStack{
             Color("BgColor").edgesIgnoringSafeArea(.all)
@@ -21,7 +25,7 @@ struct signUp: View {
             VStack (alignment: .leading) {
                 
                 VStack (alignment: .center){
-                    Text("SignUp")
+                    Text("Sign Up")
                         .font(.largeTitle)
                         .padding(Edge.Set.bottom, 30)
                     Divider()
@@ -62,7 +66,15 @@ struct signUp: View {
                 HStack {
                     VStack(alignment: .center){
                         Button {
-                            print("Button tapped!")
+                            if (firstname != "" && lastname != "" && pseudo != "" && email != "" && password != "" && phone != ""){
+                                SignUpUser.SignUp(_: firstname, _: lastname, _: email, _: password, _: pseudo, _: phone) { res in
+                                    print(res.data)
+                                    
+
+                                }
+                            } else {
+                                print("You must fill all textfields")
+                            }
                         } label: {
                             Text("Submit")
                                 .foregroundColor(Color.black)
@@ -74,9 +86,10 @@ struct signUp: View {
                 }
                 VStack(alignment: .center){
                     Button {
-                        // go to login view
+                        print(ApiService.TOKEN)
+                        self.navigationStack.push(signIn())
                     } label: {
-                        Text("Already signUp click here !")
+                        Text("Already signUp click here ! ")
                             .foregroundColor(Color.black)
                     }
                 }

@@ -30,6 +30,18 @@ class User: CustomStringConvertible {
         self.phone = phone
     }
     
-    // function fromDict
+    public class func fromDict(_ array: [String: Any]) -> User? {
+        guard let id = array["id"] as? String,
+              let firstname = array["firstname"] as? String,
+              let lastname = array["lastname"] as? String,
+              let pseudo = array["pseudo"] as? String,
+              let email = array["email"] as? String,
+              let password = array["password"] as? String,
+              let phone = array["phone"] as? String else {
+            return nil
+        }
+        
+        return User(id: id, firstname: firstname, lastname: lastname, pseudo: pseudo, email: email, password: password, phone: phone)
+    }
     
 }

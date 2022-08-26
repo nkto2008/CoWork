@@ -16,6 +16,7 @@ struct signUp: View {
     @State private var password : String = ""
     @State private var phone : String = ""
     
+    // Need to add NavigationStackCompact in ContentView
     @EnvironmentObject private var navigationStack: NavigationStackCompat
     
     var body: some View {
@@ -87,7 +88,7 @@ struct signUp: View {
                 VStack(alignment: .center){
                     Button {
                         print(ApiService.TOKEN)
-                        self.navigationStack.push(signIn())
+                        
                     } label: {
                         Text("Already signUp click here ! ")
                             .foregroundColor(Color.black)

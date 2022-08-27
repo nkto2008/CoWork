@@ -19,6 +19,16 @@
 		FAEE3C9528B37F1700A4A67D /* signUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE3C9428B37F1700A4A67D /* signUp.swift */; };
 		FAEE3C9828B3904200A4A67D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE3C9728B3904200A4A67D /* User.swift */; };
 		FAEE3C9A28B3951600A4A67D /* UserSignUpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE3C9928B3951600A4A67D /* UserSignUpService.swift */; };
+		FAEE3C9D28B42B9400A4A67D /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE3C9C28B42B9400A4A67D /* APIService.swift */; };
+		FAEE3C9F28B7D15000A4A67D /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE3C9E28B7D15000A4A67D /* ApiResponse.swift */; };
+		FAEE3CA228B865B200A4A67D /* NavigationStack in Frameworks */ = {isa = PBXBuildFile; productRef = FAEE3CA128B865B200A4A67D /* NavigationStack */; };
+		FAEE3CA428BA71CB00A4A67D /* UserSignInService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE3CA328BA71CB00A4A67D /* UserSignInService.swift */; };
+		FAEE3CA628BA78CD00A4A67D /* landingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE3CA528BA78CD00A4A67D /* landingPage.swift */; };
+		FAEE3CAA28BA7BA700A4A67D /* buttonLandingStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE3CA928BA7BA700A4A67D /* buttonLandingStyle.swift */; };
+		FAEE3CAC28BA82CF00A4A67D /* homePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE3CAB28BA82CF00A4A67D /* homePage.swift */; };
+		FAEE3CAE28BA8ADC00A4A67D /* userProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE3CAD28BA8ADC00A4A67D /* userProfile.swift */; };
+		FAEE3CB028BA8BD800A4A67D /* userRent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE3CAF28BA8BD800A4A67D /* userRent.swift */; };
+		FAEE3CB228BA8C4900A4A67D /* logout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE3CB128BA8C4900A4A67D /* logout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +45,15 @@
 		FAEE3C9428B37F1700A4A67D /* signUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signUp.swift; sourceTree = "<group>"; };
 		FAEE3C9728B3904200A4A67D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FAEE3C9928B3951600A4A67D /* UserSignUpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignUpService.swift; sourceTree = "<group>"; };
+		FAEE3C9C28B42B9400A4A67D /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		FAEE3C9E28B7D15000A4A67D /* ApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
+		FAEE3CA328BA71CB00A4A67D /* UserSignInService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignInService.swift; sourceTree = "<group>"; };
+		FAEE3CA528BA78CD00A4A67D /* landingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = landingPage.swift; sourceTree = "<group>"; };
+		FAEE3CA928BA7BA700A4A67D /* buttonLandingStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = buttonLandingStyle.swift; sourceTree = "<group>"; };
+		FAEE3CAB28BA82CF00A4A67D /* homePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homePage.swift; sourceTree = "<group>"; };
+		FAEE3CAD28BA8ADC00A4A67D /* userProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userProfile.swift; sourceTree = "<group>"; };
+		FAEE3CAF28BA8BD800A4A67D /* userRent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userRent.swift; sourceTree = "<group>"; };
+		FAEE3CB128BA8C4900A4A67D /* logout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAEE3CA228B865B200A4A67D /* NavigationStack in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,9 +91,10 @@
 				FAEE3C9328B37EE600A4A67D /* Service */,
 				FAEE3C9228B37DDC00A4A67D /* View */,
 				FA6B273628AFD87600507AA4 /* Font */,
+				FAEE3CA828BA7B7600A4A67D /* Style */,
+				FA6B272828AFD09B00507AA4 /* ContentView.swift */,
 				FA6B272628AFD09B00507AA4 /* CoWorkAppApp.swift */,
 				FAEE3C8A28AFEF3800A4A67D /* .gitignore */,
-				FA6B272828AFD09B00507AA4 /* ContentView.swift */,
 				FA6B272A28AFD09D00507AA4 /* Assets.xcassets */,
 				FA6B272C28AFD09D00507AA4 /* Preview Content */,
 				FA6B273428AFD7FD00507AA4 /* CoWorkApp.xcodeproj */,
@@ -108,6 +129,11 @@
 			children = (
 				FAEE3C9028B3744000A4A67D /* signIn.swift */,
 				FAEE3C9428B37F1700A4A67D /* signUp.swift */,
+				FAEE3CA528BA78CD00A4A67D /* landingPage.swift */,
+				FAEE3CAB28BA82CF00A4A67D /* homePage.swift */,
+				FAEE3CAD28BA8ADC00A4A67D /* userProfile.swift */,
+				FAEE3CAF28BA8BD800A4A67D /* userRent.swift */,
+				FAEE3CB128BA8C4900A4A67D /* logout.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -115,7 +141,8 @@
 		FAEE3C9328B37EE600A4A67D /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				FAEE3C9928B3951600A4A67D /* UserSignUpService.swift */,
+				FAEE3C9B28B42B7300A4A67D /* API */,
+				FAEE3C9C28B42B9400A4A67D /* APIService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -124,8 +151,26 @@
 			isa = PBXGroup;
 			children = (
 				FAEE3C9728B3904200A4A67D /* User.swift */,
+				FAEE3C9E28B7D15000A4A67D /* ApiResponse.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		FAEE3C9B28B42B7300A4A67D /* API */ = {
+			isa = PBXGroup;
+			children = (
+				FAEE3C9928B3951600A4A67D /* UserSignUpService.swift */,
+				FAEE3CA328BA71CB00A4A67D /* UserSignInService.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		FAEE3CA828BA7B7600A4A67D /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				FAEE3CA928BA7BA700A4A67D /* buttonLandingStyle.swift */,
+			);
+			path = Style;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,6 +189,9 @@
 			dependencies = (
 			);
 			name = CoWorkApp;
+			packageProductDependencies = (
+				FAEE3CA128B865B200A4A67D /* NavigationStack */,
+			);
 			productName = CoWorkApp;
 			productReference = FA6B272328AFD09B00507AA4 /* CoWorkApp.app */;
 			productType = "com.apple.product-type.application";
@@ -172,6 +220,9 @@
 				Base,
 			);
 			mainGroup = FA6B271A28AFD09B00507AA4;
+			packageReferences = (
+				FAEE3CA028B865B200A4A67D /* XCRemoteSwiftPackageReference "swiftui-navigation-stack" */,
+			);
 			productRefGroup = FA6B272428AFD09B00507AA4 /* Products */;
 			projectDirPath = "";
 			projectReferences = (
@@ -208,12 +259,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAEE3CA628BA78CD00A4A67D /* landingPage.swift in Sources */,
 				FA6B272928AFD09B00507AA4 /* ContentView.swift in Sources */,
+				FAEE3CA428BA71CB00A4A67D /* UserSignInService.swift in Sources */,
+				FAEE3CAC28BA82CF00A4A67D /* homePage.swift in Sources */,
+				FAEE3C9D28B42B9400A4A67D /* APIService.swift in Sources */,
 				FAEE3C9528B37F1700A4A67D /* signUp.swift in Sources */,
+				FAEE3CAE28BA8ADC00A4A67D /* userProfile.swift in Sources */,
 				FA6B272728AFD09B00507AA4 /* CoWorkAppApp.swift in Sources */,
 				FAEE3C9828B3904200A4A67D /* User.swift in Sources */,
+				FAEE3C9F28B7D15000A4A67D /* ApiResponse.swift in Sources */,
+				FAEE3CAA28BA7BA700A4A67D /* buttonLandingStyle.swift in Sources */,
 				FAEE3C9A28B3951600A4A67D /* UserSignUpService.swift in Sources */,
 				FAEE3C9128B3744000A4A67D /* signIn.swift in Sources */,
+				FAEE3CB028BA8BD800A4A67D /* userRent.swift in Sources */,
+				FAEE3CB228BA8C4900A4A67D /* logout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +472,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FAEE3CA028B865B200A4A67D /* XCRemoteSwiftPackageReference "swiftui-navigation-stack" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/matteopuc/swiftui-navigation-stack.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FAEE3CA128B865B200A4A67D /* NavigationStack */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FAEE3CA028B865B200A4A67D /* XCRemoteSwiftPackageReference "swiftui-navigation-stack" */;
+			productName = NavigationStack;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FA6B271B28AFD09B00507AA4 /* Project object */;
 }

@@ -77,4 +77,8 @@ const logout = async(body, res) => {
     }
 }
 
+const getProfile = async(req, res) => {
+    req
+}
+
 module.exports = {signUp, login, logout}

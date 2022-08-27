@@ -16,6 +16,10 @@ router.post('/logout', isAuthorized, async(req, res) => {
     await auth.logout(req,res)
 })
 
+router.get('/getProfile', isAuthorized, async(req, res) => {
+    await auth.get(req,res)
+})
+
 
 
 module.exports = router

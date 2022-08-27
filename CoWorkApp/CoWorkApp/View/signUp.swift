@@ -92,7 +92,7 @@ struct signUp: View {
                     Button {
                         self.navigationStack.push(signIn())
                     } label: {
-                        Text("Already signUp click here ! ")
+                        Text("Already sign up click here ! ")
                             .foregroundColor(Color.black)
                     }
                 }

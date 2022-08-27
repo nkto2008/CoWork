@@ -6,10 +6,14 @@
 //
 
 import SwiftUI
+import NavigationStack
 
 struct signIn: View {
     @State private var email : String = ""
     @State private var password : String = ""
+    
+    @EnvironmentObject private var navigationStack: NavigationStackCompat
+    
     var body: some View {
         ZStack{
             Color("BgColor").edgesIgnoringSafeArea(.all)
@@ -48,6 +52,18 @@ struct signIn: View {
                         }
                         Divider()
                             .frame(maxWidth: 50, maxHeight: 5, alignment: .trailing)
+                            .background(Color.black)
+                    }
+                    .padding(30)
+                    VStack(alignment: .trailing){
+                        Button {
+                            self.navigationStack.push(signUp())
+                        } label: {
+                            Text("Sign Up ?")
+                                .foregroundColor(Color.black)
+                        }
+                        Divider()
+                            .frame(maxWidth: 70, maxHeight: 5, alignment: .trailing)
                             .background(Color.black)
                     }
                 }

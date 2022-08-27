@@ -33,7 +33,15 @@ struct signIn: View {
                 HStack {
                     VStack(alignment: .trailing){
                         Button {
-                            print("Button tapped!")
+                            if(email != "" && password != ""){
+                                SignInUser.SignIn(_: email, _: password) { res in
+                                    if(res.error) {
+                                        print(res.message)
+                                    } else {
+                                        ApiService.TOKEN = res.message
+                                    }
+                                }
+                            }
                         } label: {
                             Text("Login")
                                 .foregroundColor(Color.black)

@@ -69,9 +69,12 @@ struct signUp: View {
                         Button {
                             if (firstname != "" && lastname != "" && pseudo != "" && email != "" && password != "" && phone != ""){
                                 SignUpUser.SignUp(_: firstname, _: lastname, _: email, _: password, _: pseudo, _: phone) { res in
-                                    print(res.data)
-                                    
-
+                                    if(res.error) {
+                                        print(res.message)
+                                    } else {
+                                        print(res.message)
+                                        self.navigationStack.push(signIn())
+                                    }
                                 }
                             } else {
                                 print("You must fill all textfields")
@@ -87,8 +90,7 @@ struct signUp: View {
                 }
                 VStack(alignment: .center){
                     Button {
-                        print(ApiService.TOKEN)
-                        
+                        self.navigationStack.push(signIn())
                     } label: {
                         Text("Already signUp click here ! ")
                             .foregroundColor(Color.black)

@@ -1,16 +1,16 @@
 //
-//  UserSignUpService.swift
+//  UserSignInService.swift
 //  CoWorkApp
 //
-//  Created by Alexandre Marcos on 22/08/2022.
+//  Created by Alexandre Marcos on 27/08/2022.
 //
 
 import SwiftUI
 
 
-class SignUpUser {
-    class func SignUp(_ firstname: String, _ lastname: String, _ email: String, _ password: String, _ pseudo: String, _ phone: String, completion: @escaping (ApiResponse) -> Void){
-        guard let url = URL(string: ApiService.URL + "/signUp") else {
+class SignInUser {
+    class func SignIn(_ email: String, _ password: String, completion: @escaping (ApiResponse) -> Void){
+        guard let url = URL(string: ApiService.URL + "/login") else {
             completion(ApiResponse(error: true, message: "Cannot access URL"))
             return
         }
@@ -19,7 +19,7 @@ class SignUpUser {
         urlRequest.httpMethod = "POST"
         urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
-        let dataArray = ["firstname": firstname, "phonenumber": phone, "lastname": lastname, "pseudo": pseudo, "email": email, "password": password]
+        let dataArray = ["email": email, "password": password]
         let datas = try? JSONSerialization.data(withJSONObject: dataArray, options: .fragmentsAllowed)
         urlRequest.httpBody = datas
         
@@ -39,7 +39,7 @@ class SignUpUser {
             print(apiResponseArray)
             
             guard let message = apiResponseArray["message"] as? String else {
-                completion(ApiResponse(error: true, message: "Error while serializing response"))
+                completion(ApiResponse(error: true, message: "Error before last operation"))
                 return
             }
             

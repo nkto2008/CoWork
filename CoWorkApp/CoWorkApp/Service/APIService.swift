@@ -11,6 +11,6 @@ class ApiService {
     static let URL = "http://localhost:8081"
     static var TOKEN = ""
     static var USER: User? = nil
-    static let API_DEFAULT_RESPONSE: ApiResponse = ApiResponse(error: true, message: "An error has occured", data: [])
+    static let API_DEFAULT_RESPONSE: ApiResponse = ApiResponse(error: true, message: "An error has occured")
 }
 

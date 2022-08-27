@@ -23,7 +23,7 @@ const signUp = async (body,res) => {
             newUser.password = encryptedPassword
             newUser.fk_role = Mongoose.Types.ObjectId("62e436aa1a254799431166b0")
             await newUser.save()
-            res.status(200).json(newUser)
+            res.status(200).json({message: "User created"})
         }
     }
 }
@@ -36,7 +36,9 @@ const login = async(body,res) => {
       res.status(400).send("All input is required");
     }
     // Find if user exist
+    console.log(email)
     const user = await UserModel.findOne({email: email });
+    console.log(user)
     const RoleUser = await RoleModel.findOne({_id: user.fk_role})
     //if my user exist and the password match
     if (user && (await bcrypt.compare(password, user.password)) && RoleUser.name == "user") {
@@ -54,7 +56,7 @@ const login = async(body,res) => {
       user.save()
 
       // user
-      res.status(200).json(user.token);
+      res.status(200).json({message: user.token});
     }else {
         res.status(400).send("Invalid Credentials")
     }

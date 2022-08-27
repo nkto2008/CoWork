@@ -14,21 +14,21 @@ class ApiResponse: CustomStringConvertible {
     
     let error: Bool
     let message: String
-    let data: [Any]
     
-    public init(error: Bool, message: String, data: [Any]){
+    public init(error: Bool, message: String){
         self.error = error
         self.message = message
-        self.data = data
     }
     
     public class func fromDict(_ array: [String: Any]) -> ApiResponse? {
+        
         guard let error = array["error"] as? Bool,
-              let message = array["message"] as? String,
-              let data = array["data"] as? [Any] else {
+              let message = array["message"] as? String else {
+            print("Coucou")
             return nil
         }
         
-        return ApiResponse(error: error, message: message, data: data)
+
+        return ApiResponse(error: error, message: message)
     }
 }

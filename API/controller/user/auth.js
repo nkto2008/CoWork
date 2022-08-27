@@ -78,7 +78,16 @@ const logout = async(body, res) => {
 }
 
 const getProfile = async(req, res) => {
-    req
+    const token = req.headers["authorization"];
+    if (token) {
+        const user = await UserModel.findOne({token})
+        if (!user) {
+            return res.status(403).send("Something wrong with your request");
+        }
+        return res.status(200).json({user})
+    } else {
+        return res.status(403).send("You need a token");
+    }
 }
 
-module.exports = {signUp, login, logout}
+module.exports = {signUp, login, logout, getProfile}

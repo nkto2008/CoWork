@@ -18,22 +18,21 @@ struct signIn: View {
         ZStack{
             Color("BgColor").edgesIgnoringSafeArea(.all)
             VStack (alignment: .leading){
-            Text("Auth")
-                .font(.largeTitle)
-                .padding(Edge.Set.bottom, 30)
-            Text("Email Address")
-            TextField("Your email address", text: $email)
-            Divider()
-                .frame(height: 5)
-                .background(Color.black)
-                .padding(Edge.Set.bottom, 30)
-            Text("Password")
-            SecureField("Your password", text: $password)
+                Text("Auth")
+                    .font(.largeTitle)
+                    .padding(Edge.Set.bottom, 30)
+                Text("Email Address")
+                TextField("Your email address", text: $email)
                 Divider()
                     .frame(height: 5)
                     .background(Color.black)
-                .padding(Edge.Set.bottom, 50)
-                
+                    .padding(Edge.Set.bottom, 30)
+                Text("Password")
+                SecureField("Your password", text: $password)
+                Divider()
+                    .frame(height: 5)
+                    .background(Color.black)
+                    .padding(Edge.Set.bottom, 50)
                 HStack {
                     VStack(alignment: .trailing){
                         Button {
@@ -43,8 +42,21 @@ struct signIn: View {
                                         print(res.message)
                                     } else {
                                         ApiService.TOKEN = res.message
+                                        userProfileService.getUserProfile(_: ApiService.TOKEN) { res in
+                                            if(res.error) {
+                                                print("Error dude")
+                                            } else {
+                                                let user = User(id: res.id, firstname: res.firstname, lastname: res.lastname, pseudo: res.pseudo, email: res.email, phone: res.phone, error: false)
+                                                ApiService.USER = user
+                                                DispatchQueue.main.async {
+                                                    self.navigationStack.push(MainView())
+                                                }
+                                            }
+                                        }
                                     }
                                 }
+                            } else {
+                                print("You must fill all fields")
                             }
                         } label: {
                             Text("Login")
@@ -57,7 +69,9 @@ struct signIn: View {
                     .padding(30)
                     VStack(alignment: .trailing){
                         Button {
-                            self.navigationStack.push(signUp())
+                            DispatchQueue.main.async {
+                                self.navigationStack.push(signUp())
+                            }
                         } label: {
                             Text("Sign Up ?")
                                 .foregroundColor(Color.black)

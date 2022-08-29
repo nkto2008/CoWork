@@ -14,6 +14,7 @@ struct landingPage: View {
     @EnvironmentObject private var navigationStack: NavigationStackCompat
     
     var body: some View {
+        NavigationView{
         ZStack{
             Color("BgColor").edgesIgnoringSafeArea(.all)
             // Need to avoid Divider because a Stack can only contains 10
@@ -26,21 +27,46 @@ struct landingPage: View {
                     Divider()
                         .frame(maxWidth: 2000, maxHeight: 0, alignment: .trailing)
                         .background(Color.black)
-                        .padding(Edge.Set.bottom, 20)
-                    Button("Sign In", action: {
-                        self.navigationStack.push(signIn())
-                    }).buttonStyle(LandingButtonStyle(bgColor: .gray))
-                    Button("Sign Up", action: {
-                        self.navigationStack.push(signUp())
-                    }).buttonStyle(LandingButtonStyle(bgColor: .gray))
-
+                        .padding(Edge.Set.bottom, 100)
+                    Button {
+                        DispatchQueue.main.async {
+                            self.navigationStack.push(signIn())
+                        }
+                    } label: {
+                        Text("Sign In")
+                            .font(.title3)
+                            .foregroundColor(.white)
+                            .frame(maxWidth: .infinity)
+                            .padding(10)
+                            .background(.gray)
+                            .cornerRadius(50)
+                    }
+                    .padding(Edge.Set.leading, 30)
+                    .padding(Edge.Set.trailing, 30)
+                    .padding(Edge.Set.top, 30)
+                    Button {
+                        DispatchQueue.main.async {
+                            self.navigationStack.push(signUp())
+                        }
+                    } label: {
+                        Text("Sign Up")
+                            .font(.title3)
+                            .foregroundColor(.white)
+                            .frame(maxWidth: .infinity)
+                            .padding(10)
+                            .background(.gray)
+                            .cornerRadius(50)
+                    }
+                    .padding(30)
                     
                 }
+                Spacer()
                 
                 .padding(20)
                 
             }
             .padding()
         }
+    }
     }
 }

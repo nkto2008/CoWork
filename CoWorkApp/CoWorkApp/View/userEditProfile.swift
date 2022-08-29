@@ -8,7 +8,14 @@
 import SwiftUI
 import NavigationStack
 
-struct userProfile: View {
+struct userEditProfile: View {
+    
+    @State private var newFirstname : String = ""
+    @State private var newLastname : String = ""
+    @State private var newPseudo : String = ""
+    @State private var newEmail : String = ""
+    @State private var newPassword : String = ""
+    @State private var newPhone : String = ""
     
     @EnvironmentObject private var navigationStack: NavigationStackCompat
     
@@ -29,55 +36,62 @@ struct userProfile: View {
                     
                     VStack {
                         HStack {
-                            Text("Firstname : " + ApiService.USER!.firstname)
-                                .font(.body)
+                            VStack (alignment: .center){
+                                Text("Firstname : " + ApiService.USER!.firstname)
+                                    .font(.body)
+                                TextField("New firstname", text: $newFirstname)
+                            }
                         }
                         .padding(.bottom)
                         HStack {
+                            VStack (alignment: .center){
                             Text("Lastname : " + ApiService.USER!.lastname)
                                 .font(.body)
+                                TextField("New lastname", text: $newLastname)
+                            }
                         }
                         .padding(.bottom)
                         HStack {
+                            VStack (alignment: .center){
                             Text("Pseudo : " + ApiService.USER!.pseudo)
                                 .font(.body)
+                                TextField("New pseudo", text: $newPseudo)
+                            }
                         }
                         .padding(.bottom)
                         HStack {
+                            VStack (alignment: .center){
                             Text("Email : " + ApiService.USER!.email)
                                 .font(.body)
+                                TextField("New email", text: $newEmail)
+                            }
                         }
                         .padding(.bottom)
                         HStack {
-                            Text("Phone number : " + ApiService.USER!.phone)
+                            VStack (alignment: .center){
+                            Text("Phone numer : " + ApiService.USER!.phone)
                                 .font(.body)
+                                TextField("New phone number", text: $newPhone)
+                            }
                         }
                         .padding(.bottom)
-                        HStack {
-                            Text("id : " + (ApiService.USER!.id ?? "Pas d'id"))
-                                .font(.body)
+                        Button {
+                            // Need to send datas to the API
+                        } label: {
+                            Text("Submit")
+                                .font(.title3)
+                                .foregroundColor(.white)
+                                .frame(maxWidth: .infinity)
+                                .padding(10)
+                                .background(.gray)
+                                .cornerRadius(50)
                         }
-                        .padding(.bottom)
                     }
                     .padding()
                     Divider()
                         .frame(maxWidth: 2000, maxHeight: 0, alignment: .trailing)
                         .background(Color.black)
                         .padding(Edge.Set.bottom, 20)
-                    Button {
-                        DispatchQueue.main.async {
-                            self.navigationStack.push(userEditProfile())
-                        }
-                    } label: {
-                        Text("Edit my profile")
-                            .font(.title3)
-                            .foregroundColor(.white)
-                            .frame(maxWidth: .infinity)
-                            .padding(10)
-                            .background(.gray)
-                            .cornerRadius(50)
-                    }
-                    .padding(30)
                 }
             }
             .padding()

@@ -73,7 +73,9 @@ struct signUp: View {
                                         print(res.message)
                                     } else {
                                         print(res.message)
-                                        self.navigationStack.push(signIn())
+                                        DispatchQueue.main.async {
+                                            self.navigationStack.push(signIn())
+                                        }
                                     }
                                 }
                             } else {
@@ -90,7 +92,9 @@ struct signUp: View {
                 }
                 VStack(alignment: .center){
                     Button {
-                        self.navigationStack.push(signIn())
+                        DispatchQueue.main.async {
+                            self.navigationStack.push(signIn())
+                        }
                     } label: {
                         Text("Already sign up click here ! ")
                             .foregroundColor(Color.black)

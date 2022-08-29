@@ -17,17 +17,17 @@ class User: CustomStringConvertible {
     let lastname: String
     let pseudo: String
     let email: String
-    let password: String
     let phone: String
+    let error: Bool
     
-    init(id: String?, firstname: String, lastname: String, pseudo: String, email: String, password: String, phone: String){
+    public init(id: String?, firstname: String, lastname: String, pseudo: String, email: String, phone: String, error: Bool){
         self.id = id
         self.firstname = firstname
         self.lastname = lastname
         self.pseudo = pseudo
         self.email = email
-        self.password = password
         self.phone = phone
+        self.error = error
     }
     
     public class func fromDict(_ array: [String: Any]) -> User? {
@@ -36,12 +36,12 @@ class User: CustomStringConvertible {
               let lastname = array["lastname"] as? String,
               let pseudo = array["pseudo"] as? String,
               let email = array["email"] as? String,
-              let password = array["password"] as? String,
+              let error = array["error"] as? Bool,
               let phone = array["phone"] as? String else {
             return nil
         }
         
-        return User(id: id, firstname: firstname, lastname: lastname, pseudo: pseudo, email: email, password: password, phone: phone)
+        return User(id: id, firstname: firstname, lastname: lastname, pseudo: pseudo, email: email, phone: phone, error: error)
     }
     
 }

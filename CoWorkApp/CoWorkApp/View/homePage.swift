@@ -8,10 +8,14 @@
 import SwiftUI
 import NavigationStack
 
-struct homePage: View {
+struct MainView: View {
     
     // Need to add NavigationStackCompact in ContentView
     @EnvironmentObject private var navigationStack: NavigationStackCompat
+    
+    init() {
+        UITabBar.appearance().backgroundColor = UIColor.lightGray
+    }
     
     var body: some View {
         TabView {
@@ -19,17 +23,25 @@ struct homePage: View {
             userProfile()
                 .tabItem {
                     Label("Profile", systemImage: "person")
+                        .padding(.top)
                 }
+            
             //réserver
             userRent()
                 .tabItem {
                     Label("Réserver", systemImage: "bag")
+                        .padding(.top)
                 }
+            
             //déconnexion
             logout()
+                .badge("Bye")
                 .tabItem {
                     Label("Logout", systemImage: "figure.walk")
+                        .padding(.top)
+                    
                 }
+            
         }
     }
 }

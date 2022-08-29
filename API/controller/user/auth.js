@@ -70,7 +70,7 @@ const logout = async(body, res) => {
         const user = await UserModel.findOne({email})
         user.token = ""
         if(user.save()){
-            res.status(200).send("you are disconnected")
+            res.status(200).send({message: "Successfully logged out"})
         }else {
             res.status(400).send("error in the process of logout")
         }
@@ -84,7 +84,14 @@ const getProfile = async(req, res) => {
         if (!user) {
             return res.status(403).send("Something wrong with your request");
         }
-        return res.status(200).json({user})
+        return res.status(200).json({
+            id: user._id,
+            email: user.email,
+            lastname: user.lastname,
+            firstname: user.firstname,
+            pseudo: user.pseudo,
+            phone: user.phonenumber,
+        })
     } else {
         return res.status(403).send("You need a token");
     }

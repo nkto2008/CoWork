@@ -11,7 +11,7 @@ import NavigationStack
 struct ContentView: View {
     var body: some View {
         NavigationStackView(transitionType: .custom(AnyTransition.identity)) {
-            homePage()
+            landingPage()
         }
     }
 }

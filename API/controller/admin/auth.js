@@ -13,26 +13,30 @@ const login = async(body,res) => {
     }
     // Find if user exist
     const user = await UserModel.findOne({email: email });
-    const RoleUser = await RoleModel.findOne({_id: user.fk_role})
-    //if my user exist and the password match
-    if (user && (await bcrypt.compare(password, user.password)) && RoleUser.name == "admin") {
-      // Create token
-      const token = jwt.sign(
-        { user_id: user._id, email },
-        process.env.TS,
-        {
-          expiresIn: "7h",
-        }
-      );
-
-      // save user token
-      user.token = token;
-      user.save()
-
-      // user
-      res.status(200).json(user.token);
-    }else {
-        res.status(400).send("Invalid Credentials")
+    if(user){
+      const RoleUser = await RoleModel.findOne({_id: user.fk_role})
+      //if my user exist and the password match
+      if (user && (await bcrypt.compare(password, user.password)) && RoleUser.name == "admin") {
+        // Create token
+        const token = jwt.sign(
+          { user_id: user._id, email },
+          process.env.TS,
+          {
+            expiresIn: "7h",
+          }
+        );
+  
+        // save user token
+        user.token = token;
+        user.save()
+  
+        // user
+        res.status(200).json(user.token);
+      }else {
+          res.status(400).send("Invalid Credentials")
+      }
+    }else{
+      res.status(400).send("Invalid Credentials")
     }
 }
 

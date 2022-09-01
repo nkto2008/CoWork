@@ -20,6 +20,10 @@ router.post('/logout', isAuthorized, async (req, res) => {
     await auth.logout(req, res)
 })
 
+router.get('/getProfile', isAuthorized, async(req, res) => {
+    await auth.getProfile(req,res)
+})
+
 
 // Define the User schema in the swagger, we will use it in endpoints descriptions
 

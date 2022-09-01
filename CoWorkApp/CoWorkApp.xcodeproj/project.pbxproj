@@ -1,0 +1,496 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FA6B272728AFD09B00507AA4 /* CoWorkAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6B272628AFD09B00507AA4 /* CoWorkAppApp.swift */; };
+		FA6B272928AFD09B00507AA4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6B272828AFD09B00507AA4 /* ContentView.swift */; };
+		FA6B272B28AFD09D00507AA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA6B272A28AFD09D00507AA4 /* Assets.xcassets */; };
+		FA6B272E28AFD09D00507AA4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA6B272D28AFD09D00507AA4 /* Preview Assets.xcassets */; };
+		FA6B273528AFD7FD00507AA4 /* CoWorkApp.xcodeproj in Resources */ = {isa = PBXBuildFile; fileRef = FA6B273428AFD7FD00507AA4 /* CoWorkApp.xcodeproj */; };
+		FA6B273C28AFD8D600507AA4 /* Comfortaa.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA6B273B28AFD8D600507AA4 /* Comfortaa.ttf */; };
+		FA6B273E28AFD8DF00507AA4 /* BungeeShade.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA6B273D28AFD8DF00507AA4 /* BungeeShade.ttf */; };
+		FAEE3C8B28AFEF3800A4A67D /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = FAEE3C8A28AFEF3800A4A67D /* .gitignore */; };
+		FAEE3C9128B3744000A4A67D /* signIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE3C9028B3744000A4A67D /* signIn.swift */; };
+		FAEE3C9528B37F1700A4A67D /* signUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE3C9428B37F1700A4A67D /* signUp.swift */; };
+		FAEE3C9828B3904200A4A67D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE3C9728B3904200A4A67D /* User.swift */; };
+		FAEE3C9A28B3951600A4A67D /* UserSignUpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE3C9928B3951600A4A67D /* UserSignUpService.swift */; };
+		FAEE3C9D28B42B9400A4A67D /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE3C9C28B42B9400A4A67D /* APIService.swift */; };
+		FAEE3C9F28B7D15000A4A67D /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE3C9E28B7D15000A4A67D /* ApiResponse.swift */; };
+		FAEE3CA228B865B200A4A67D /* NavigationStack in Frameworks */ = {isa = PBXBuildFile; productRef = FAEE3CA128B865B200A4A67D /* NavigationStack */; };
+		FAEE3CA428BA71CB00A4A67D /* UserSignInService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE3CA328BA71CB00A4A67D /* UserSignInService.swift */; };
+		FAEE3CA628BA78CD00A4A67D /* landingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE3CA528BA78CD00A4A67D /* landingPage.swift */; };
+		FAEE3CAA28BA7BA700A4A67D /* buttonLandingStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE3CA928BA7BA700A4A67D /* buttonLandingStyle.swift */; };
+		FAEE3CAC28BA82CF00A4A67D /* homePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE3CAB28BA82CF00A4A67D /* homePage.swift */; };
+		FAEE3CAE28BA8ADC00A4A67D /* userProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE3CAD28BA8ADC00A4A67D /* userProfile.swift */; };
+		FAEE3CB028BA8BD800A4A67D /* userRent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE3CAF28BA8BD800A4A67D /* userRent.swift */; };
+		FAEE3CB228BA8C4900A4A67D /* logout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE3CB128BA8C4900A4A67D /* logout.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		FA6B272328AFD09B00507AA4 /* CoWorkApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoWorkApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA6B272628AFD09B00507AA4 /* CoWorkAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoWorkAppApp.swift; sourceTree = "<group>"; };
+		FA6B272828AFD09B00507AA4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FA6B272A28AFD09D00507AA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FA6B272D28AFD09D00507AA4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FA6B273428AFD7FD00507AA4 /* CoWorkApp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = CoWorkApp.xcodeproj; sourceTree = SOURCE_ROOT; };
+		FA6B273B28AFD8D600507AA4 /* Comfortaa.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Comfortaa.ttf; sourceTree = "<group>"; };
+		FA6B273D28AFD8DF00507AA4 /* BungeeShade.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BungeeShade.ttf; sourceTree = "<group>"; };
+		FAEE3C8A28AFEF3800A4A67D /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		FAEE3C9028B3744000A4A67D /* signIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signIn.swift; sourceTree = "<group>"; };
+		FAEE3C9428B37F1700A4A67D /* signUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signUp.swift; sourceTree = "<group>"; };
+		FAEE3C9728B3904200A4A67D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		FAEE3C9928B3951600A4A67D /* UserSignUpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignUpService.swift; sourceTree = "<group>"; };
+		FAEE3C9C28B42B9400A4A67D /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		FAEE3C9E28B7D15000A4A67D /* ApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
+		FAEE3CA328BA71CB00A4A67D /* UserSignInService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignInService.swift; sourceTree = "<group>"; };
+		FAEE3CA528BA78CD00A4A67D /* landingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = landingPage.swift; sourceTree = "<group>"; };
+		FAEE3CA928BA7BA700A4A67D /* buttonLandingStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = buttonLandingStyle.swift; sourceTree = "<group>"; };
+		FAEE3CAB28BA82CF00A4A67D /* homePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homePage.swift; sourceTree = "<group>"; };
+		FAEE3CAD28BA8ADC00A4A67D /* userProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userProfile.swift; sourceTree = "<group>"; };
+		FAEE3CAF28BA8BD800A4A67D /* userRent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userRent.swift; sourceTree = "<group>"; };
+		FAEE3CB128BA8C4900A4A67D /* logout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logout.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FA6B272028AFD09B00507AA4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAEE3CA228B865B200A4A67D /* NavigationStack in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FA6B271A28AFD09B00507AA4 = {
+			isa = PBXGroup;
+			children = (
+				FA6B272528AFD09B00507AA4 /* CoWorkApp */,
+				FA6B272428AFD09B00507AA4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FA6B272428AFD09B00507AA4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FA6B272328AFD09B00507AA4 /* CoWorkApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FA6B272528AFD09B00507AA4 /* CoWorkApp */ = {
+			isa = PBXGroup;
+			children = (
+				FAEE3C9628B380C100A4A67D /* Model */,
+				FAEE3C9328B37EE600A4A67D /* Service */,
+				FAEE3C9228B37DDC00A4A67D /* View */,
+				FA6B273628AFD87600507AA4 /* Font */,
+				FAEE3CA828BA7B7600A4A67D /* Style */,
+				FA6B272828AFD09B00507AA4 /* ContentView.swift */,
+				FA6B272628AFD09B00507AA4 /* CoWorkAppApp.swift */,
+				FAEE3C8A28AFEF3800A4A67D /* .gitignore */,
+				FA6B272A28AFD09D00507AA4 /* Assets.xcassets */,
+				FA6B272C28AFD09D00507AA4 /* Preview Content */,
+				FA6B273428AFD7FD00507AA4 /* CoWorkApp.xcodeproj */,
+			);
+			path = CoWorkApp;
+			sourceTree = "<group>";
+		};
+		FA6B272C28AFD09D00507AA4 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				FA6B272D28AFD09D00507AA4 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FA6B273628AFD87600507AA4 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				FA6B273D28AFD8DF00507AA4 /* BungeeShade.ttf */,
+				FA6B273B28AFD8D600507AA4 /* Comfortaa.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		FAEE3C8828AFDAA400A4A67D /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FAEE3C9228B37DDC00A4A67D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FAEE3C9028B3744000A4A67D /* signIn.swift */,
+				FAEE3C9428B37F1700A4A67D /* signUp.swift */,
+				FAEE3CA528BA78CD00A4A67D /* landingPage.swift */,
+				FAEE3CAB28BA82CF00A4A67D /* homePage.swift */,
+				FAEE3CAD28BA8ADC00A4A67D /* userProfile.swift */,
+				FAEE3CAF28BA8BD800A4A67D /* userRent.swift */,
+				FAEE3CB128BA8C4900A4A67D /* logout.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FAEE3C9328B37EE600A4A67D /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				FAEE3C9B28B42B7300A4A67D /* API */,
+				FAEE3C9C28B42B9400A4A67D /* APIService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		FAEE3C9628B380C100A4A67D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FAEE3C9728B3904200A4A67D /* User.swift */,
+				FAEE3C9E28B7D15000A4A67D /* ApiResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FAEE3C9B28B42B7300A4A67D /* API */ = {
+			isa = PBXGroup;
+			children = (
+				FAEE3C9928B3951600A4A67D /* UserSignUpService.swift */,
+				FAEE3CA328BA71CB00A4A67D /* UserSignInService.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		FAEE3CA828BA7B7600A4A67D /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				FAEE3CA928BA7BA700A4A67D /* buttonLandingStyle.swift */,
+			);
+			path = Style;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FA6B272228AFD09B00507AA4 /* CoWorkApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA6B273128AFD09D00507AA4 /* Build configuration list for PBXNativeTarget "CoWorkApp" */;
+			buildPhases = (
+				FA6B271F28AFD09B00507AA4 /* Sources */,
+				FA6B272028AFD09B00507AA4 /* Frameworks */,
+				FA6B272128AFD09B00507AA4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CoWorkApp;
+			packageProductDependencies = (
+				FAEE3CA128B865B200A4A67D /* NavigationStack */,
+			);
+			productName = CoWorkApp;
+			productReference = FA6B272328AFD09B00507AA4 /* CoWorkApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FA6B271B28AFD09B00507AA4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					FA6B272228AFD09B00507AA4 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+				};
+			};
+			buildConfigurationList = FA6B271E28AFD09B00507AA4 /* Build configuration list for PBXProject "CoWorkApp" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FA6B271A28AFD09B00507AA4;
+			packageReferences = (
+				FAEE3CA028B865B200A4A67D /* XCRemoteSwiftPackageReference "swiftui-navigation-stack" */,
+			);
+			productRefGroup = FA6B272428AFD09B00507AA4 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = FAEE3C8828AFDAA400A4A67D /* Products */;
+					ProjectRef = FA6B273428AFD7FD00507AA4 /* CoWorkApp.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				FA6B272228AFD09B00507AA4 /* CoWorkApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FA6B272128AFD09B00507AA4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA6B272E28AFD09D00507AA4 /* Preview Assets.xcassets in Resources */,
+				FA6B273E28AFD8DF00507AA4 /* BungeeShade.ttf in Resources */,
+				FA6B273C28AFD8D600507AA4 /* Comfortaa.ttf in Resources */,
+				FA6B272B28AFD09D00507AA4 /* Assets.xcassets in Resources */,
+				FAEE3C8B28AFEF3800A4A67D /* .gitignore in Resources */,
+				FA6B273528AFD7FD00507AA4 /* CoWorkApp.xcodeproj in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FA6B271F28AFD09B00507AA4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAEE3CA628BA78CD00A4A67D /* landingPage.swift in Sources */,
+				FA6B272928AFD09B00507AA4 /* ContentView.swift in Sources */,
+				FAEE3CA428BA71CB00A4A67D /* UserSignInService.swift in Sources */,
+				FAEE3CAC28BA82CF00A4A67D /* homePage.swift in Sources */,
+				FAEE3C9D28B42B9400A4A67D /* APIService.swift in Sources */,
+				FAEE3C9528B37F1700A4A67D /* signUp.swift in Sources */,
+				FAEE3CAE28BA8ADC00A4A67D /* userProfile.swift in Sources */,
+				FA6B272728AFD09B00507AA4 /* CoWorkAppApp.swift in Sources */,
+				FAEE3C9828B3904200A4A67D /* User.swift in Sources */,
+				FAEE3C9F28B7D15000A4A67D /* ApiResponse.swift in Sources */,
+				FAEE3CAA28BA7BA700A4A67D /* buttonLandingStyle.swift in Sources */,
+				FAEE3C9A28B3951600A4A67D /* UserSignUpService.swift in Sources */,
+				FAEE3C9128B3744000A4A67D /* signIn.swift in Sources */,
+				FAEE3CB028BA8BD800A4A67D /* userRent.swift in Sources */,
+				FAEE3CB228BA8C4900A4A67D /* logout.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		FA6B272F28AFD09D00507AA4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FA6B273028AFD09D00507AA4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FA6B273228AFD09D00507AA4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"CoWorkApp/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = esgi.CoWorkApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FA6B273328AFD09D00507AA4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"CoWorkApp/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = esgi.CoWorkApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FA6B271E28AFD09B00507AA4 /* Build configuration list for PBXProject "CoWorkApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA6B272F28AFD09D00507AA4 /* Debug */,
+				FA6B273028AFD09D00507AA4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA6B273128AFD09D00507AA4 /* Build configuration list for PBXNativeTarget "CoWorkApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA6B273228AFD09D00507AA4 /* Debug */,
+				FA6B273328AFD09D00507AA4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FAEE3CA028B865B200A4A67D /* XCRemoteSwiftPackageReference "swiftui-navigation-stack" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/matteopuc/swiftui-navigation-stack.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FAEE3CA128B865B200A4A67D /* NavigationStack */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FAEE3CA028B865B200A4A67D /* XCRemoteSwiftPackageReference "swiftui-navigation-stack" */;
+			productName = NavigationStack;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = FA6B271B28AFD09B00507AA4 /* Project object */;
+}

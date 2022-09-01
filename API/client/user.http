@@ -3,12 +3,12 @@ POST http://localhost:8081/signUp HTTP/1.1
 Content-Type: application/json
 
 {
-    "firstname": "Gka",
-    "phonenumber": "0606060609",
-    "lastname": "graka",
-    "pseudo": "Gkata",
-    "email": "gkata@gmail.com",
-    "password": "123456"
+    "firstname": "Yanis",
+    "phonenumber": "0606060606",
+    "lastname": "Wukong",
+    "pseudo": "SunWukong",
+    "email": "YanisWukong@gmail.com",
+    "password": "123456789Wu"
 }
 
 ###

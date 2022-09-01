@@ -59,12 +59,14 @@ struct signIn: View {
                                 print("You must fill all fields")
                             }
                         } label: {
-                            Text("Login")
-                                .foregroundColor(Color.black)
+                            (email != "" && password != "") ? Text("Login")
+                                .foregroundColor(Color.green) : Text("Login")
+                                .foregroundColor(Color.red)
+                            
                         }
-                        Divider()
-                            .frame(maxWidth: 50, maxHeight: 5, alignment: .trailing)
-                            .background(Color.black)
+                        (email != "" && password != "") ? Divider()
+                            .frame(maxWidth: 50, maxHeight: 5, alignment: .trailing).background(Color.green) : Divider()
+                            .frame(maxWidth: 50, maxHeight: 5, alignment: .trailing).background(Color.red)
                     }
                     .padding(30)
                     VStack(alignment: .trailing){

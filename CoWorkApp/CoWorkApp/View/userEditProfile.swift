@@ -25,6 +25,17 @@ struct userEditProfile: View {
             Color("BgColor").edgesIgnoringSafeArea(.all)
             // Need to avoid Divider because a Stack can only contains 10
             VStack (alignment: .leading) {
+                Button {
+                    DispatchQueue.main.async {
+                        self.navigationStack.pop()
+                    }
+                } label: {
+                    Image(systemName: "arrow.backward")
+                        .foregroundColor(Color.black)
+                    Text("Back")
+                        .font(.body)
+                        .foregroundColor(Color.black)
+                }
                 VStack (alignment: .center){
                     Text("Profile")
                         .font(.largeTitle)
@@ -37,7 +48,7 @@ struct userEditProfile: View {
                     VStack {
                         HStack {
                             VStack (alignment: .center){
-                                Text("Firstname : " + ApiService.USER!.firstname)
+                                Text("Firstname : " + (ApiService.USER?.firstname ?? ""))
                                     .font(.body)
                                 TextField("New firstname", text: $newFirstname)
                             }
@@ -45,7 +56,7 @@ struct userEditProfile: View {
                         .padding(.bottom)
                         HStack {
                             VStack (alignment: .center){
-                            Text("Lastname : " + ApiService.USER!.lastname)
+                                Text("Lastname : " + (ApiService.USER?.lastname ?? ""))
                                 .font(.body)
                                 TextField("New lastname", text: $newLastname)
                             }
@@ -53,7 +64,7 @@ struct userEditProfile: View {
                         .padding(.bottom)
                         HStack {
                             VStack (alignment: .center){
-                            Text("Pseudo : " + ApiService.USER!.pseudo)
+                            Text("Pseudo : " + (ApiService.USER?.pseudo ?? ""))
                                 .font(.body)
                                 TextField("New pseudo", text: $newPseudo)
                             }
@@ -61,7 +72,7 @@ struct userEditProfile: View {
                         .padding(.bottom)
                         HStack {
                             VStack (alignment: .center){
-                            Text("Email : " + ApiService.USER!.email)
+                            Text("Email : " + (ApiService.USER?.email ?? ""))
                                 .font(.body)
                                 TextField("New email", text: $newEmail)
                             }
@@ -69,29 +80,30 @@ struct userEditProfile: View {
                         .padding(.bottom)
                         HStack {
                             VStack (alignment: .center){
-                            Text("Phone numer : " + ApiService.USER!.phone)
+                            Text("Phone number : " + (ApiService.USER?.phone ?? ""))
                                 .font(.body)
                                 TextField("New phone number", text: $newPhone)
                             }
                         }
                         .padding(.bottom)
-                        Button {
-                            // Need to send datas to the API
-                        } label: {
-                            Text("Submit")
-                                .font(.title3)
-                                .foregroundColor(.white)
-                                .frame(maxWidth: .infinity)
-                                .padding(10)
-                                .background(.gray)
-                                .cornerRadius(50)
-                        }
+                     
                     }
                     .padding()
                     Divider()
                         .frame(maxWidth: 2000, maxHeight: 0, alignment: .trailing)
                         .background(Color.black)
                         .padding(Edge.Set.bottom, 20)
+                    Button {
+                        // Need to send datas to the API
+                    } label: {
+                        Text("Submit")
+                            .font(.title3)
+                            .foregroundColor(.white)
+                            .frame(maxWidth: .infinity)
+                            .padding(10)
+                            .background(.gray)
+                            .cornerRadius(50)
+                    }
                 }
             }
             .padding()

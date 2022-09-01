@@ -10,7 +10,7 @@ import NavigationStack
 
 struct ContentView: View {
     var body: some View {
-        NavigationStackView(transitionType: .custom(AnyTransition.identity)) {
+        NavigationStackView(transitionType: .custom(.move(edge: Edge.trailing))) {
             landingPage()
         }
     }

@@ -29,32 +29,32 @@ struct userProfile: View {
                     
                     VStack {
                         HStack {
-                            Text("Firstname : " + ApiService.USER!.firstname)
+                            Text("Firstname : " + (ApiService.USER?.firstname ?? "X"))
                                 .font(.body)
                         }
                         .padding(.bottom)
                         HStack {
-                            Text("Lastname : " + ApiService.USER!.lastname)
+                            Text("Lastname : " + (ApiService.USER?.lastname ?? "X"))
                                 .font(.body)
                         }
                         .padding(.bottom)
                         HStack {
-                            Text("Pseudo : " + ApiService.USER!.pseudo)
+                            Text("Pseudo : " + (ApiService.USER?.pseudo ?? "X"))
                                 .font(.body)
                         }
                         .padding(.bottom)
                         HStack {
-                            Text("Email : " + ApiService.USER!.email)
+                            Text("Email : " + (ApiService.USER?.email ?? "X"))
                                 .font(.body)
                         }
                         .padding(.bottom)
                         HStack {
-                            Text("Phone number : " + ApiService.USER!.phone)
+                            Text("Phone number : " + (ApiService.USER?.phone ?? "X"))
                                 .font(.body)
                         }
                         .padding(.bottom)
                         HStack {
-                            Text("id : " + (ApiService.USER!.id ?? "Pas d'id"))
+                            Text("id : " + (ApiService.USER?.id ?? "Pas d'id"))
                                 .font(.body)
                         }
                         .padding(.bottom)

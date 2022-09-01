@@ -35,7 +35,6 @@ struct MainView: View {
             
             //déconnexion
             logout()
-                .badge("Bye")
                 .tabItem {
                     Label("Logout", systemImage: "figure.walk")
                         .padding(.top)

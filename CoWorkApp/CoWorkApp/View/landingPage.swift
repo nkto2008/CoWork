@@ -12,7 +12,7 @@ struct landingPage: View {
     
     // Need to add NavigationStackCompact in ContentView
     @EnvironmentObject private var navigationStack: NavigationStackCompat
-    
+    // Ajouter le bouton back su l'écran
     var body: some View {
         NavigationView{
         ZStack{

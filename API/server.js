@@ -5,7 +5,8 @@ const dotenv = require('dotenv')
 const mongoose = require('mongoose');
 const morgan = require('morgan')
 const bodyparser = require('body-parser')
-
+const swaggerJsDoc = require('swagger-jsdoc')
+const swaggerUiExpress = require('swagger-ui-express')
 
 dotenv.config()
 const app = express()
@@ -15,7 +16,34 @@ const password = process.env.DBPWD
 const dbname = process.env.DBNAME
 
 
+// Options are use by swagger-js-doc
+const options = {
+  definition: {
+    openapi: '3.0.0',
+    info: {
+      title: 'CoWork API Documentation',
+      version: '1.0.0',
+      description: 'API Documentation for CoWork Project',
+      contact: {
+        name: 'CoWork API',
+        url: '',
+        https: '//swagger.io',
+        email: '',
+      },
+    },
+    
+    servers: [
+      {
+        url: 'http://localhost:8081/',
+      }
+    ],
+  },
+  apis: [
+    './routes/*.js',
+  ],
+};
 
+const specs = swaggerJsDoc(options)
 
 // Middleware
 app.use(bodyparser.json())
@@ -39,6 +67,7 @@ db.once("open", function () {
 
 app.use(routeruser);
 app.use(routeradmin)
+app.use("/api-docs", swaggerUiExpress.serve, swaggerUiExpress.setup(specs))
 
 app.listen(process.env.PORT || 8080, () => {
   console.log(`server listen at ${port}`)

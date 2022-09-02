@@ -17,6 +17,7 @@
 		FAE2D95828C23FC000A47606 /* userEditProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE2D95728C23FC000A47606 /* userEditProfile.swift */; };
 		FAE2D95A28C2400D00A47606 /* UserProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE2D95928C2400D00A47606 /* UserProfileService.swift */; };
 		FAE2D95C28C2401400A47606 /* UserLogoutService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE2D95B28C2401400A47606 /* UserLogoutService.swift */; };
+		FAE2D95E28C2497A00A47606 /* UserProfielupdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE2D95D28C2497A00A47606 /* UserProfielupdateService.swift */; };
 		FAEE3C8B28AFEF3800A4A67D /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = FAEE3C8A28AFEF3800A4A67D /* .gitignore */; };
 		FAEE3C9128B3744000A4A67D /* signIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE3C9028B3744000A4A67D /* signIn.swift */; };
 		FAEE3C9528B37F1700A4A67D /* signUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE3C9428B37F1700A4A67D /* signUp.swift */; };
@@ -46,6 +47,7 @@
 		FAE2D95728C23FC000A47606 /* userEditProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userEditProfile.swift; sourceTree = "<group>"; };
 		FAE2D95928C2400D00A47606 /* UserProfileService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileService.swift; sourceTree = "<group>"; };
 		FAE2D95B28C2401400A47606 /* UserLogoutService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLogoutService.swift; sourceTree = "<group>"; };
+		FAE2D95D28C2497A00A47606 /* UserProfielupdateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfielupdateService.swift; sourceTree = "<group>"; };
 		FAEE3C8A28AFEF3800A4A67D /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		FAEE3C9028B3744000A4A67D /* signIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signIn.swift; sourceTree = "<group>"; };
 		FAEE3C9428B37F1700A4A67D /* signUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signUp.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				FAE2D95928C2400D00A47606 /* UserProfileService.swift */,
 				FAEE3C9928B3951600A4A67D /* UserSignUpService.swift */,
 				FAEE3CA328BA71CB00A4A67D /* UserSignInService.swift */,
+				FAE2D95D28C2497A00A47606 /* UserProfielupdateService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 				FAE2D95C28C2401400A47606 /* UserLogoutService.swift in Sources */,
 				FAEE3CA628BA78CD00A4A67D /* landingPage.swift in Sources */,
 				FA6B272928AFD09B00507AA4 /* ContentView.swift in Sources */,
+				FAE2D95E28C2497A00A47606 /* UserProfielupdateService.swift in Sources */,
 				FAEE3CA428BA71CB00A4A67D /* UserSignInService.swift in Sources */,
 				FAEE3CAC28BA82CF00A4A67D /* homePage.swift in Sources */,
 				FAEE3C9D28B42B9400A4A67D /* APIService.swift in Sources */,

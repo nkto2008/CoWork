@@ -1,4 +1,4 @@
-//
+    //
 //  signUp.swift
 //  CoWorkApp
 //
@@ -95,6 +95,24 @@ struct userEditProfile: View {
                         .padding(Edge.Set.bottom, 20)
                     Button {
                         // Need to send datas to the API
+                        UserProfileUpdateService.Update(newFirstname, newLastname, newEmail, newPseudo, newPhone) { res in
+                            if(res.error) {
+                                print(res.message)
+                            } else {
+                                print(res.message)
+                                userProfileService.getUserProfile(_: ApiService.TOKEN) { res in
+                                    if(res.error) {
+                                        print("Error")
+                                    } else {
+                                        let user = User(id: res.id, firstname: res.firstname, lastname: res.lastname, pseudo: res.pseudo, email: res.email, phone: res.phone, error: false)
+                                        ApiService.USER = user
+                                        DispatchQueue.main.async {
+                                            self.navigationStack.push(MainView())
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     } label: {
                         Text("Submit")
                             .font(.title3)

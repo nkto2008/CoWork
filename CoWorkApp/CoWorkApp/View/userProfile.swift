@@ -77,43 +77,9 @@ struct userProfile: View {
                             .background(.gray)
                             .cornerRadius(50)
                     }
-                    .padding(Edge.Set.trailing, 30)
-                    .padding(Edge.Set.leading, 30)
-                    .padding(Edge.Set.bottom, 5)
-                    Button {
-                        DispatchQueue.main.async {
-                            //la page my subscription
-                        }
-                    } label: {
-                        Text("My subscription")
-                            .font(.title3)
-                            .foregroundColor(.white)
-                            .frame(maxWidth: .infinity)
-                            .padding(10)
-                            .background(.gray)
-                            .cornerRadius(50)
-                    }
-                    .padding(Edge.Set.trailing, 30)
-                    .padding(Edge.Set.leading, 30)
-                    .padding(Edge.Set.bottom, 5)
-                    Button {
-                        DispatchQueue.main.async {
-                            // la page my rent
-                        }
-                    } label: {
-                        Text("My rent")
-                            .font(.title3)
-                            .foregroundColor(.white)
-                            .frame(maxWidth: .infinity)
-                            .padding(10)
-                            .background(.gray)
-                            .cornerRadius(50)
-                    }
                     // Ajouter bouton mes réservations
                     // Ajouter bouton mes abonnements
-                    .padding(Edge.Set.trailing, 30)
-                    .padding(Edge.Set.leading, 30)
-                    .padding(Edge.Set.bottom, 5)
+                    .padding(30)
                 }
             }
             .padding()

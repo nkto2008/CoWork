@@ -1,45 +1,43 @@
 ###
-POST http://localhost:8081/welcome HTTP/1.1
+POST http://localhost:8081/addService HTTP/1.1
 Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjJlNzljNjI0ZDQ3MTAyYmIwY2MxNjYwIiwiZW1haWwiOiJzdW53dWtvbmdAZ21haWwuY29tIiwiaWF0IjoxNjU5MzQ4MzkyLCJleHAiOjE2NTkzNzM1OTJ9.8NAN8kS0ACJQTPjUaSR74E7uFNt9FAa9RW1bL2rDWvo
 
 {
-    "email": "sunwukong@gmail.co",
-    "password": "123456789Wu"
+    "name": "Gaming Room",
+    "price": 4.50
 }
 
 ###
-POST http://localhost:8081/bye HTTP/1.1
+GET http://localhost:8081/getService HTTP/1.1
 Content-Type: application/json
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjJlNzljNjI0ZDQ3MTAyYmIwY2MxNjYwIiwiZW1haWwiOiJzdW53dWtvbmdAZ21haWwuY29tIiwiaWF0IjoxNjU5MzQ4MzkyLCJleHAiOjE2NTkzNzM1OTJ9.8NAN8kS0ACJQTPjUaSR74E7uFNt9FAa9RW1bL2rDWvo
 
 ###
-GET http://localhost:8081/getUsers HTTP/1.1
-Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjJlNzljNjI0ZDQ3MTAyYmIwY2MxNjYwIiwiZW1haWwiOiJzdW53dWtvbmdAZ21haWwuY29tIiwiaWF0IjoxNjU5MzQ4MzkyLCJleHAiOjE2NTkzNzM1OTJ9.8NAN8kS0ACJQTPjUaSR74E7uFNt9FAa9RW1bL2rDWvo
-
-###
-POST http://localhost:8081/getUserById HTTP/1.1
+POST http://localhost:8081/getServiceById HTTP/1.1
 Content-Type: application/json
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjJlNzljNjI0ZDQ3MTAyYmIwY2MxNjYwIiwiZW1haWwiOiJzdW53dWtvbmdAZ21haWwuY29tIiwiaWF0IjoxNjU5MzQ4MzkyLCJleHAiOjE2NTkzNzM1OTJ9.8NAN8kS0ACJQTPjUaSR74E7uFNt9FAa9RW1bL2rDWvo
 
 {
-    "id":"62e797836150151c50b24dc8"
+    "service": "62e7d867cd167f34887fe849"
 }
 
 ###
-POST http://localhost:8081/getUserByRole HTTP/1.1
+PATCH http://localhost:8081/updateService HTTP/1.1
 Content-Type: application/json
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjJlNzljNjI0ZDQ3MTAyYmIwY2MxNjYwIiwiZW1haWwiOiJzdW53dWtvbmdAZ21haWwuY29tIiwiaWF0IjoxNjU5MzQ4MzkyLCJleHAiOjE2NTkzNzM1OTJ9.8NAN8kS0ACJQTPjUaSR74E7uFNt9FAa9RW1bL2rDWvo
 
 {
-    "role": "62e436aa1a254799431166b0"
+    "name": "Salle Gaming",
+    "price": 5,
+    "id": "62e7d867cd167f34887fe849" 
 }
 
 ###
-DELETE http://localhost:8081/deleteUsers HTTP/1.1
+DELETE http://localhost:8081/deleteService HTTP/1.1
 Content-Type: application/json
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjJlNzljNjI0ZDQ3MTAyYmIwY2MxNjYwIiwiZW1haWwiOiJzdW53dWtvbmdAZ21haWwuY29tIiwiaWF0IjoxNjU5MzQ4MzkyLCJleHAiOjE2NTkzNzM1OTJ9.8NAN8kS0ACJQTPjUaSR74E7uFNt9FAa9RW1bL2rDWvo
 
 {
-    "id": "62e797836150151c50b24dc8"
+    "id": "62e7b8d12b8e181dd0f90a2d"
 }

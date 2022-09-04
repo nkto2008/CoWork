@@ -77,6 +77,8 @@ struct userProfile: View {
                             .background(.gray)
                             .cornerRadius(50)
                     }
+                    // Ajouter bouton mes réservations
+                    // Ajouter bouton mes abonnements
                     .padding(30)
                 }
             }

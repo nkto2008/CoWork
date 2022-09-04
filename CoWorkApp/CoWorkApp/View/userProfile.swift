@@ -53,11 +53,6 @@ struct userProfile: View {
                                 .font(.body)
                         }
                         .padding(.bottom)
-                        HStack {
-                            Text("id : " + (ApiService.USER?.id ?? "Pas d'id"))
-                                .font(.body)
-                        }
-                        .padding(.bottom)
                     }
                     .padding()
                     Divider()
@@ -77,9 +72,40 @@ struct userProfile: View {
                             .background(.gray)
                             .cornerRadius(50)
                     }
-                    // Ajouter bouton mes réservations
-                    // Ajouter bouton mes abonnements
-                    .padding(30)
+                    .padding(Edge.Set.leading, 30)
+                    .padding(Edge.Set.trailing, 30)
+                    .padding(Edge.Set.bottom, 30)
+                    Button {
+                        DispatchQueue.main.async {
+                            self.navigationStack.push(userEditProfile())
+                        }
+                    } label: {
+                        Text("Edit my subscription")
+                            .font(.title3)
+                            .foregroundColor(.white)
+                            .frame(maxWidth: .infinity)
+                            .padding(10)
+                            .background(.gray)
+                            .cornerRadius(50)
+                    }
+                    .padding(Edge.Set.leading, 30)
+                    .padding(Edge.Set.trailing, 30)
+                    .padding(Edge.Set.bottom, 30)
+                    Button {
+                        print(ApiService.PLACE ?? "No place")
+                    } label: {
+                        Text("Edit my rent")
+                            .font(.title3)
+                            .foregroundColor(.white)
+                            .frame(maxWidth: .infinity)
+                            .padding(10)
+                            .background(.gray)
+                            .cornerRadius(50)
+                    }
+                    .padding(Edge.Set.leading, 30)
+                    .padding(Edge.Set.trailing, 30)
+                    .padding(Edge.Set.bottom, 30)
+                    
                 }
             }
             .padding()

@@ -14,6 +14,8 @@
 		FA6B273528AFD7FD00507AA4 /* CoWorkApp.xcodeproj in Resources */ = {isa = PBXBuildFile; fileRef = FA6B273428AFD7FD00507AA4 /* CoWorkApp.xcodeproj */; };
 		FA6B273C28AFD8D600507AA4 /* Comfortaa.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA6B273B28AFD8D600507AA4 /* Comfortaa.ttf */; };
 		FA6B273E28AFD8DF00507AA4 /* BungeeShade.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA6B273D28AFD8DF00507AA4 /* BungeeShade.ttf */; };
+		FAD4066328C50F630083320B /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD4066228C50F630083320B /* Place.swift */; };
+		FAD4066528C50F7C0083320B /* DisplayRentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD4066428C50F7C0083320B /* DisplayRentService.swift */; };
 		FAE2D95828C23FC000A47606 /* userEditProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE2D95728C23FC000A47606 /* userEditProfile.swift */; };
 		FAE2D95A28C2400D00A47606 /* UserProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE2D95928C2400D00A47606 /* UserProfileService.swift */; };
 		FAE2D95C28C2401400A47606 /* UserLogoutService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE2D95B28C2401400A47606 /* UserLogoutService.swift */; };
@@ -44,6 +46,8 @@
 		FA6B273428AFD7FD00507AA4 /* CoWorkApp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = CoWorkApp.xcodeproj; sourceTree = SOURCE_ROOT; };
 		FA6B273B28AFD8D600507AA4 /* Comfortaa.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Comfortaa.ttf; sourceTree = "<group>"; };
 		FA6B273D28AFD8DF00507AA4 /* BungeeShade.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BungeeShade.ttf; sourceTree = "<group>"; };
+		FAD4066228C50F630083320B /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		FAD4066428C50F7C0083320B /* DisplayRentService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayRentService.swift; sourceTree = "<group>"; };
 		FAE2D95728C23FC000A47606 /* userEditProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userEditProfile.swift; sourceTree = "<group>"; };
 		FAE2D95928C2400D00A47606 /* UserProfileService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileService.swift; sourceTree = "<group>"; };
 		FAE2D95B28C2401400A47606 /* UserLogoutService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLogoutService.swift; sourceTree = "<group>"; };
@@ -160,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				FAEE3C9728B3904200A4A67D /* User.swift */,
+				FAD4066228C50F630083320B /* Place.swift */,
 				FAEE3C9E28B7D15000A4A67D /* ApiResponse.swift */,
 			);
 			path = Model;
@@ -172,6 +177,7 @@
 				FAE2D95928C2400D00A47606 /* UserProfileService.swift */,
 				FAEE3C9928B3951600A4A67D /* UserSignUpService.swift */,
 				FAEE3CA328BA71CB00A4A67D /* UserSignInService.swift */,
+				FAD4066428C50F7C0083320B /* DisplayRentService.swift */,
 				FAE2D95D28C2497A00A47606 /* UserProfielupdateService.swift */,
 			);
 			path = API;
@@ -284,12 +290,14 @@
 				FA6B272728AFD09B00507AA4 /* CoWorkAppApp.swift in Sources */,
 				FAE2D95A28C2400D00A47606 /* UserProfileService.swift in Sources */,
 				FAEE3C9828B3904200A4A67D /* User.swift in Sources */,
+				FAD4066528C50F7C0083320B /* DisplayRentService.swift in Sources */,
 				FAEE3C9F28B7D15000A4A67D /* ApiResponse.swift in Sources */,
 				FAEE3CAA28BA7BA700A4A67D /* buttonLandingStyle.swift in Sources */,
 				FAEE3C9A28B3951600A4A67D /* UserSignUpService.swift in Sources */,
 				FAEE3C9128B3744000A4A67D /* signIn.swift in Sources */,
 				FAEE3CB028BA8BD800A4A67D /* userRent.swift in Sources */,
 				FAEE3CB228BA8C4900A4A67D /* logout.swift in Sources */,
+				FAD4066328C50F630083320B /* Place.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

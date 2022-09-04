@@ -44,12 +44,19 @@ struct signIn: View {
                                         ApiService.TOKEN = res.message
                                         userProfileService.getUserProfile(_: ApiService.TOKEN) { res in
                                             if(res.error) {
-                                                print("Error")
+                                                print("Error dude")
                                             } else {
                                                 let user = User(id: res.id, firstname: res.firstname, lastname: res.lastname, pseudo: res.pseudo, email: res.email, phone: res.phone, error: false)
                                                 ApiService.USER = user
-                                                DispatchQueue.main.async {
-                                                    self.navigationStack.push(MainView())
+                                                DisplayRentUser.display() { res in
+                                                    if(res.error){
+                                                        print("Error display")
+                                                    } else {
+                                                        ApiService.PLACE = res.data
+                                                        DispatchQueue.main.async {
+                                                            self.navigationStack.push(MainView())
+                                                        }
+                                                    }
                                                 }
                                             }
                                         }

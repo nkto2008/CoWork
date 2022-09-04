@@ -4,10 +4,7 @@ const UserModel = require("../model/user.js")
 const config = process.env;
 
 const isAuthorized = async (req, res, next) => {
-    var token = req.headers["authorization"];
-    if (token.includes("Bearer")) {
-        token = token.replace("Bearer ", "");
-    }
+    const token = req.headers["authorization"];
     const user = await UserModel.findOne({token})
     if (!token || !user) {
         return res.status(403).send("Something wrong with your request");

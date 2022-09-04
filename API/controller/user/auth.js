@@ -38,31 +38,27 @@ const login = async(body,res) => {
     // Find if user exist
     console.log(email)
     const user = await UserModel.findOne({email: email });
-    if (user) {
-        console.log(user)
-        const RoleUser = await RoleModel.findOne({_id: user.fk_role})
-        //if my user exist and the password match
-        if (user && (await bcrypt.compare(password, user.password)) && RoleUser.name == "user") {
-        // Create token
-        const token = jwt.sign(
-            { user_id: user._id, email },
-            process.env.TS,
-            {
-            expiresIn: "7h",
-            }
-        );
-
-        // save user token
-        user.token = token;
-        user.save()
-
-        // user
-        res.status(200).json({message: user.token});
-        }else {
-            res.status(400).send("Invalid Credentials")
+    console.log(user)
+    const RoleUser = await RoleModel.findOne({_id: user.fk_role})
+    //if my user exist and the password match
+    if (user && (await bcrypt.compare(password, user.password)) && RoleUser.name == "user") {
+      // Create token
+      const token = jwt.sign(
+        { user_id: user._id, email },
+        process.env.TS,
+        {
+          expiresIn: "7h",
         }
-    } else {
-        res.status(400).send("User not found");
+      );
+
+      // save user token
+      user.token = token;
+      user.save()
+
+      // user
+      res.status(200).json({message: user.token});
+    }else {
+        res.status(400).send("Invalid Credentials")
     }
 }
 
@@ -86,9 +82,9 @@ const getProfile = async(req, res) => {
     if (token) {
         const user = await UserModel.findOne({token})
         if (!user) {
-            res.status(403).send("Something wrong with your request");
+            return res.status(403).send("Something wrong with your request");
         }
-        res.status(200).json({
+        return res.status(200).json({
             id: user._id,
             email: user.email,
             lastname: user.lastname,
@@ -97,40 +93,8 @@ const getProfile = async(req, res) => {
             phone: user.phonenumber,
         })
     } else {
-        res.status(403).send("You need a token");
+        return res.status(403).send("You need a token");
     }
 }
 
-const updateProfile = async(req, res) => {
-    const token = req.headers["authorization"];
-    if (token) {
-        const user = await UserModel.findOne({token})
-        if (!user){
-            res.status(403).send("Something wrong with your request");
-        }
-
-        if(req.body.firstname) {
-            user.firstname = req.body.firstname
-        }
-        if(req.body.lastname) {
-            user.lastname = req.body.lastname
-        }
-        if(req.body.pseudo) {
-            user.pseudo = req.body.pseudo
-        }
-        if(req.body.phonenumber) {
-            user.phonenumber = req.body.phonenumber
-        }
-        if(req.body.email) {
-            user.email = req.body.email
-        }
-
-        user.save()
-
-        res.status(200).send({message: "Successfully updated"})
-    } else {
-        res.status(403).send("You need a token");
-    }
-}
-
-module.exports = {signUp, login, logout, getProfile, updateProfile}
+module.exports = {signUp, login, logout, getProfile}

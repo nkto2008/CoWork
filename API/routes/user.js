@@ -24,6 +24,9 @@ router.get('/getProfile', isAuthorized, async(req, res) => {
     await auth.getProfile(req,res)
 })
 
+router.put('/updateProfile', isAuthorized, async(req, res) => {
+    await auth.updateProfile(req, res)
+})
 
 // Define the User schema in the swagger, we will use it in endpoints descriptions
 

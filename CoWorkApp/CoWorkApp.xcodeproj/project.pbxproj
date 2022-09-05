@@ -16,6 +16,8 @@
 		FA6B273E28AFD8DF00507AA4 /* BungeeShade.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA6B273D28AFD8DF00507AA4 /* BungeeShade.ttf */; };
 		FAD4066328C50F630083320B /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD4066228C50F630083320B /* Place.swift */; };
 		FAD4066528C50F7C0083320B /* DisplayRentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD4066428C50F7C0083320B /* DisplayRentService.swift */; };
+		FAD4067028C641E20083320B /* NavigationStack in Frameworks */ = {isa = PBXBuildFile; productRef = FAD4066F28C641E20083320B /* NavigationStack */; };
+		FAD4067328C641F70083320B /* NavigationStack in Frameworks */ = {isa = PBXBuildFile; productRef = FAD4067228C641F70083320B /* NavigationStack */; };
 		FAE2D95828C23FC000A47606 /* userEditProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE2D95728C23FC000A47606 /* userEditProfile.swift */; };
 		FAE2D95A28C2400D00A47606 /* UserProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE2D95928C2400D00A47606 /* UserProfileService.swift */; };
 		FAE2D95C28C2401400A47606 /* UserLogoutService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE2D95B28C2401400A47606 /* UserLogoutService.swift */; };
@@ -27,7 +29,6 @@
 		FAEE3C9A28B3951600A4A67D /* UserSignUpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE3C9928B3951600A4A67D /* UserSignUpService.swift */; };
 		FAEE3C9D28B42B9400A4A67D /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE3C9C28B42B9400A4A67D /* APIService.swift */; };
 		FAEE3C9F28B7D15000A4A67D /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE3C9E28B7D15000A4A67D /* ApiResponse.swift */; };
-		FAEE3CA228B865B200A4A67D /* NavigationStack in Frameworks */ = {isa = PBXBuildFile; productRef = FAEE3CA128B865B200A4A67D /* NavigationStack */; };
 		FAEE3CA428BA71CB00A4A67D /* UserSignInService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE3CA328BA71CB00A4A67D /* UserSignInService.swift */; };
 		FAEE3CA628BA78CD00A4A67D /* landingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE3CA528BA78CD00A4A67D /* landingPage.swift */; };
 		FAEE3CAA28BA7BA700A4A67D /* buttonLandingStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE3CA928BA7BA700A4A67D /* buttonLandingStyle.swift */; };
@@ -73,7 +74,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAEE3CA228B865B200A4A67D /* NavigationStack in Frameworks */,
+				FAD4067028C641E20083320B /* NavigationStack in Frameworks */,
+				FAD4067328C641F70083320B /* NavigationStack in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,7 +210,8 @@
 			);
 			name = CoWorkApp;
 			packageProductDependencies = (
-				FAEE3CA128B865B200A4A67D /* NavigationStack */,
+				FAD4066F28C641E20083320B /* NavigationStack */,
+				FAD4067228C641F70083320B /* NavigationStack */,
 			);
 			productName = CoWorkApp;
 			productReference = FA6B272328AFD09B00507AA4 /* CoWorkApp.app */;
@@ -239,7 +242,9 @@
 			);
 			mainGroup = FA6B271A28AFD09B00507AA4;
 			packageReferences = (
-				FAEE3CA028B865B200A4A67D /* XCRemoteSwiftPackageReference "swiftui-navigation-stack" */,
+				FAD4066B28C641900083320B /* XCRemoteSwiftPackageReference "swiftui-navigation-stack" */,
+				FAD4066E28C641E20083320B /* XCRemoteSwiftPackageReference "swiftui-navigation-stack" */,
+				FAD4067128C641F70083320B /* XCRemoteSwiftPackageReference "swiftui-navigation-stack" */,
 			);
 			productRefGroup = FA6B272428AFD09B00507AA4 /* Products */;
 			projectDirPath = "";
@@ -498,7 +503,23 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		FAEE3CA028B865B200A4A67D /* XCRemoteSwiftPackageReference "swiftui-navigation-stack" */ = {
+		FAD4066B28C641900083320B /* XCRemoteSwiftPackageReference "swiftui-navigation-stack" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/matteopuc/swiftui-navigation-stack.git";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+		FAD4066E28C641E20083320B /* XCRemoteSwiftPackageReference "swiftui-navigation-stack" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/matteopuc/swiftui-navigation-stack.git";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+		FAD4067128C641F70083320B /* XCRemoteSwiftPackageReference "swiftui-navigation-stack" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/matteopuc/swiftui-navigation-stack.git";
 			requirement = {
@@ -509,9 +530,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		FAEE3CA128B865B200A4A67D /* NavigationStack */ = {
+		FAD4066F28C641E20083320B /* NavigationStack */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FAEE3CA028B865B200A4A67D /* XCRemoteSwiftPackageReference "swiftui-navigation-stack" */;
+			package = FAD4066B28C641900083320B /* XCRemoteSwiftPackageReference "swiftui-navigation-stack" */;
+			productName = NavigationStack;
+		};
+		FAD4067228C641F70083320B /* NavigationStack */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FAD4067128C641F70083320B /* XCRemoteSwiftPackageReference "swiftui-navigation-stack" */;
 			productName = NavigationStack;
 		};
 /* End XCSwiftPackageProductDependency section */

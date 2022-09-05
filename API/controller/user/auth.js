@@ -97,4 +97,36 @@ const getProfile = async(req, res) => {
     }
 }
 
-module.exports = {signUp, login, logout, getProfile}
+const updateProfile = async(req, res) => {
+    const token = req.headers["authorization"];
+    if (token) {
+        const user = await UserModel.findOne({token})
+        if (!user){
+            res.status(403).send("Something wrong with your request");
+        }
+
+        if(req.body.firstname) {
+            user.firstname = req.body.firstname
+        }
+        if(req.body.lastname) {
+            user.lastname = req.body.lastname
+        }
+        if(req.body.pseudo) {
+            user.pseudo = req.body.pseudo
+        }
+        if(req.body.phonenumber) {
+            user.phonenumber = req.body.phonenumber
+        }
+        if(req.body.email) {
+            user.email = req.body.email
+        }
+
+        user.save()
+
+        res.status(200).send({message: "Successfully updated"})
+    } else {
+        res.status(403).send("You need a token");
+    }
+}
+
+module.exports = {signUp, login, logout, getProfile, updateProfile}

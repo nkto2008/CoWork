@@ -6,13 +6,14 @@ const jwt = require("jsonwebtoken");
 
 const login = async(body,res) => {
 
-    const { email, password } = body;
+  const { email, password } = body;
 
-    if (!email || !password) {
-      res.status(400).send("All input is required");
-    }
-    // Find if user exist
-    const user = await UserModel.findOne({email: email });
+  if (!email || !password) {
+    res.status(400).send("All input is required");
+  }
+  // Find if user exist
+  const user = await UserModel.findOne({email: email });
+  if(user){
     const RoleUser = await RoleModel.findOne({_id: user.fk_role})
     //if my user exist and the password match
     if (user && (await bcrypt.compare(password, user.password)) && RoleUser.name == "admin") {
@@ -34,6 +35,9 @@ const login = async(body,res) => {
     }else {
         res.status(400).send("Invalid Credentials")
     }
+  }else{
+    res.status(400).send("Invalid Credentials")
+  }
 }
 
 const logout = async(body, res) => {

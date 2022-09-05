@@ -3,16 +3,13 @@ import 'dart:convert';
 import 'dart:io';
 import 'package:http/http.dart' as http;
 
-import '../utils/tokenPreferences.dart';
+import '../utils/token_preferences.dart';
 
 const loginURL = "http://localhost:8081/welcome";
 const logoutURL = "http://localhost:8081/bye";
 
 class Auth {
   static Future<String?> login(email, password) async {
-
-    print(email);
-    print(password);
 
     try{
       var body = jsonEncode({"email": '$email', "password": '$password'});
@@ -29,19 +26,17 @@ class Auth {
         encoding: Encoding.getByName("utf-8"),
       );
 
-      print(response.body);
-
-      token = jsonDecode(response.body);
-      print(token);
+      if(response.statusCode == 400 && response.body == "Invalid Credentials"){
+        return "Email ou mot de passe incorrect";
+      }
 
       if(response.statusCode == 200){
-        await TokenSimplePreferences.setToken(token!);
-      }
-      if(response.statusCode == 400){
-        token = "Email ou mot de passe incorrect";
+        token = jsonDecode(response.body);
+        await TokenSimplePreferences.setToken(token.toString());
+        return "good";
       }
 
-      return token;
+      return null;
 
     }catch(err){
       String error = "error : $err";
@@ -49,9 +44,9 @@ class Auth {
     }
   }
 
-  static Future<Map> logout() async{
+  static Future<String?> logout() async{
+    String? res;
     try {
-      Map<String, dynamic> res;
       final response = await http.post(
         Uri.parse(logoutURL),
         headers: {
@@ -61,17 +56,15 @@ class Auth {
         },
       );
 
-      res = jsonDecode(response.body);
-
       if (response.statusCode == 200) {
         await TokenSimplePreferences.removeToken('token');
+        return "Disconnect";
       }
 
-      return res;
+      return "Session expired";
 
     }catch(err){
-      Map<String, dynamic> error = {"error": err};
-      return error;
+      return "error: $err";
     }
   }
 }

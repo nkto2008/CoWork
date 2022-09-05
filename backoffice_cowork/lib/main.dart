@@ -1,10 +1,12 @@
+import 'package:backoffice_cowork/screens/home_admin/home_screen.dart';
 import 'package:backoffice_cowork/screens/login/login_screen.dart';
 import 'package:backoffice_cowork/utils/constants.dart';
-import 'package:backoffice_cowork/utils/tokenPreferences.dart';
+import 'package:backoffice_cowork/utils/token_preferences.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 
-void main() {
+Future<void> main() async {
+  await TokenSimplePreferences.init();
   runApp(const MyApp());
 }
 
@@ -32,7 +34,7 @@ class MyApp extends StatelessWidget {
           case "/":
             return TokenSimplePreferences.getToken('token') != null
                 ? PageTransition(
-                child: LoginScreen(), type: PageTransitionType.fade)
+                child: HomeScreen(), type: PageTransitionType.fade)
                 : PageTransition(
                 child: LoginScreen(), type: PageTransitionType.fade);
             break;

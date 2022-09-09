@@ -1,0 +1,32 @@
+###
+POST http://localhost:8081/signUp HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstname": "test",
+    "phonenumber": "0603060607",
+    "lastname": "test",
+    "pseudo": "test",
+    "email": "test@gmail.com",
+    "password": "test"
+}
+
+###
+POST http://localhost:8081/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "test@gmail.com",
+    "password": "test"
+}
+
+###
+POST http://localhost:8081/logout HTTP/1.1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjJlNzk3ODM2MTUwMTUxYzUwYjI0ZGM4IiwiZW1haWwiOiJzb25nb2t1QGdtYWlsLmNvbSIsImlhdCI6MTY1OTM0NTA1NywiZXhwIjoxNjU5MzcwMjU3fQ.PAk9FH0W8jw9HxAvhxoSeDinVEV1M3h1zxvixueajA8
+
+###
+GET http://localhost:8081/getProfile HTTP/1.1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjMwYTNkNGNlN2ZhNjM5Yjk5NWE0NTVmIiwiZW1haWwiOiJ0ZXN0QGdtYWlsLmNvbSIsImlhdCI6MTY2MTYyMzMyMSwiZXhwIjoxNjYxNjQ4NTIxfQ.AgvF4-kKm2Qb4jbZG8nInzPyL6Hb6PApPD0FiQkw-w4
+

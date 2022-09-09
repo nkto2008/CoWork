@@ -13,17 +13,17 @@ class Place: CustomStringConvertible {
     }
     
     let error: Bool
-    let data: [Any]
+    let data: [String : Any]
     
-    public init(error: Bool, data: [Any]){
+    public init(error: Bool, data: [String : Any]){
         self.error = error
         self.data = data
     }
     
-    public class func fromDict(_ array: [String: Any]) -> Place? {
+    public class func fromDict(_ array: [[String : Any]]) -> Place? {
         
-        guard let error = array["error"] as? Bool,
-              let data = array["data"] as? [Any] else {
+        guard let error = array[0]["error"] as? Bool,
+              let data = array[0]["place"] as? [String : Any] else {
             print("Coucou")
             return nil
         }

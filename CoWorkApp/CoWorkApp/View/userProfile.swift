@@ -92,7 +92,7 @@ struct userProfile: View {
                     .padding(Edge.Set.trailing, 30)
                     .padding(Edge.Set.bottom, 30)
                     Button {
-                        print(ApiService.PLACE ?? "No place")
+                        print(ApiService.PLACE)
                     } label: {
                         Text("Edit my rent")
                             .font(.title3)

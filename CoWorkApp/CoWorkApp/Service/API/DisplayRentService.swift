@@ -11,8 +11,8 @@ import SwiftUI
 class DisplayRentUser {
     class func display(completion: @escaping (Place) -> Void){
         guard let url = URL(string: ApiService.URL + "/getPlace") else {
-            completion(Place(error: true, data: []))
-            return
+            completion(Place(error: true, data: [:]))
+            return 
         }
         
         var urlRequest = URLRequest(url: url)
@@ -22,14 +22,17 @@ class DisplayRentUser {
         
         let req = URLSession.shared.dataTask(with: urlRequest) { (datas, res, err)  in
             guard err == nil, let d = datas else {
-                completion(Place(error: true, data: []))
+                completion(Place(error: true, data: [:]))
                 return
             }
             
-            let json = try? JSONSerialization.jsonObject(with: d,options: .allowFragments)
+            print(d)
             
-            guard let apiResponseArray = json as? [Any] else {
-                completion(Place(error: true, data: []))
+            let json = try? JSONSerialization.jsonObject(with: d,options: .allowFragments)
+            print(json)
+            
+            guard let apiResponseArray = json as? [String : Any] else {
+                completion(Place(error: true, data: [:]))
                 return
             }
             

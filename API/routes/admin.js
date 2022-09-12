@@ -4,6 +4,7 @@ const auth = require("../controller/admin/auth.js")
 const user = require("../controller/admin/user.js")
 const service = require("../controller/admin/service.js")
 const place = require("../controller/admin/place.js")
+const sub = require("../controller/admin/sub.js")
 const router = express.Router()
 
 
@@ -77,6 +78,12 @@ router.patch('/updatePlace', isAuthorized, async(req,res) => {
 
 router.delete('/deletePlace', isAuthorized, async(req,res) => {
     await place.deletePlace(req.body, res)
+})
+
+//subscriptions
+
+router.post('/createSubs', isAuthorized, async(req,res) => {
+    await sub.createSub(req.body,res)
 })
 
 /**

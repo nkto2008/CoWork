@@ -32,6 +32,10 @@ router.post('/getUserByRole',isAuthorized, async(req,res) => {
 router.delete('/deleteUsers', isAuthorized, async(req,res) => {
     await user.deleteUsers(req.body,res)
 })
+
+router.post('/createAccount', isAuthorized, async(req, res) => {
+    await user.createAccount(req.body, res)
+})
 //Service Routes
 router.post('/addService', isAuthorized, async(req,res) => {
     await service.addService(req.body,res)

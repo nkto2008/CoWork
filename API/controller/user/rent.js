@@ -23,7 +23,7 @@ const createRent = async(body, res) => {
 const getRentByIdUser = async(body,res) => {
     if(!body.id){
         res.status(400).send("all input are required")
-    }else{$
+    }else{
         const id = Mongoose.Types.ObjectId(body.id)
         const rent = await RentModel.find({fk_user: id})
         if(rent){

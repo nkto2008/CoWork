@@ -56,7 +56,7 @@ const SubForUser = async(body,res) => {
     if(!body.id || !body.idSub){
         res.status(400).send("all input are required")
     }else{
-        const user = await UserModel.find({token: id})
+        const user = await UserModel.find({token: body.id})
         if(user){
             user.fk_sub = body.idSub
             if(await user.save()){
@@ -72,7 +72,7 @@ const getSubUser = async(body,res) => {
     if(!body.token){
         res.status(400).send("all input are required")
     }else{
-        const user = await UserModel.find({token: id})
+        const user = await UserModel.find({token: body.token})
         if(user){
             if(user.fk_sub){
                 const sub = await SubModel.find({_id: user.fk_sub})

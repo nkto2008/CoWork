@@ -38,7 +38,7 @@ struct signIn: View {
                         Button {
                             if(email != "" && password != ""){
                                 DispatchQueue.main.async {
-                                    self.navigationStack.push(ProgressViewg())
+                                    self.navigationStack.push(ProgressView())
                                 }
                                 SignInUser.SignIn(_: email, _: password) { res in
                                     if(res.error) {

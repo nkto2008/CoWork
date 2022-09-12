@@ -52,4 +52,5 @@ const deleteSubs = async(body,res) => {
 }
 
 
+
 module.exports = {createSub, getSub, getSubById, deleteSubs}

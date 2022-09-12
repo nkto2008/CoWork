@@ -1,4 +1,5 @@
 const SubModel = require('../../model/sub');
+const UserModel = require('../../model/user.js')
 
 const createSub = async(body,res) => {
     if(!body.name || !body.fk_service || !body.price){
@@ -51,6 +52,22 @@ const deleteSubs = async(body,res) => {
     }
 }
 
+const SubForUser = async(body,res) => {
+    if(!body.id || !body.idSub){
+        res.status(400).send("all input are required")
+    }else{
+        const user = await UserModel.find({token: id})
+        if(user){
+            user.fk_sub = body.idSub
+            if(await user.save()){
+                res.status(200).send("subscription done")
+            }else{
+                res.status(400).send("error")
+            }
+        }
+    }
+}
 
 
-module.exports = {createSub, getSub, getSubById, deleteSubs}
+
+module.exports = {createSub, getSub, getSubById, deleteSubs, SubForUser}

@@ -33,6 +33,10 @@ const UserSchema = new mongoose.Schema(
       fk_role: {
         type: String,
         default: ""
+      },
+      fk_sub: {
+        type: String,
+        default: ""
       }
     }
   );

@@ -2,6 +2,7 @@ const express = require('express');
 const isAuthorized = require("../helper/authtoken")
 const auth = require("../controller/user/auth.js")
 const rent = require("../controller/user/rent.js")
+const sub = require("../controller/admin/sub.js")
 const router = express.Router()
 
 
@@ -35,6 +36,19 @@ router.post('/createRent', isAuthorized, async(req,res) => {
     await rent.createRent(req.body,res)
 })
 
+router.post('/getRentByIdUSer', isAuthorized, async(req, res) => {
+    await rent.getRentByIdUser(req.body, res)
+})
+
+router.delete('/cancelRent', isAuthorized, async(req, res) => {
+    await rent.cancelRent(req.body, res)
+})
+
+//sub
+
+router.post('/subforuser', isAuthorized, async(req,res) => {
+    await sub.SubForUser(req.body, res)
+})
 // Define the User schema in the swagger, we will use it in endpoints descriptions
 
 /**

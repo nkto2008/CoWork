@@ -1,6 +1,7 @@
 const express = require('express');
 const isAuthorized = require("../helper/authtoken")
 const auth = require("../controller/user/auth.js")
+const rent = require("../controller/user/rent.js")
 const router = express.Router()
 
 
@@ -26,6 +27,12 @@ router.get('/getProfile', isAuthorized, async(req, res) => {
 
 router.put('/updateProfile', isAuthorized, async(req, res) => {
     await auth.updateProfile(req, res)
+})
+
+//rent
+
+router.post('/createRent', isAuthorized, async(req,res) => {
+    await rent.createRent(req.body,res)
 })
 
 // Define the User schema in the swagger, we will use it in endpoints descriptions

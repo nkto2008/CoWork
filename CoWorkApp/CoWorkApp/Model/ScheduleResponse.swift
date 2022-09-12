@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-class ScheduleResponse: CustomStringConvertible {
+class ScheduleResponse: CustomStringConvertible, Identifiable {
     var description: String {
         "Api default response"
     }

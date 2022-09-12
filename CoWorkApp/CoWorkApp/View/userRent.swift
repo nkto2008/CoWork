@@ -6,21 +6,34 @@
 //
 
 import SwiftUI
+import NavigationStack
 
 struct userRent: View {
+    
     let places = ApiService.PLACE
+    @State var i: Int = 0
+    @EnvironmentObject private var navigationStack: NavigationStackCompat
+    
     var body: some View {
-        ZStack(alignment: .center){
+        ScrollView(Axis.Set.vertical){
             VStack {
                 ForEach(places) { place in
                     HStack {
+                        VStack{
+                         
                         Button {
-                            //DispatchQueue.main.async {
-                              //  self.navigationStack.push(signUp())
-                            //}
+                            DispatchQueue.main.async {
+                                self.navigationStack.push(selectedPlace(place: place))
+                            }
                             print("Hello" + place.place.id)
                         } label: {
-                            Text(place.place.name)
+                           
+                            Text("\(place.place.name) \n \(place.place.city) \n \(place.place.cp) \n ")
+                                .foregroundColor(Color.black)
+                                .frame(minWidth: 0, maxWidth: .infinity)
+                        }
+                        .background(.gray)
+                        .padding(20)
                         }
                     }
                 }
@@ -28,6 +41,8 @@ struct userRent: View {
         }
     }
 }
+
+
 
 /*
 struct SourceViewer: View {

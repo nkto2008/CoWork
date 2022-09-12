@@ -37,6 +37,9 @@ struct signIn: View {
                     VStack(alignment: .trailing){
                         Button {
                             if(email != "" && password != ""){
+                                DispatchQueue.main.async {
+                                    self.navigationStack.push(ProgressViewg())
+                                }
                                 SignInUser.SignIn(_: email, _: password) { res in
                                     if(res.error) {
                                         print(res.message)

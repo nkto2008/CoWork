@@ -40,6 +40,7 @@
 		FAF013C928CE3693001ACFC4 /* RentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF013C828CE3693001ACFC4 /* RentResponse.swift */; };
 		FAF013CC28CE7A38001ACFC4 /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = FAF013CB28CE7A38001ACFC4 /* Collections */; };
 		FAF013CE28CE7A38001ACFC4 /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = FAF013CD28CE7A38001ACFC4 /* OrderedCollections */; };
+		FAF013D028CEB812001ACFC4 /* selectedPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF013CF28CEB812001ACFC4 /* selectedPlace.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +74,7 @@
 		FAEE3CAF28BA8BD800A4A67D /* userRent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userRent.swift; sourceTree = "<group>"; };
 		FAEE3CB128BA8C4900A4A67D /* logout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logout.swift; sourceTree = "<group>"; };
 		FAF013C828CE3693001ACFC4 /* RentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentResponse.swift; sourceTree = "<group>"; };
+		FAF013CF28CEB812001ACFC4 /* selectedPlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = selectedPlace.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 				FAE2D95728C23FC000A47606 /* userEditProfile.swift */,
 				FAEE3CAF28BA8BD800A4A67D /* userRent.swift */,
 				FAEE3CB128BA8C4900A4A67D /* logout.swift */,
+				FAF013CF28CEB812001ACFC4 /* selectedPlace.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				FAD4067728C659120083320B /* ScheduleResponse.swift in Sources */,
 				FAE2D95828C23FC000A47606 /* userEditProfile.swift in Sources */,
 				FAEE3CAE28BA8ADC00A4A67D /* userProfile.swift in Sources */,
+				FAF013D028CEB812001ACFC4 /* selectedPlace.swift in Sources */,
 				FA6B272728AFD09B00507AA4 /* CoWorkAppApp.swift in Sources */,
 				FAE2D95A28C2400D00A47606 /* UserProfileService.swift in Sources */,
 				FAEE3C9828B3904200A4A67D /* User.swift in Sources */,

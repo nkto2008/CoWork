@@ -68,6 +68,28 @@ const SubForUser = async(body,res) => {
     }
 }
 
+const getSubUser = async(body,res) => {
+    if(!body.token){
+        res.status(400).send("all input are required")
+    }else{
+        const user = await UserModel.find({token: id})
+        if(user){
+            if(user.fk_sub){
+                const sub = await SubModel.find({_id: user.fk_sub})
+                if(sub){
+                    res.status(200).send(sub)
+                }else{
+                    res.status(400).send("no sub find for this id sub")
+                }
+            }else{
+                res.status(400).send("no sub find for this user")
+            }
+        }else{
+            res.status(400).send("no user find with token")
+        }
+    }
+}
 
 
-module.exports = {createSub, getSub, getSubById, deleteSubs, SubForUser}
+
+module.exports = {createSub, getSub, getSubById, deleteSubs, SubForUser, getSubUser}

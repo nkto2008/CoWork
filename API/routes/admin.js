@@ -86,6 +86,14 @@ router.post('/createSubs', isAuthorized, async(req,res) => {
     await sub.createSub(req.body,res)
 })
 
+router.get('/getSub', isAuthorized, async(req,res) => {
+    await sub.getSub(res)
+})
+
+router.post('/getSubById',isAuthorized, async(req,res) => {
+    await sub.getSubById(req.body,res)
+})
+
 /**
  * @swagger
  * components:

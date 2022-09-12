@@ -8,21 +8,36 @@
 import SwiftUI
 
 struct userRent: View {
-    let sites = ["Apple.com", "HackingWithSwift.com", "Swift.org"]
-
+    let places = ApiService.PLACE
     var body: some View {
-        NavigationView {
-            List(sites, id: \.self) { site in
-                NavigationLink(site) {
-                    SourceViewer(site: site)
+        ZStack(alignment: .center){
+            VStack {
+                ForEach(places) { place in
+                    HStack {
+                        Button {
+                            //DispatchQueue.main.async {
+                              //  self.navigationStack.push(signUp())
+                            //}
+                            print("Hello" + place.place.id)
+                        } label: {
+                            Text(place.place.name)
+                        }
+                    }
                 }
             }
-            .navigationTitle("Co Work")
         }
     }
 }
 
+/*
 struct SourceViewer: View {
+
+    var body: some View {
+        VStack{
+         
+      }
+    }
+    
     let site: String
     @State private var sourceCode = "Loading…"
 
@@ -43,5 +58,5 @@ struct SourceViewer: View {
                 sourceCode = "Failed to fetch site."
             }
         }
-    }
-}
+    }*/
+

@@ -9,9 +9,9 @@ import SwiftUI
 
 
 class DisplayRentUser {
-    class func display(completion: @escaping (Place) -> Void){
+    class func display(completion: @escaping ([RentResponse]) -> Void){
         guard let url = URL(string: ApiService.URL + "/getPlace") else {
-            completion(Place(error: true, data: [:]))
+            completion([])
             return 
         }
         
@@ -22,23 +22,20 @@ class DisplayRentUser {
         
         let req = URLSession.shared.dataTask(with: urlRequest) { (datas, res, err)  in
             guard err == nil, let d = datas else {
-                completion(Place(error: true, data: [:]))
+                completion([])
                 return
             }
-            
-            print(d)
             
             let json = try? JSONSerialization.jsonObject(with: d,options: .allowFragments)
-            print(json)
             
-            guard let apiResponseArray = json as? [String : Any] else {
-                completion(Place(error: true, data: [:]))
+            guard let apiResponseArray = json as? [[String: Any]] else {
+                completion([])
                 return
             }
             
-            print(apiResponseArray)
+           
             
-            completion(Place(error: false, data: apiResponseArray))
+            completion(apiResponseArray.compactMap(RentResponse.fromDict(_:)))
             
         }
         req.resume()

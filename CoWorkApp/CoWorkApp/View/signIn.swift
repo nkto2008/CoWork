@@ -49,13 +49,9 @@ struct signIn: View {
                                                 let user = User(id: res.id, firstname: res.firstname, lastname: res.lastname, pseudo: res.pseudo, email: res.email, phone: res.phone, error: false)
                                                 ApiService.USER = user
                                                 DisplayRentUser.display() { res in
-                                                    if(res.error){
-                                                        print("Error display")
-                                                    } else {
-                                                        ApiService.PLACE = res.data
-                                                        DispatchQueue.main.async {
-                                                            self.navigationStack.push(MainView())
-                                                        }
+                                                    ApiService.PLACE = res
+                                                    DispatchQueue.main.async {
+                                                        self.navigationStack.push(MainView())
                                                     }
                                                 }
                                             }

@@ -12,14 +12,12 @@ class ScheduleResponse: CustomStringConvertible {
         "Api default response"
     }
     
-    let v: String
     let id: String
     let day: String
     let idPlace: String
     let time: String
     
-    public init(v: String, id: String, day: String, idPlace: String, time: String){
-        self.v = v
+    public init(id: String, day: String, idPlace: String, time: String){
         self.id = id
         self.day = day
         self.idPlace = idPlace
@@ -28,8 +26,7 @@ class ScheduleResponse: CustomStringConvertible {
     
     public class func fromDict(_ array: [String: Any]) -> ScheduleResponse? {
         
-        guard let v = array["v"] as? String,
-              let id = array["id"] as? String,
+        guard let id = array["_id"] as? String,
               let day = array["day"] as? String,
               let idPlace = array["idPlace"] as? String,
               let time = array["time"] as? String else {
@@ -38,6 +35,6 @@ class ScheduleResponse: CustomStringConvertible {
         }
         
 
-        return ScheduleResponse(v: v, id: id, day: day, idPlace: idPlace, time: time)
+        return ScheduleResponse(id: id, day: day, idPlace: idPlace, time: time)
     }
 }

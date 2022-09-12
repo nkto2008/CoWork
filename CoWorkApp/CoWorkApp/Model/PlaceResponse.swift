@@ -12,14 +12,12 @@ class PlaceResponse: CustomStringConvertible {
         "Api default response"
     }
     
-    let v: String
     let id: String
     let city: String
-    let cp: String
+    let cp: Int
     let name: String
     
-    public init(v: String, id: String, city: String, cp: String, name: String){
-        self.v = v
+    public init(id: String, city: String, cp: Int, name: String){
         self.id = id
         self.city = city
         self.cp = cp
@@ -28,16 +26,15 @@ class PlaceResponse: CustomStringConvertible {
     
     public class func fromDict(_ array: [String: Any]) -> PlaceResponse? {
         
-        guard let v = array["v"] as? String,
-              let id = array["id"] as? String,
+        guard let id = array["_id"] as? String,
               let city = array["city"] as? String,
-              let cp = array["cp"] as? String,
+              let cp = array["cp"] as? Int,
               let name = array["name"] as? String else {
             print("Coucou")
             return nil
         }
         
 
-        return PlaceResponse(v: v, id: id, city: city, cp: cp, name: name)
+        return PlaceResponse(id: id, city: city, cp: cp, name: name)
     }
 }

@@ -76,9 +76,7 @@ struct userProfile: View {
                     .padding(Edge.Set.trailing, 30)
                     .padding(Edge.Set.bottom, 30)
                     Button {
-                        DispatchQueue.main.async {
-                            self.navigationStack.push(userEditProfile())
-                        }
+                        
                     } label: {
                         Text("Edit my subscription")
                             .font(.title3)
@@ -92,7 +90,9 @@ struct userProfile: View {
                     .padding(Edge.Set.trailing, 30)
                     .padding(Edge.Set.bottom, 30)
                     Button {
-                        print(ApiService.PLACE)
+                        for place in ApiService.PLACE {
+                            print(place.place.name)
+                        }
                     } label: {
                         Text("Edit my rent")
                             .font(.title3)

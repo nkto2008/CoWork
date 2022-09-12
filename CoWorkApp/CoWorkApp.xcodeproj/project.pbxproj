@@ -14,7 +14,6 @@
 		FA6B273528AFD7FD00507AA4 /* CoWorkApp.xcodeproj in Resources */ = {isa = PBXBuildFile; fileRef = FA6B273428AFD7FD00507AA4 /* CoWorkApp.xcodeproj */; };
 		FA6B273C28AFD8D600507AA4 /* Comfortaa.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA6B273B28AFD8D600507AA4 /* Comfortaa.ttf */; };
 		FA6B273E28AFD8DF00507AA4 /* BungeeShade.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA6B273D28AFD8DF00507AA4 /* BungeeShade.ttf */; };
-		FAD4066328C50F630083320B /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD4066228C50F630083320B /* Place.swift */; };
 		FAD4066528C50F7C0083320B /* DisplayRentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD4066428C50F7C0083320B /* DisplayRentService.swift */; };
 		FAD4067028C641E20083320B /* NavigationStack in Frameworks */ = {isa = PBXBuildFile; productRef = FAD4066F28C641E20083320B /* NavigationStack */; };
 		FAD4067328C641F70083320B /* NavigationStack in Frameworks */ = {isa = PBXBuildFile; productRef = FAD4067228C641F70083320B /* NavigationStack */; };
@@ -38,6 +37,9 @@
 		FAEE3CAE28BA8ADC00A4A67D /* userProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE3CAD28BA8ADC00A4A67D /* userProfile.swift */; };
 		FAEE3CB028BA8BD800A4A67D /* userRent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE3CAF28BA8BD800A4A67D /* userRent.swift */; };
 		FAEE3CB228BA8C4900A4A67D /* logout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE3CB128BA8C4900A4A67D /* logout.swift */; };
+		FAF013C928CE3693001ACFC4 /* RentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF013C828CE3693001ACFC4 /* RentResponse.swift */; };
+		FAF013CC28CE7A38001ACFC4 /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = FAF013CB28CE7A38001ACFC4 /* Collections */; };
+		FAF013CE28CE7A38001ACFC4 /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = FAF013CD28CE7A38001ACFC4 /* OrderedCollections */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,7 +51,6 @@
 		FA6B273428AFD7FD00507AA4 /* CoWorkApp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = CoWorkApp.xcodeproj; sourceTree = SOURCE_ROOT; };
 		FA6B273B28AFD8D600507AA4 /* Comfortaa.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Comfortaa.ttf; sourceTree = "<group>"; };
 		FA6B273D28AFD8DF00507AA4 /* BungeeShade.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BungeeShade.ttf; sourceTree = "<group>"; };
-		FAD4066228C50F630083320B /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		FAD4066428C50F7C0083320B /* DisplayRentService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayRentService.swift; sourceTree = "<group>"; };
 		FAD4067428C657E60083320B /* PlaceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceResponse.swift; sourceTree = "<group>"; };
 		FAD4067628C659120083320B /* ScheduleResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleResponse.swift; sourceTree = "<group>"; };
@@ -71,6 +72,7 @@
 		FAEE3CAD28BA8ADC00A4A67D /* userProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userProfile.swift; sourceTree = "<group>"; };
 		FAEE3CAF28BA8BD800A4A67D /* userRent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userRent.swift; sourceTree = "<group>"; };
 		FAEE3CB128BA8C4900A4A67D /* logout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logout.swift; sourceTree = "<group>"; };
+		FAF013C828CE3693001ACFC4 /* RentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +80,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAF013CC28CE7A38001ACFC4 /* Collections in Frameworks */,
 				FAD4067028C641E20083320B /* NavigationStack in Frameworks */,
+				FAF013CE28CE7A38001ACFC4 /* OrderedCollections in Frameworks */,
 				FAD4067328C641F70083320B /* NavigationStack in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -170,10 +174,10 @@
 			isa = PBXGroup;
 			children = (
 				FAEE3C9728B3904200A4A67D /* User.swift */,
-				FAD4066228C50F630083320B /* Place.swift */,
 				FAEE3C9E28B7D15000A4A67D /* ApiResponse.swift */,
 				FAD4067428C657E60083320B /* PlaceResponse.swift */,
 				FAD4067628C659120083320B /* ScheduleResponse.swift */,
+				FAF013C828CE3693001ACFC4 /* RentResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -218,6 +222,8 @@
 			packageProductDependencies = (
 				FAD4066F28C641E20083320B /* NavigationStack */,
 				FAD4067228C641F70083320B /* NavigationStack */,
+				FAF013CB28CE7A38001ACFC4 /* Collections */,
+				FAF013CD28CE7A38001ACFC4 /* OrderedCollections */,
 			);
 			productName = CoWorkApp;
 			productReference = FA6B272328AFD09B00507AA4 /* CoWorkApp.app */;
@@ -251,6 +257,7 @@
 				FAD4066B28C641900083320B /* XCRemoteSwiftPackageReference "swiftui-navigation-stack" */,
 				FAD4066E28C641E20083320B /* XCRemoteSwiftPackageReference "swiftui-navigation-stack" */,
 				FAD4067128C641F70083320B /* XCRemoteSwiftPackageReference "swiftui-navigation-stack" */,
+				FAF013CA28CE7A38001ACFC4 /* XCRemoteSwiftPackageReference "swift-collections" */,
 			);
 			productRefGroup = FA6B272428AFD09B00507AA4 /* Products */;
 			projectDirPath = "";
@@ -293,6 +300,7 @@
 				FA6B272928AFD09B00507AA4 /* ContentView.swift in Sources */,
 				FAE2D95E28C2497A00A47606 /* UserProfielupdateService.swift in Sources */,
 				FAEE3CA428BA71CB00A4A67D /* UserSignInService.swift in Sources */,
+				FAF013C928CE3693001ACFC4 /* RentResponse.swift in Sources */,
 				FAEE3CAC28BA82CF00A4A67D /* homePage.swift in Sources */,
 				FAEE3C9D28B42B9400A4A67D /* APIService.swift in Sources */,
 				FAEE3C9528B37F1700A4A67D /* signUp.swift in Sources */,
@@ -310,7 +318,6 @@
 				FAEE3C9128B3744000A4A67D /* signIn.swift in Sources */,
 				FAEE3CB028BA8BD800A4A67D /* userRent.swift in Sources */,
 				FAEE3CB228BA8C4900A4A67D /* logout.swift in Sources */,
-				FAD4066328C50F630083320B /* Place.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -535,6 +542,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		FAF013CA28CE7A38001ACFC4 /* XCRemoteSwiftPackageReference "swift-collections" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-collections.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -547,6 +562,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FAD4067128C641F70083320B /* XCRemoteSwiftPackageReference "swiftui-navigation-stack" */;
 			productName = NavigationStack;
+		};
+		FAF013CB28CE7A38001ACFC4 /* Collections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FAF013CA28CE7A38001ACFC4 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = Collections;
+		};
+		FAF013CD28CE7A38001ACFC4 /* OrderedCollections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FAF013CA28CE7A38001ACFC4 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = OrderedCollections;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

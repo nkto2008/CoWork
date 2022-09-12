@@ -49,6 +49,10 @@ router.delete('/cancelRent', isAuthorized, async(req, res) => {
 router.post('/subforuser', isAuthorized, async(req,res) => {
     await sub.SubForUser(req.body, res)
 })
+
+router.post('/getSubUser', isAuthorized, async(req,res) => {
+    await sub.getSubUser(req.body, res)
+})
 // Define the User schema in the swagger, we will use it in endpoints descriptions
 
 /**

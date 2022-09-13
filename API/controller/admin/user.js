@@ -60,8 +60,48 @@ const deleteUsers= async(body,res) => {
 
 }
 
+const updateUser = async(req, res) => {
+    const {token} = req.headers["authorization"];
+    if (token) {
+        const user = await UserModel.findOne({token})
+        if (!user){
+            res.status(403).send("Something wrong with your request");
+        }else{
+            if(req.body.firstname) {
+                user.firstname = req.body.firstname
+            }
+            if(req.body.lastname) {
+                user.lastname = req.body.lastname
+            }
+            if(req.body.pseudo) {
+                user.pseudo = req.body.pseudo
+            }
+            if(req.body.phonenumber) {
+                user.phonenumber = req.body.phonenumber
+            }
+            if(req.body.email) {
+                user.email = req.body.email
+            }
+            if(req.body.password) {
+                user.password = req.body.password
+            }
+            if(req.body.fk_role) {
+                user.fk_role = req.body.fk_role
+            }
+            if(req.body.fk_sub){
+                user.fk_sub = req.body.fk_sub
+            }
+            user.save()
+        }
+
+        res.status(200).send({message: "Successfully updated"})
+    } else {
+        res.status(403).send("You need a token");
+    }
+}
 
 
 
 
-module.exports = {getAllUsers, getUserById, getUserByRole, deleteUsers, createAccount}
+
+module.exports = {getAllUsers, getUserById, getUserByRole, deleteUsers, createAccount, updateUser}

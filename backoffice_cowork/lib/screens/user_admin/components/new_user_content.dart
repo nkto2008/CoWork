@@ -5,7 +5,6 @@ import '../../../utils/constants.dart';
 import '../../../widgets/create_button_user.dart';
 import '../../../widgets/custom_appbar.dart';
 import '../../../widgets/custom_text.dart';
-import '../../../widgets/modify_button_user.dart';
 
 class NewUserContent extends StatefulWidget {
   const NewUserContent({Key? key}) : super(key: key);

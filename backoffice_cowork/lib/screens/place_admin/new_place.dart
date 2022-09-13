@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../models/model_user.dart';
 import '../../widgets/side_menu.dart';
 import 'components/new_place_content.dart';
 

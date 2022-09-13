@@ -1,14 +1,11 @@
 import 'package:backoffice_cowork/models/model_place.dart';
-import 'package:backoffice_cowork/models/model_user.dart';
 import 'package:backoffice_cowork/requests/places.dart';
-import 'package:backoffice_cowork/requests/users.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 
 import '../../../utils/constants.dart';
 import '../../../widgets/custom_appbar.dart';
 import '../../../widgets/places_data_row.dart';
-import '../../../widgets/users_data_row.dart';
 import '../new_place.dart';
 
 class PlaceContent extends StatefulWidget {

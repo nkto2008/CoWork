@@ -2,12 +2,9 @@ import 'package:backoffice_cowork/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '../../../models/model_place.dart';
 import '../../../utils/constants.dart';
 import '../../../widgets/create_button_place.dart';
 import '../../../widgets/custom_appbar.dart';
-import '../../../widgets/modify_button_place.dart';
-import '../../../widgets/suppression_button_place.dart';
 
 class NewPlaceContent extends StatefulWidget {
   const NewPlaceContent({

@@ -1,7 +1,6 @@
 import 'package:backoffice_cowork/screens/place_admin/components/place_content.dart';
 import 'package:flutter/material.dart';
 
-import '../../utils/constants.dart';
 import '../../widgets/side_menu.dart';
 
 class PlaceScreen extends StatefulWidget {

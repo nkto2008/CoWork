@@ -2,10 +2,8 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:backoffice_cowork/models/model_user.dart';
-import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 
-import '../models/model_place.dart';
 import '../utils/token_preferences.dart';
 
 const getUsersUrl = "http://localhost:8081/getUsers";

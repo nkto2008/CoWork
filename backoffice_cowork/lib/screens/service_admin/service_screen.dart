@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../utils/constants.dart';
 import '../../widgets/side_menu.dart';
 
 class ServiceScreen extends StatefulWidget {

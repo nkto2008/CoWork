@@ -1,5 +1,4 @@
 import 'package:backoffice_cowork/requests/users.dart';
-import 'package:backoffice_cowork/screens/user_admin/user_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 

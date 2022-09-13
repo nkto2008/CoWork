@@ -19,7 +19,6 @@ class PlaceDetailsContent extends StatefulWidget {
   @override
   State<PlaceDetailsContent> createState() => _PlaceDetailsContentState();
 }
-
 class _PlaceDetailsContentState extends State<PlaceDetailsContent> {
   @override
   Widget build(BuildContext context) {

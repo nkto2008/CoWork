@@ -37,6 +37,10 @@ router.delete('/deleteUsers', isAuthorized, async(req,res) => {
 router.post('/createAccount', isAuthorized, async(req, res) => {
     await user.createAccount(req.body, res)
 })
+
+router.post('/updateUser', isAuthorized, async(req,res) => {
+    await user.updateUser(req, res)
+})
 //Service Routes
 router.post('/addService', isAuthorized, async(req,res) => {
     await service.addService(req.body,res)

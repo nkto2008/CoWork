@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../models/model_user.dart';
 import '../../widgets/side_menu.dart';
 import 'components/new_user_content.dart';
-import 'components/user_details_content.dart';
 
 class NewUser extends StatefulWidget {
 

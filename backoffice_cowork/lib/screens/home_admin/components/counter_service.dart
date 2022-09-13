@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:backoffice_cowork/requests/services.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';

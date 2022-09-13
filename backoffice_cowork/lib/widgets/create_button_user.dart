@@ -3,7 +3,6 @@ import 'package:backoffice_cowork/screens/user_admin/user_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 
-import '../models/model_user.dart';
 import '../utils/constants.dart';
 import 'custom_text.dart';
 

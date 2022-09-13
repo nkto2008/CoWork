@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../utils/constants.dart';
 import '../../widgets/side_menu.dart';
 import 'components/user_content.dart';
 

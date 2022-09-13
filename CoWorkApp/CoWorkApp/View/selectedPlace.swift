@@ -41,6 +41,7 @@ struct selectedPlace: View {
                     Text(place.place.name)
                         .font(.largeTitle)
                         .padding(Edge.Set.bottom, 30)
+                        .padding(Edge.Set.top, 20)
                     Divider()
                         .frame(maxWidth: 2000, maxHeight: 0, alignment: .trailing)
                         .background(Color.black)
@@ -50,9 +51,20 @@ struct selectedPlace: View {
                         VStack{
                             ForEach(place.schedules) { schedule in
                                 HStack {
+                                    VStack{
                                 Text("\(schedule.day) \n \(schedule.time)")
-                                        .padding(10)
+                                    Button {
+                                       
+                                        print("Hello" + place.place.id)
+                                    } label: {
+                                       
+                                        Text("Réserver")
+                                            .foregroundColor(Color.green)
+                                            .frame(minWidth: 0, maxWidth: .infinity)
+                                    }
+                                    }
                                 }
+                                .padding(10)
                             }
                         }
                     }

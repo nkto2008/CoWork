@@ -43,11 +43,17 @@ struct signIn: View {
                                 SignInUser.SignIn(_: email, _: password) { res in
                                     if(res.error) {
                                         print(res.message)
+                                        DispatchQueue.main.async {
+                                            self.navigationStack.push(signIn())
+                                        }
                                     } else {
                                         ApiService.TOKEN = res.message
                                         userProfileService.getUserProfile(_: ApiService.TOKEN) { res in
                                             if(res.error) {
                                                 print("Error dude")
+                                                DispatchQueue.main.async {
+                                                    self.navigationStack.push(signIn())
+                                                }
                                             } else {
                                                 let user = User(id: res.id, firstname: res.firstname, lastname: res.lastname, pseudo: res.pseudo, email: res.email, phone: res.phone, error: false)
                                                 ApiService.USER = user

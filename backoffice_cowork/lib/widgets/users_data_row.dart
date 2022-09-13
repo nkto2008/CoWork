@@ -1,4 +1,3 @@
-import 'package:backoffice_cowork/models/model_place.dart';
 import 'package:backoffice_cowork/models/model_user.dart';
 import 'package:backoffice_cowork/screens/user_admin/user_details.dart';
 import 'package:backoffice_cowork/utils/constants.dart';

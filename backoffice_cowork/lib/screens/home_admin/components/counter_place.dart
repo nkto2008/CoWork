@@ -2,9 +2,7 @@ import 'package:backoffice_cowork/requests/places.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 
-import '../../../models/model_place.dart';
 import '../../../utils/constants.dart';
-import '../../../widgets/places_data_row.dart';
 import '../../place_admin/place_screen.dart';
 
 class CounterPlace extends StatelessWidget {

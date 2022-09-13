@@ -62,9 +62,10 @@ const deleteUsers= async(body,res) => {
 }
 
 const updateUser = async(req, res) => {
-    const {token} = req.headers["authorization"];
-    if (token) {
-        const user = await UserModel.findOne({token})
+    const {id} = req.body.id
+    if (id) {
+        const idUser = Moongoe.Types.ObjectId(id)
+        const user = await UserModel.findOne({_id: idUser})
         if (!user){
             res.status(403).send("Something wrong with your request");
         }else{

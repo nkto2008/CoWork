@@ -1,6 +1,6 @@
 const UserModel = require('../../model/user.js')
 const SubModel = require('../../model/sub.js')
-
+const RoleModel = require('../../model/role.js')
 
 const createAccount = async(body,res) => {
     if (!body.email || !body.password || !body.lastname || !body.firstname || !body.pseudo || !body.phonenumber || !body.fk_role) {
@@ -87,8 +87,9 @@ const updateUser = async(req, res) => {
             if(req.body.password) {
                 user.password = req.body.password
             }
+            const role = await RoleModel.find({name: req.body.fk_role})
             if(req.body.fk_role) {
-                user.fk_role = req.body.fk_role
+                user.fk_role = role._id
             }
             const sub = await SubModel.find({name: user.fk_sub})
             if(req.body.fk_sub){

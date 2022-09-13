@@ -11,11 +11,11 @@ import NavigationStack
 struct userRent: View {
     
     let places = ApiService.PLACE
-    @State var i: Int = 0
     @EnvironmentObject private var navigationStack: NavigationStackCompat
-    
+    // Add request to get if place is already in rent
     var body: some View {
         ScrollView(Axis.Set.vertical){
+            Color("BgColor").edgesIgnoringSafeArea(.all)
             VStack {
                 ForEach(places) { place in
                     HStack {

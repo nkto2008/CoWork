@@ -14,6 +14,7 @@
 		FA6B273528AFD7FD00507AA4 /* CoWorkApp.xcodeproj in Resources */ = {isa = PBXBuildFile; fileRef = FA6B273428AFD7FD00507AA4 /* CoWorkApp.xcodeproj */; };
 		FA6B273C28AFD8D600507AA4 /* Comfortaa.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA6B273B28AFD8D600507AA4 /* Comfortaa.ttf */; };
 		FA6B273E28AFD8DF00507AA4 /* BungeeShade.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA6B273D28AFD8DF00507AA4 /* BungeeShade.ttf */; };
+		FAC27C9028D11664000C923D /* UserGetRentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC27C8F28D11664000C923D /* UserGetRentService.swift */; };
 		FAD4066528C50F7C0083320B /* DisplayRentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD4066428C50F7C0083320B /* DisplayRentService.swift */; };
 		FAD4067028C641E20083320B /* NavigationStack in Frameworks */ = {isa = PBXBuildFile; productRef = FAD4066F28C641E20083320B /* NavigationStack */; };
 		FAD4067328C641F70083320B /* NavigationStack in Frameworks */ = {isa = PBXBuildFile; productRef = FAD4067228C641F70083320B /* NavigationStack */; };
@@ -52,6 +53,7 @@
 		FA6B273428AFD7FD00507AA4 /* CoWorkApp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = CoWorkApp.xcodeproj; sourceTree = SOURCE_ROOT; };
 		FA6B273B28AFD8D600507AA4 /* Comfortaa.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Comfortaa.ttf; sourceTree = "<group>"; };
 		FA6B273D28AFD8DF00507AA4 /* BungeeShade.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BungeeShade.ttf; sourceTree = "<group>"; };
+		FAC27C8F28D11664000C923D /* UserGetRentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGetRentService.swift; sourceTree = "<group>"; };
 		FAD4066428C50F7C0083320B /* DisplayRentService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayRentService.swift; sourceTree = "<group>"; };
 		FAD4067428C657E60083320B /* PlaceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceResponse.swift; sourceTree = "<group>"; };
 		FAD4067628C659120083320B /* ScheduleResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleResponse.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 				FAEE3CA328BA71CB00A4A67D /* UserSignInService.swift */,
 				FAD4066428C50F7C0083320B /* DisplayRentService.swift */,
 				FAE2D95D28C2497A00A47606 /* UserProfielupdateService.swift */,
+				FAC27C8F28D11664000C923D /* UserGetRentService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				FAE2D95828C23FC000A47606 /* userEditProfile.swift in Sources */,
 				FAEE3CAE28BA8ADC00A4A67D /* userProfile.swift in Sources */,
 				FAF013D028CEB812001ACFC4 /* selectedPlace.swift in Sources */,
+				FAC27C9028D11664000C923D /* UserGetRentService.swift in Sources */,
 				FA6B272728AFD09B00507AA4 /* CoWorkAppApp.swift in Sources */,
 				FAE2D95A28C2400D00A47606 /* UserProfileService.swift in Sources */,
 				FAEE3C9828B3904200A4A67D /* User.swift in Sources */,

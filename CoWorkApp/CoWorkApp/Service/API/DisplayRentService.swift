@@ -10,7 +10,7 @@ import SwiftUI
 
 class DisplayRentUser {
     class func display(completion: @escaping ([RentResponse]) -> Void){
-        guard let url = URL(string: ApiService.URL + "/getPlace") else {
+        guard let url = URL(string: ApiService.URL + "/getPlaceUser") else {
             completion([])
             return 
         }

@@ -1,6 +1,7 @@
 const PlaceModel = require('../../model/place.js')
 const slpModel = require('../../model/placelinkschedules.js')
 const RentModel = require('../../model/rent.js')
+const Mongoose = require('mongoose')
 
 const getPlaceUser = async(res) => {
     const places = await PlaceModel.find()
@@ -9,11 +10,8 @@ const getPlaceUser = async(res) => {
         var tmp = []
         for(i in places){
             var horaire = await slpModel.find({idPlace: places[i]._id})
-            const rent = await RentModel.findOne({_id: horaire._id})
-            if(!rent){
-                var result = [{"place":places[i],"schedules": horaire}]
-                tmp = tmp.concat(result)
-            }
+            var result = [{"place":places[i],"schedules": horaire}]
+            tmp = tmp.concat(result)
         }
         res.status(200).send(tmp)
     }else{

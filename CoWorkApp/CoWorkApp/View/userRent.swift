@@ -15,6 +15,7 @@ struct userRent: View {
     // Add request to get if place is already in rent
     var body: some View {
         ScrollView(Axis.Set.vertical){
+            Color("BgColor").edgesIgnoringSafeArea(.all)
             VStack {
                 ForEach(places) { place in
                     HStack {

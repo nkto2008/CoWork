@@ -13,6 +13,10 @@ const SLPSchema = new mongoose.Schema(
       day :{
         type: String,
         default: ""
+      },
+      rent : {
+        type: Boolean,
+        default: ""
       }
     }
   );

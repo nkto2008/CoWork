@@ -58,10 +58,18 @@ struct signIn: View {
                                                 let user = User(id: res.id, firstname: res.firstname, lastname: res.lastname, pseudo: res.pseudo, email: res.email, phone: res.phone, error: false)
                                                 ApiService.USER = user
                                                 DisplayRentUser.display() { res in
-                                                    ApiService.PLACE = res
-                                                    DispatchQueue.main.async {
-                                                        self.navigationStack.push(MainView())
+                                                    if(res.isEmpty){
+                                                        print("Error dude")
+                                                        DispatchQueue.main.async {
+                                                            self.navigationStack.push(signIn())
+                                                        }
+                                                    } else {
+                                                        ApiService.PLACE = res
+                                                        DispatchQueue.main.async {
+                                                            self.navigationStack.push(MainView())
+                                                        }
                                                     }
+                                                    
                                                 }
                                             }
                                         }

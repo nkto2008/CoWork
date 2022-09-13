@@ -38,10 +38,11 @@ struct selectedPlace: View {
                         .foregroundColor(Color.black)
                 }
                 VStack (alignment: .center){
-                    Text(place.place.name)
+             
+                    Text("\(place.place.name) \n \(place.place.city) \n \(place.place.cp)")
                         .font(.largeTitle)
                         .padding(Edge.Set.bottom, 30)
-                        .padding(Edge.Set.top, 20)
+                        .padding(Edge.Set.top, 10)
                     Divider()
                         .frame(maxWidth: 2000, maxHeight: 0, alignment: .trailing)
                         .background(Color.black)
@@ -52,10 +53,29 @@ struct selectedPlace: View {
                             ForEach(place.schedules) { schedule in
                                 HStack {
                                     VStack{
-                                Text("\(schedule.day) \n \(schedule.time)")
-                                    Button {
-                                       
-                                        print("Hello" + place.place.id)
+                                        Text("\(schedule.day) \n \(schedule.time)")
+                                        if(!schedule.state){
+                                        if(schedule.time != "Fermé" && schedule.time != "fermé") { Button {
+                                        UserGetRentService.Rent(id_place: schedule.idPlace, id_schedule: schedule.id) { res in
+                                            if(res.error) {
+                                                print(res.message)
+                                            } else {
+                                                DisplayRentUser.display() { res in
+                                                    if(res.isEmpty){
+                                                        print("Error dude")
+                                                        DispatchQueue.main.async {
+                                                            self.navigationStack.push(MainView())
+                                                        }
+                                                    } else {
+                                                        ApiService.PLACE = res
+                                                        DispatchQueue.main.async {
+                                                            self.navigationStack.pop()
+                                                        }
+                                                    }
+                                                    
+                                                }
+                                            }
+                                        }
                                     } label: {
                                        
                                         Text("Réserver")
@@ -63,8 +83,12 @@ struct selectedPlace: View {
                                             .frame(minWidth: 0, maxWidth: .infinity)
                                     }
                                     }
+                                        } else {
+                                            Text("Déjà réservé")
+                                        }
                                 }
                                 .padding(10)
+                            }
                             }
                         }
                     }

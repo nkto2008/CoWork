@@ -3,8 +3,8 @@ POST http://localhost:8081/welcome HTTP/1.1
 Content-Type: application/json
 
 {
-    "email": "sunwukong@gmail.co",
-    "password": "123456789Wu"
+    "email": "tata",
+    "password": "tata"
 }
 
 ###

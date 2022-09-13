@@ -18,7 +18,7 @@ struct MainView: View {
     }
     
     var body: some View {
-        
+        Color("BgColor").edgesIgnoringSafeArea(.all)
         TabView {
             //profil
             userProfile()

@@ -11,7 +11,7 @@ const RentSchema = new mongoose.Schema(
         default: ""
       },
       fk_pls: {
-        type: Number,
+        type: String,
         default: ""
       }
     }

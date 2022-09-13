@@ -4,6 +4,8 @@ const UserModel = require('../../model/user.js')
 const SubModel = require('../../model/sub.js')
 const RoleModel = require('../../model/role.js')
 
+const bcrypt = require('bcrypt')
+
 const createAccount = async(body,res) => {
     if (!body.email || !body.password || !body.lastname || !body.firstname || !body.pseudo || !body.phonenumber || !body.fk_role) {
         res.status(400).send("All input are required");
@@ -65,15 +67,15 @@ const deleteUsers= async(body,res) => {
 }
 
 const updateUser = async(req, res) => {
+
     const id = req.body.id
-    console.log(id);
     if (id) {
         const idUser = Mongoose.Types.ObjectId(id)
         const user = await UserModel.findOne({_id: idUser})
         if (!user){
             res.status(403).send("Something wrong with your request");
         }else{
-            
+
             if(req.body.firstname) {
                 user.firstname = req.body.firstname
             }

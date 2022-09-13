@@ -1,0 +1,13 @@
+###
+POST http://localhost:8081/createSubs HTTP/1.1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjMyMDlhYTdiMjg3MWQ0NWU4OWNhMmUwIiwiZW1haWwiOiJ0YXRhIiwiaWF0IjoxNjYzMDgxMTQzLCJleHAiOjE2NjMxMDYzNDN9.JSwfJ4hsr-3IYEGIP37OYOqcPdPhW2L7JVZTBhYCXZ4
+
+{
+    "name": "Premium",
+    "price": 30,
+    "services": {
+        "service1": "62e7d867cd167f34887fe849"
+    }
+
+}

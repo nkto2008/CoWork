@@ -8,9 +8,9 @@ import '../../../widgets/modify_button_user.dart';
 import '../../../widgets/suppression_button_user.dart';
 
 class UserDetailsContent extends StatefulWidget {
-  final User user;
+  User user;
 
-  const UserDetailsContent({
+  UserDetailsContent({
     Key? key,
     required this.user,
   }) : super(key: key);
@@ -20,7 +20,6 @@ class UserDetailsContent extends StatefulWidget {
 }
 
 class _UserDetailsContentState extends State<UserDetailsContent> {
-  final TextEditingController id = TextEditingController();
   final TextEditingController lname = TextEditingController();
   final TextEditingController fname = TextEditingController();
   final TextEditingController pseudo = TextEditingController();
@@ -63,17 +62,11 @@ class _UserDetailsContentState extends State<UserDetailsContent> {
                                   size: 20,
                                   align: TextAlign.left,
                                 ),
-                                TextFormField(
-                                  controller: id,
-                                  style: const TextStyle(
-                                    fontSize: 15,
-                                    fontFamily: "Comfortaa",
-                                  ),
-                                  decoration: InputDecoration(
-                                    hintText: widget.user.id,
-                                    border: InputBorder.none,
-                                    contentPadding: const EdgeInsets.all(0),
-                                  ),
+                                CustomText(
+                                  text: widget.user.id,
+                                  font: "Comfortaa",
+                                  size: 15,
+                                  align: TextAlign.left,
                                 ),
                               ],
                             ),
@@ -211,7 +204,7 @@ class _UserDetailsContentState extends State<UserDetailsContent> {
                     children: [
                       ModifyButtonUser(
                         user: widget.user,
-                        id: id,
+                        id: widget.user.id,
                         lname: lname,
                         fname: fname,
                         pseudo: pseudo,

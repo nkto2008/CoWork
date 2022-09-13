@@ -65,13 +65,15 @@ const deleteUsers= async(body,res) => {
 }
 
 const updateUser = async(req, res) => {
-    const {id} = req.body.id
+    const id = req.body.id
+    console.log(id);
     if (id) {
-        const idUser = Moongoe.Types.ObjectId(id)
+        const idUser = Mongoose.Types.ObjectId(id)
         const user = await UserModel.findOne({_id: idUser})
         if (!user){
             res.status(403).send("Something wrong with your request");
         }else{
+            
             if(req.body.firstname) {
                 user.firstname = req.body.firstname
             }

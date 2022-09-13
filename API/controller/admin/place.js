@@ -33,12 +33,12 @@ const addPlace = async(body,res) => {
 }
 
 const getPlace = async(res) => {
-    const places = await PlaceModel.find()
+    const places = await PlaceModel.find().sort({_id: -1})
 
     if(places){
         var tmp = []
         for(i in places){
-            var horaire = await slpModel.find({idPlace: places[i]._id})
+            var horaire = await slpModel.find({idPlace: places[i]._id}).sort({_id: 1})
             var result = [{"place":places[i],"schedules": horaire}]
             tmp = tmp.concat(result)
         }

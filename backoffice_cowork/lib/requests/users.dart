@@ -11,7 +11,7 @@ import '../utils/token_preferences.dart';
 const getUsersUrl = "http://localhost:8081/getUsers";
 const delUserUrl = "http://localhost:8081/deleteUsers";
 const createUserUrl = "http://localhost:8081/createAccount";
-const updateUserUrl = "http://localhost:8081/updateProfile";
+const updateUserUrl = "http://localhost:8081/updateUser";
 
 class Users {
   static Future<List<User>?> getAllUsersDesc() async {
@@ -99,7 +99,7 @@ class Users {
       },
     );
 
-    final response = await http.put(
+    final response = await http.patch(
       Uri.parse(updateUserUrl),
       headers: {
         "Access-Control-Allow-Origin": "*",

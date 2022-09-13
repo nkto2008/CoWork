@@ -7,11 +7,12 @@ const createRent = async(body, res) => {
         res.status(400).send("all input are required")
     }else{
         const rent = new RentModel(body)
-        const rentExist = await RentModel.find({fk_pls: body.fk_pls, fk_place: body.fk_place, fk_user: body.fk_user})
+        const rentExist = await RentModel.findOne({fk_pls: body.fk_pls, fk_place: body.fk_place, fk_user: body.fk_user})
+        console.log(rentExist)
         if(rentExist){
             res.status(203).send("this rent already exist")
         }else{
-            const slp = await slpModel.findOne({_id: fk_pls})
+            const slp = await slpModel.findOne({_id: body.fk_pls})
             slp.rent = true
             await slp.save()
             await rent.save()

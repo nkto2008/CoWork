@@ -4,12 +4,12 @@ Content-Type: application/json
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjMyMGE5MGViNGRmODQzODk0OWI1OTY0IiwiZW1haWwiOiJsYW1vdWNoZUBnbWFpbC5jb20iLCJpYXQiOjE2NjMwODY1MzEsImV4cCI6MTY2MzExMTczMX0.zYzAFETpaTj_vvMbAvKD17id0ve442PFASfOZBcw3HA
 
 {
-    "name": "COWORK BASTILLE",
+    "name": "COWORK PASTILLE",
     "city": "Paris",
     "cp": 75004,
     "horaire":{
-        "lundi":"9h-20h",
-        "mardi": "9h-20h",
+        "lundi":"fermé",
+        "mardi": "fermé",
         "mercredi": "9h-20h",
         "jeudi": "9h-20h",
         "vendredi": "9h-20h",

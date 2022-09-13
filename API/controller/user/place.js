@@ -9,7 +9,7 @@ const getPlaceUser = async(res) => {
     if(places){
         var tmp = []
         for(i in places){
-            var horaire = await slpModel.find({idPlace: places[i]._id,rent: false})
+            var horaire = await slpModel.find({idPlace: places[i]._id})
             var result = [{"place":places[i],"schedules": horaire}]
             tmp = tmp.concat(result)
         }

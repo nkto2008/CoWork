@@ -3,6 +3,7 @@ const slpModel = require('../../model/placelinkschedules.js')
 const RentModel = require('../../model/rent.js')
 const Mongoose = require('mongoose')
 
+
 const getPlaceUser = async(res) => {
     const places = await PlaceModel.find()
 

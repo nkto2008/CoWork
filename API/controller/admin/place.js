@@ -17,7 +17,8 @@ const addPlace = async(body,res) => {
                 let count = 0
                 const arrayTime = ["lundi","mardi","mercredi","jeudi","vendredi","samedi","dimanche"]
                 for(let i in horaire){
-                    let arraySchedules = {"idPlace": place._id, "day": arrayTime[count],"time": body.horaire[i]}
+
+                    let arraySchedules = {"idPlace": place._id, "day": arrayTime[count],"time": body.horaire[i],"rent": 0}
                     console.log(arraySchedules)
                     let schedules = new slpModel(arraySchedules)
                     schedules.save()
@@ -33,12 +34,12 @@ const addPlace = async(body,res) => {
 }
 
 const getPlace = async(res) => {
-    const places = await PlaceModel.find()
+    const places = await PlaceModel.find().sort({_id: -1})
 
     if(places){
         var tmp = []
         for(i in places){
-            var horaire = await slpModel.find({idPlace: places[i]._id})
+            var horaire = await slpModel.find({idPlace: places[i]._id}).sort({_id: 1})
             var result = [{"place":places[i],"schedules": horaire}]
             tmp = tmp.concat(result)
         }

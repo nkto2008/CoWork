@@ -1,10 +1,10 @@
 class User {
-  final String fname;
-  final String lname;
-  final String pseudo;
-  final String email;
-  final String phone;
-  final String id;
+  String fname;
+  String lname;
+  String pseudo;
+  String email;
+  String phone;
+  String id;
 
   User(
     this.fname,

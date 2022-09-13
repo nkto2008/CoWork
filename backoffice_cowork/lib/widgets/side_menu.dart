@@ -26,17 +26,16 @@ class SideMenu extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 0, vertical: defaultPadding),
+            padding: const EdgeInsets.symmetric(
+                horizontal: 0, vertical: defaultPadding),
             child: MouseRegion(
               cursor: MaterialStateMouseCursor.clickable,
               child: GestureDetector(
                 onTap: () {
-                  if (select != 1) {
-                    Navigator.push(
-                        context,
-                        PageTransition(
-                            type: PageTransitionType.fade, child: HomeScreen()));
-                  }
+                  Navigator.push(
+                      context,
+                      PageTransition(
+                          type: PageTransitionType.fade, child: const HomeScreen()));
                 },
                 child: Icon(
                   Icons.home,
@@ -46,17 +45,16 @@ class SideMenu extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 0, vertical: defaultPadding),
+            padding: const EdgeInsets.symmetric(
+                horizontal: 0, vertical: defaultPadding),
             child: MouseRegion(
               cursor: MaterialStateMouseCursor.clickable,
               child: GestureDetector(
                 onTap: () {
-                  if (select != 2) {
-                    Navigator.push(
-                        context,
-                        PageTransition(
-                            type: PageTransitionType.fade, child: UserScreen()));
-                  }
+                  Navigator.push(
+                      context,
+                      PageTransition(
+                          type: PageTransitionType.fade, child: UserScreen()));
                 },
                 child: Icon(
                   Icons.person,
@@ -66,17 +64,16 @@ class SideMenu extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 0, vertical: defaultPadding),
+            padding: const EdgeInsets.symmetric(
+                horizontal: 0, vertical: defaultPadding),
             child: MouseRegion(
               cursor: MaterialStateMouseCursor.clickable,
               child: GestureDetector(
                 onTap: () {
-                  if (select != 3) {
-                    Navigator.push(
-                        context,
-                        PageTransition(
-                            type: PageTransitionType.fade, child: PlaceScreen()));
-                  }
+                  Navigator.push(
+                      context,
+                      PageTransition(
+                          type: PageTransitionType.fade, child: PlaceScreen()));
                 },
                 child: Icon(
                   Icons.apartment,
@@ -86,17 +83,17 @@ class SideMenu extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 0, vertical: defaultPadding),
+            padding: const EdgeInsets.symmetric(
+                horizontal: 0, vertical: defaultPadding),
             child: MouseRegion(
               cursor: MaterialStateMouseCursor.clickable,
               child: GestureDetector(
                 onTap: () {
-                  if (select != 4) {
-                    Navigator.push(
-                        context,
-                        PageTransition(
-                            type: PageTransitionType.fade, child: ServiceScreen()));
-                  }
+                  Navigator.push(
+                      context,
+                      PageTransition(
+                          type: PageTransitionType.fade,
+                          child: ServiceScreen()));
                 },
                 child: Icon(
                   Icons.widgets,
@@ -105,7 +102,7 @@ class SideMenu extends StatelessWidget {
               ),
             ),
           ),
-          Spacer(),
+          const Spacer(),
           Padding(
             padding: const EdgeInsets.only(bottom: defaultPadding * 1.5),
             child: MouseRegion(

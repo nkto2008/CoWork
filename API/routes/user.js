@@ -3,6 +3,7 @@ const isAuthorized = require("../helper/authtoken")
 const auth = require("../controller/user/auth.js")
 const rent = require("../controller/user/rent.js")
 const sub = require("../controller/admin/sub.js")
+const place = require("../controller/user/place.js")
 const router = express.Router()
 
 
@@ -30,6 +31,9 @@ router.put('/updateProfile', isAuthorized, async(req, res) => {
     await auth.updateProfile(req, res)
 })
 
+router.get('/getPlaceUser', isAuthorized, async(req,res) => {
+    await place.getPlaceUser(res)
+})
 //rent
 
 router.post('/createRent', isAuthorized, async(req,res) => {

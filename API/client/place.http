@@ -1,15 +1,15 @@
 ###
 POST http://localhost:8081/createPlace HTTP/1.1
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjJlNzljNjI0ZDQ3MTAyYmIwY2MxNjYwIiwiZW1haWwiOiJzdW53dWtvbmdAZ21haWwuY29tIiwiaWF0IjoxNjU5NDU0ODI1LCJleHAiOjE2NTk0ODAwMjV9.T6ty88FqVNHMRgiZTBSjJu0vGxMgJ3lVfUq7TGFzZaY
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjMyMGE5MGViNGRmODQzODk0OWI1OTY0IiwiZW1haWwiOiJsYW1vdWNoZUBnbWFpbC5jb20iLCJpYXQiOjE2NjMwODY1MzEsImV4cCI6MTY2MzExMTczMX0.zYzAFETpaTj_vvMbAvKD17id0ve442PFASfOZBcw3HA
 
 {
-    "name": "COWORK BASTILLE",
+    "name": "COWORK PASTILLE",
     "city": "Paris",
     "cp": 75004,
     "horaire":{
-        "lundi":"9h-20h",
-        "mardi": "9h-20h",
+        "lundi":"fermé",
+        "mardi": "fermé",
         "mercredi": "9h-20h",
         "jeudi": "9h-20h",
         "vendredi": "9h-20h",
@@ -22,12 +22,12 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjJlNzljNjI0
 ###
 GET http://localhost:8081/getPlace HTTP/1.1
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjJlNzljNjI0ZDQ3MTAyYmIwY2MxNjYwIiwiZW1haWwiOiJzdW53dWtvbmdAZ21haWwuY29tIiwiaWF0IjoxNjU5NDU0ODI1LCJleHAiOjE2NTk0ODAwMjV9.T6ty88FqVNHMRgiZTBSjJu0vGxMgJ3lVfUq7TGFzZaY
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjMyMGE5MGViNGRmODQzODk0OWI1OTY0IiwiZW1haWwiOiJsYW1vdWNoZUBnbWFpbC5jb20iLCJpYXQiOjE2NjMwODY1MzEsImV4cCI6MTY2MzExMTczMX0.zYzAFETpaTj_vvMbAvKD17id0ve442PFASfOZBcw3HA
 
 ###
 POST http://localhost:8081/getPlaceById HTTP/1.1
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjJlNzljNjI0ZDQ3MTAyYmIwY2MxNjYwIiwiZW1haWwiOiJzdW53dWtvbmdAZ21haWwuY29tIiwiaWF0IjoxNjU5NDU0ODI1LCJleHAiOjE2NTk0ODAwMjV9.T6ty88FqVNHMRgiZTBSjJu0vGxMgJ3lVfUq7TGFzZaY
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjMwYTNkNGNlN2ZhNjM5Yjk5NWE0NTVmIiwiZW1haWwiOiJ0ZXN0QGdtYWlsLmNvbSIsImlhdCI6MTY2Mjk0MzAzMywiZXhwIjoxNjYyOTY4MjMzfQ.8LHvgTOxdWksjyp7baOlsDm-TmqjAtrUJVFjAwfn2wk
 
 {
     "id": "62e95018684d1822849593e9"

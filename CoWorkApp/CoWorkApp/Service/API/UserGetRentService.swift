@@ -8,36 +8,23 @@
 import SwiftUI
 
 
-class UserProfileUpdateService {
-    class func Update(_ firstname: String, _ lastname: String, _ email: String, _ pseudo: String, _ phone: String, completion: @escaping (ApiResponse) -> Void){
-        guard let url = URL(string: ApiService.URL + "/updateProfile") else {
+class UserGetRentService {
+    class func Rent(id_place: String, id_schedule: String, completion: @escaping (ApiResponse) -> Void){
+        guard let url = URL(string: ApiService.URL + "/createRent") else {
             completion(ApiResponse(error: true, message: "Cannot access URL"))
             return
         }
         
         var urlRequest = URLRequest(url: url)
-        urlRequest.httpMethod = "PUT"
+        urlRequest.httpMethod = "POST"
         urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
         urlRequest.addValue(ApiService.TOKEN, forHTTPHeaderField: "Authorization")
         var dataArray:[String:Any] = [:]
         
-        if(firstname != "") {
-            dataArray["firstname"] = firstname
-        }
-        if(lastname != "") {
-            dataArray["lastname"] = lastname
-        }
-        if(email != "") {
-            dataArray["email"] = email
-        }
-        if(pseudo != "") {
-            dataArray["pseudo"] = pseudo
-        }
-        if(phone != "") {
-            dataArray["phonenumber"] = phone
-        }
+        dataArray["fk_user"] = ApiService.USER!.id
+        dataArray["fk_pls"] = id_schedule
+        dataArray["fk_place"] = id_place
         
-        //let dataArray = ["firstname": firstname, "phonenumber": phone, "lastname": lastname, "pseudo": pseudo, "email": email, "password": password]
         let datas = try? JSONSerialization.data(withJSONObject: dataArray, options: .fragmentsAllowed)
         urlRequest.httpBody = datas
         

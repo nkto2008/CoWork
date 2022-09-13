@@ -1,4 +1,5 @@
 const { Mongoose } = require("mongoose")
+const slpModel = require('../../model/placelinkschedules.js')
 const RentModel = require("../../model/rent.js")
 
 const createRent = async(body, res) => {
@@ -10,6 +11,9 @@ const createRent = async(body, res) => {
         if(rentExist){
             res.status(203).send("this rent already exist")
         }else{
+            const slp = await slpModel.findOne({_id: fk_pls})
+            slp.rent = true
+            await slp.save()
             await rent.save()
             if(rent){
                 res.status(200).send("rent created")

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../utils/constants.dart';
+
 class CustomText extends StatelessWidget {
   final String text;
   double? size;
@@ -29,7 +31,7 @@ class CustomText extends StatelessWidget {
           fontSize: size ?? 16,
           fontFamily: font ?? "Helvetica",
           fontStyle: style ?? FontStyle.normal,
-          color: color ?? Colors.black,
+          color: color ?? primaryColor,
           fontWeight: weight ?? FontWeight.normal),
     );
   }

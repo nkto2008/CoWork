@@ -1,6 +1,9 @@
+const bcrypt = require('bcrypt')
+const Mongoose = require('mongoose');
 const UserModel = require('../../model/user.js')
 const SubModel = require('../../model/sub.js')
 const RoleModel = require('../../model/role.js')
+
 const bcrypt = require('bcrypt')
 
 const createAccount = async(body,res) => {
@@ -14,8 +17,9 @@ const createAccount = async(body,res) => {
                 res.status(400).send("User already exist");
         }else {
             encryptedPassword = await bcrypt.hash(newUser.password, 10);
-            newUser.password = encryptedPassword
-            newUser.fk_role = Mongoose.Types.ObjectId("62e436aa1a254799431166b0")
+            newUser.password = encryptedPassword;
+            const role = await RoleModel.findOne({name: body.fk_role})
+            newUser.fk_role = Mongoose.Types.ObjectId(role._id)
             await newUser.save()
             res.status(200).json({message: "User created"})
         }
@@ -63,13 +67,15 @@ const deleteUsers= async(body,res) => {
 }
 
 const updateUser = async(req, res) => {
-    const {id} = req.body.id
+
+    const id = req.body.id
     if (id) {
-        const idUser = Moongoe.Types.ObjectId(id)
+        const idUser = Mongoose.Types.ObjectId(id)
         const user = await UserModel.findOne({_id: idUser})
         if (!user){
             res.status(403).send("Something wrong with your request");
         }else{
+
             if(req.body.firstname) {
                 user.firstname = req.body.firstname
             }

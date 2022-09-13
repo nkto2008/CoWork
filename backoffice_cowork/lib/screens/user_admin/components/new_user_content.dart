@@ -1,40 +1,35 @@
-import 'package:backoffice_cowork/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
-import '../../../models/model_user.dart';
 import '../../../utils/constants.dart';
+import '../../../widgets/create_button_user.dart';
 import '../../../widgets/custom_appbar.dart';
+import '../../../widgets/custom_text.dart';
 import '../../../widgets/modify_button_user.dart';
-import '../../../widgets/suppression_button_user.dart';
 
-class UserDetailsContent extends StatefulWidget {
-  User user;
-
-  UserDetailsContent({
-    Key? key,
-    required this.user,
-  }) : super(key: key);
+class NewUserContent extends StatefulWidget {
+  const NewUserContent({Key? key}) : super(key: key);
 
   @override
-  State<UserDetailsContent> createState() => _UserDetailsContentState();
+  State<NewUserContent> createState() => _NewUserContentState();
 }
 
-class _UserDetailsContentState extends State<UserDetailsContent> {
+class _NewUserContentState extends State<NewUserContent> {
+  final TextEditingController email = TextEditingController();
+  final TextEditingController password = TextEditingController();
   final TextEditingController lname = TextEditingController();
   final TextEditingController fname = TextEditingController();
   final TextEditingController pseudo = TextEditingController();
-  final TextEditingController email = TextEditingController();
   final TextEditingController phone = TextEditingController();
+
+  String dropDownValue = "user";
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
         children: [
-          CustomAppBar(
-              title:
-                  "Utilisateur - ${widget.user.id} - ${widget.user.lname} ${widget.user.fname}",
-              backward: true),
+          const CustomAppBar(title: "Création d'utilisateur", backward: true),
           Container(
             width: 740,
             height: 640,
@@ -57,19 +52,79 @@ class _UserDetailsContentState extends State<UserDetailsContent> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 CustomText(
-                                  text: "ID :",
+                                  text: "Email :",
                                   font: "Comfortaa",
                                   size: 20,
                                   align: TextAlign.left,
                                 ),
-                                CustomText(
-                                  text: widget.user.id,
-                                  font: "Comfortaa",
-                                  size: 15,
-                                  align: TextAlign.left,
+                                TextFormField(
+                                  controller: email,
+                                  style: const TextStyle(
+                                    fontSize: 15,
+                                    fontFamily: "Comfortaa",
+                                  ),
+                                  decoration: const InputDecoration(
+                                    hintText: "email",
+                                    border: InputBorder.none,
+                                    contentPadding: EdgeInsets.all(0),
+                                  ),
                                 ),
                               ],
                             ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                CustomText(
+                                  text: "Mot de passe :",
+                                  font: "Comfortaa",
+                                  size: 20,
+                                  align: TextAlign.left,
+                                ),
+                                TextFormField(
+                                  controller: password,
+                                  style: const TextStyle(
+                                    fontSize: 15,
+                                    fontFamily: "Comfortaa",
+                                  ),
+                                  decoration: const InputDecoration(
+                                    hintText: "mot de passe",
+                                    border: InputBorder.none,
+                                    contentPadding: EdgeInsets.all(0),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                CustomText(
+                                  text: "Pseudo :",
+                                  font: "Comfortaa",
+                                  size: 20,
+                                  align: TextAlign.left,
+                                ),
+                                TextFormField(
+                                  controller: pseudo,
+                                  style: const TextStyle(
+                                    fontSize: 15,
+                                    fontFamily: "Comfortaa",
+                                  ),
+                                  decoration: const InputDecoration(
+                                    hintText: "pseudo",
+                                    border: InputBorder.none,
+                                    contentPadding: EdgeInsets.all(0),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                      Expanded(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
@@ -85,10 +140,10 @@ class _UserDetailsContentState extends State<UserDetailsContent> {
                                     fontSize: 15,
                                     fontFamily: "Comfortaa",
                                   ),
-                                  decoration: InputDecoration(
-                                    hintText: widget.user.lname,
+                                  decoration: const InputDecoration(
+                                    hintText: "nom",
                                     border: InputBorder.none,
-                                    contentPadding: const EdgeInsets.all(0),
+                                    contentPadding: EdgeInsets.all(0),
                                   ),
                                 ),
                               ],
@@ -108,41 +163,10 @@ class _UserDetailsContentState extends State<UserDetailsContent> {
                                     fontSize: 15,
                                     fontFamily: "Comfortaa",
                                   ),
-                                  decoration: InputDecoration(
-                                    hintText: widget.user.fname,
+                                  decoration: const InputDecoration(
+                                    hintText: "prénom",
                                     border: InputBorder.none,
-                                    contentPadding: const EdgeInsets.all(0),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                      Expanded(
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                CustomText(
-                                  text: "Pseudo :",
-                                  font: "Comfortaa",
-                                  size: 20,
-                                  align: TextAlign.left,
-                                ),
-                                TextFormField(
-                                  controller: pseudo,
-                                  style: const TextStyle(
-                                    fontSize: 15,
-                                    fontFamily: "Comfortaa",
-                                  ),
-                                  decoration: InputDecoration(
-                                    hintText: widget.user.pseudo,
-                                    border: InputBorder.none,
-                                    contentPadding: const EdgeInsets.all(0),
+                                    contentPadding: EdgeInsets.all(0),
                                   ),
                                 ),
                               ],
@@ -151,45 +175,60 @@ class _UserDetailsContentState extends State<UserDetailsContent> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 CustomText(
-                                  text: "Email :",
+                                  text: "Téléphone :",
                                   font: "Comfortaa",
                                   size: 20,
                                   align: TextAlign.left,
                                 ),
                                 TextFormField(
-                                  controller: email,
-                                  style: const TextStyle(
-                                    fontSize: 15,
-                                    fontFamily: "Comfortaa",
-                                  ),
-                                  decoration: InputDecoration(
-                                    hintText: widget.user.email,
-                                    border: InputBorder.none,
-                                    contentPadding: const EdgeInsets.all(0),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                CustomText(
-                                  text: "Phone :",
-                                  font: "Comfortaa",
-                                  size: 20,
-                                  align: TextAlign.left,
-                                ),
-                                TextFormField(
+                                  keyboardType: TextInputType.number,
+                                  inputFormatters: [
+                                    FilteringTextInputFormatter.digitsOnly,
+                                  ],
                                   controller: phone,
                                   style: const TextStyle(
                                     fontSize: 15,
                                     fontFamily: "Comfortaa",
                                   ),
-                                  decoration: InputDecoration(
-                                    hintText: widget.user.phone,
+                                  decoration: const InputDecoration(
+                                    hintText: "téléphone",
                                     border: InputBorder.none,
-                                    contentPadding: const EdgeInsets.all(0),
+                                    contentPadding: EdgeInsets.all(0),
                                   ),
+                                ),
+                              ],
+                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                CustomText(
+                                  text: "Rôle :",
+                                  font: "Comfortaa",
+                                  size: 20,
+                                  align: TextAlign.left,
+                                ),
+                                DropdownButton<String>(
+                                  value: dropDownValue,
+                                  icon: const Icon(Icons.arrow_drop_down,
+                                      color: primaryColor),
+                                  elevation: 5,
+                                  isExpanded: true,
+                                  style: const TextStyle(
+                                      color: primaryColor,
+                                      fontFamily: "Comfortaa"),
+                                  onChanged: (String? newValue) {
+                                    setState(() {
+                                      dropDownValue = newValue!;
+                                    });
+                                  },
+                                  items: <String>['user', 'admin']
+                                      .map<DropdownMenuItem<String>>(
+                                          (String value) {
+                                    return DropdownMenuItem<String>(
+                                      value: value,
+                                      child: Text(value),
+                                    );
+                                  }).toList(),
                                 ),
                               ],
                             ),
@@ -202,17 +241,15 @@ class _UserDetailsContentState extends State<UserDetailsContent> {
                 Expanded(
                   child: Column(
                     children: [
-                      ModifyButtonUser(
-                        user: widget.user,
-                        id: widget.user.id,
+                      CreateButtonUser(
+                        email: email,
+                        password: password,
                         lname: lname,
                         fname: fname,
                         pseudo: pseudo,
-                        email: email,
                         phone: phone,
+                        rule: dropDownValue,
                       ),
-                      const SizedBox(height: defaultPadding),
-                      SuppressionButtonUser(user: widget.user),
                     ],
                   ),
                 ),

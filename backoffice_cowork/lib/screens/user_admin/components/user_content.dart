@@ -1,6 +1,8 @@
 import 'package:backoffice_cowork/models/model_user.dart';
 import 'package:backoffice_cowork/requests/users.dart';
+import 'package:backoffice_cowork/screens/user_admin/new_user.dart';
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
 
 import '../../../utils/constants.dart';
 import '../../../widgets/custom_appbar.dart';
@@ -29,7 +31,15 @@ class _UserContentState extends State<UserContent> {
                   MouseRegion(
                     cursor: MaterialStateMouseCursor.clickable,
                     child: GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          PageTransition(
+                            type: PageTransitionType.fade,
+                            child: const NewUser(),
+                          ),
+                        );
+                      },
                       child: const Icon(
                         Icons.add,
                         color: primaryColor,
@@ -136,10 +146,8 @@ class _UserContentState extends State<UserContent> {
                                   ),
                                 );
                               }
-                              break;
                             default:
                               return Container();
-                              break;
                           }
                         },
                       ),

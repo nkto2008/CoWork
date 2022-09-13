@@ -24,7 +24,6 @@ class InputForm extends StatelessWidget {
       padding: const EdgeInsets.symmetric(
           horizontal: defaultPadding/2, vertical: 0),
       decoration: const BoxDecoration(
-        color: Colors.white,
         borderRadius: BorderRadius.all(Radius.circular(5)),
       ),
       child: Center(

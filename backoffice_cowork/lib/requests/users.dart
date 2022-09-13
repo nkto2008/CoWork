@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:backoffice_cowork/models/model_user.dart';
+import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 
 import '../models/model_place.dart';
@@ -9,6 +10,8 @@ import '../utils/token_preferences.dart';
 
 const getUsersUrl = "http://localhost:8081/getUsers";
 const delUserUrl = "http://localhost:8081/deleteUsers";
+const createUserUrl = "http://localhost:8081/createAccount";
+const updateUserUrl = "http://localhost:8081/updateProfile";
 
 class Users {
   static Future<List<User>?> getAllUsersDesc() async {
@@ -50,27 +53,69 @@ class Users {
     return counter;
   }
 
-  static Future updateUser(User user, String id, String lname, String fname, String pseudo,
-      String email, String phone) async {
+  static Future createUser(String email, String password, String pseudo,
+      String lname, String fname, String phone, String rule) async {
+    var body = jsonEncode(
+      {
+        "email": email,
+        "password": password,
+        "pseudo": pseudo,
+        "lastname": lname,
+        "firstname": fname,
+        "phonenumber": phone,
+        "fk_role": rule
+      },
+    );
 
-
-
-    final response = await http.patch(
-      Uri.parse(getUsersUrl),
+    final response = await http.post(
+      Uri.parse(createUserUrl),
       headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Content-Type": "application/json",
         HttpHeaders.authorizationHeader:
             TokenSimplePreferences.getToken('token').toString(),
       },
+      body: body,
+      encoding: Encoding.getByName("utf-8"),
     );
 
     if (response.statusCode != 200) {
       throw Error();
     }
 
-    final jsonBody = json.decode(response.body);
-    final counter = jsonBody.length;
+    return 1;
+  }
 
-    return counter;
+  static Future updateUser(String id, String lname, String fname,
+      String pseudo, String email, String phone) async {
+    var body = jsonEncode(
+      {
+        "id": id,
+        "firstname": fname,
+        "lastname": lname,
+        "pseudo": pseudo,
+        "email": email,
+        "phonenumber": phone
+      },
+    );
+
+    final response = await http.put(
+      Uri.parse(updateUserUrl),
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Content-Type": "application/json",
+        HttpHeaders.authorizationHeader:
+            TokenSimplePreferences.getToken('token').toString(),
+      },
+      body: body,
+      encoding: Encoding.getByName("utf-8"),
+    );
+
+    if (response.statusCode != 200) {
+      throw Error();
+    }
+
+    return 1;
   }
 
   static Future<bool> delUser(String id) async {

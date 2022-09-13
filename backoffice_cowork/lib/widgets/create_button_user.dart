@@ -7,32 +7,31 @@ import '../models/model_user.dart';
 import '../utils/constants.dart';
 import 'custom_text.dart';
 
-class ModifyButtonUser extends StatefulWidget {
-  final User user;
-
-  final TextEditingController id;
+class CreateButtonUser extends StatefulWidget {
+  final TextEditingController email;
+  final TextEditingController password;
   final TextEditingController lname;
   final TextEditingController fname;
   final TextEditingController pseudo;
-  final TextEditingController email;
   final TextEditingController phone;
+  final String rule;
 
-  const ModifyButtonUser({
+  const CreateButtonUser({
     Key? key,
-    required this.user,
-    required this.id,
+    required this.email,
+    required this.password,
     required this.lname,
     required this.fname,
     required this.pseudo,
-    required this.email,
     required this.phone,
+    required this.rule,
   }) : super(key: key);
 
   @override
-  State<ModifyButtonUser> createState() => _ModifyButtonUserState();
+  State<CreateButtonUser> createState() => _CreateButtonUserState();
 }
 
-class _ModifyButtonUserState extends State<ModifyButtonUser> {
+class _CreateButtonUserState extends State<CreateButtonUser> {
   bool display = false;
 
   void confirm() {
@@ -70,32 +69,24 @@ class _ModifyButtonUserState extends State<ModifyButtonUser> {
                 const SizedBox(width: defaultPadding),
                 TextButton(
                   onPressed: () async {
-                    var res = Users.updateUser(
-                      widget.id.text,
-                      widget.lname.text,
-                      widget.fname.text,
-                      widget.pseudo.text,
-                      widget.email.text,
-                      widget.phone.text,
-                    );
-                    if (await res) {
-                      setState(() {
-                        if(widget.id.text.isNotEmpty){
-
-                        }
-                        if(widget.id.text.isNotEmpty){
-
-                        }
-                        if(widget.id.text.isNotEmpty){
-
-                        }
-                        if(widget.id.text.isNotEmpty){
-
-                        }
-                      });
+                    var res = Users.createUser(
+                        widget.email.text,
+                        widget.password.text,
+                        widget.pseudo.text,
+                        widget.lname.text,
+                        widget.fname.text,
+                        widget.phone.text,
+                        widget.rule);
+                    print(res);
+                    if (await res == 1) {
+                      Navigator.push(
+                          context,
+                          PageTransition(
+                              type: PageTransitionType.fade,
+                              child: const UserScreen()));
                       ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(
-                          content: Text("Profile modifié"),
+                          content: Text("Profil créé"),
                         ),
                       );
                     } else {
@@ -125,7 +116,20 @@ class _ModifyButtonUserState extends State<ModifyButtonUser> {
             )
           : TextButton(
               onPressed: () {
-                confirm();
+                if (widget.email.text.isEmpty ||
+                    widget.password.text.isEmpty ||
+                    widget.lname.text.isEmpty ||
+                    widget.fname.text.isEmpty ||
+                    widget.pseudo.text.isEmpty ||
+                    widget.phone.text.isEmpty) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text("Tous les champs doivent être remplis"),
+                    ),
+                  );
+                } else {
+                  confirm();
+                }
               },
               style: TextButton.styleFrom(
                 backgroundColor: primaryColor,
@@ -134,7 +138,7 @@ class _ModifyButtonUserState extends State<ModifyButtonUser> {
                 padding: const EdgeInsets.symmetric(
                     horizontal: defaultPadding, vertical: defaultPadding / 2),
                 child: CustomText(
-                  text: "MODIFIER",
+                  text: "CRÉER",
                   color: lightCream,
                   font: "Comfortaa",
                   size: 20,

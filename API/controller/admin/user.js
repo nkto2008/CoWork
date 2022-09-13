@@ -1,4 +1,5 @@
 const UserModel = require('../../model/user.js')
+const SubModel = require('../../model/sub.js')
 
 
 const createAccount = async(body,res) => {
@@ -88,8 +89,9 @@ const updateUser = async(req, res) => {
             if(req.body.fk_role) {
                 user.fk_role = req.body.fk_role
             }
+            const sub = await SubModel.find({name: user.fk_sub})
             if(req.body.fk_sub){
-                user.fk_sub = req.body.fk_sub
+                user.fk_sub = sub._id
             }
             user.save()
         }

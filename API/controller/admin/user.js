@@ -1,6 +1,7 @@
 const UserModel = require('../../model/user.js')
 const SubModel = require('../../model/sub.js')
 const RoleModel = require('../../model/role.js')
+const bcrypt = require('bcrypt')
 
 const createAccount = async(body,res) => {
     if (!body.email || !body.password || !body.lastname || !body.firstname || !body.pseudo || !body.phonenumber || !body.fk_role) {

@@ -44,6 +44,9 @@ const cancelRent = async(body,res) => {
     }else{
         const rentExist = await RentModel.findOneAndDelete({fk_pls: body.fk_pls, fk_place: body.fk_place, fk_user: body.fk_user})
         if(rentExist){
+            const slp = await slpModel.findOne({_id: body.fk_pls})
+            slp.rent = false
+            await slp.save()
             res.status(203).send("delete success")
         }else{
             res.status(400).send("error")

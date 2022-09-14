@@ -42,36 +42,3 @@ struct userRent: View {
     }
 }
 
-
-
-/*
-struct SourceViewer: View {
-
-    var body: some View {
-        VStack{
-         
-      }
-    }
-    
-    let site: String
-    @State private var sourceCode = "Loading…"
-
-    var body: some View {
-        ScrollView {
-            Text(sourceCode)
-                .font(.system(.body, design: .monospaced))
-        }
-        .task {
-            guard let url = URL(string: "https://\(site)") else {
-                return
-            }
-
-            do {
-                let (data, _) = try await URLSession.shared.data(from: url)
-                sourceCode = String(decoding: data, as: UTF8.self).trimmingCharacters(in: .whitespacesAndNewlines)
-            } catch {
-                sourceCode = "Failed to fetch site."
-            }
-        }
-    }*/
-

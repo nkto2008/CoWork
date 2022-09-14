@@ -3,6 +3,7 @@ import 'package:backoffice_cowork/requests/users.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 
+import '../../../requests/subscribes.dart';
 import '../../../utils/constants.dart';
 import '../../../widgets/custom_appbar.dart';
 import '../../../widgets/users_data_row.dart';
@@ -52,7 +53,7 @@ class _SubscribeContentState extends State<SubscribeContent> {
                     child: SizedBox(
                       width: double.infinity,
                       child: FutureBuilder(
-                        future: Subscribes.getAllUsersDesc(),
+                        future: Subscribes.getAllSubscribesDesc(),
                         builder: (BuildContext context, AsyncSnapshot snapshot) {
                           switch (snapshot.connectionState) {
                             case ConnectionState.waiting:

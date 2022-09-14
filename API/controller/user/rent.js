@@ -1,7 +1,7 @@
 const { Mongoose } = require("mongoose")
-const slpModel = require('../../model/placelinkschedules.js')
 const RentModel = require("../../model/rent.js")
 const slpModel = require('../../model/placelinkschedules.js')
+const PlaceModel = require('../../model/place.js')
 
 const createRent = async(body, res) => {
     if(!body.fk_user || !body.fk_pls || !body.fk_place){
@@ -26,13 +26,27 @@ const createRent = async(body, res) => {
     }
 }
 const getRentByIdUser = async(body,res) => {
+    console.log(body.id)
     if(!body.id){
         res.status(400).send("all input are required")
     }else{
-        const id = Mongoose.Types.ObjectId(body.id)
+        const id = body.id
         const rent = await RentModel.find({fk_user: id})
         if(rent){
-            res.status(200).send(rent)
+            const slp = await slpModel.find({fk_place: rent.fk_place, fk_pls: rent.fk_pls, rent: true})
+            if(slp){
+                var result = []
+                for(i in slp){
+                    console.log(slp[i].idPlace)
+                    var name = await PlaceModel.findOne({_id: slp[i].idPlace})
+                    result.push({"name": name.name, "day": slp[i].day, "time": slp[i].time, "fk_pls": slp[i]._id, "fk_place": slp[i].idPlace, "fk_user": rent[i].fk_user})
+                    console.log(result)
+                }
+                res.status(200).json([{rent: result}])
+            } else {
+                res.status(400).send("slp not found")
+            }
+            
         }else{
             res.status(400).send("dont find rent")
         }

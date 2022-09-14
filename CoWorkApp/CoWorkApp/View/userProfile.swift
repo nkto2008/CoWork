@@ -90,8 +90,19 @@ struct userProfile: View {
                     .padding(Edge.Set.trailing, 30)
                     .padding(Edge.Set.bottom, 30)
                     Button {
-                        for place in ApiService.PLACE {
-                            print(place.place.name)
+                        AllUserRentService.Show() { res in
+                            if(res.isEmpty){
+                                DispatchQueue.main.async {
+                                    self.navigationStack.push(userRentAllView())
+                                }
+                                
+                            } else {
+                                ApiService.USER_RENT = res
+                                DispatchQueue.main.async {
+                                    self.navigationStack.push(userRentAllView())
+                                }
+                            }
+                            
                         }
                     } label: {
                         Text("Edit my rent")

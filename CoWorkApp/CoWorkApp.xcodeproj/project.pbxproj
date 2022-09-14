@@ -15,6 +15,11 @@
 		FA6B273C28AFD8D600507AA4 /* Comfortaa.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA6B273B28AFD8D600507AA4 /* Comfortaa.ttf */; };
 		FA6B273E28AFD8DF00507AA4 /* BungeeShade.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA6B273D28AFD8DF00507AA4 /* BungeeShade.ttf */; };
 		FAC27C9028D11664000C923D /* UserGetRentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC27C8F28D11664000C923D /* UserGetRentService.swift */; };
+		FAC27C9228D1429C000C923D /* UserRent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC27C9128D1429C000C923D /* UserRent.swift */; };
+		FAC27C9428D14433000C923D /* AllUserRentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC27C9328D14433000C923D /* AllUserRentService.swift */; };
+		FAC27C9628D147AD000C923D /* UserRentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC27C9528D147AD000C923D /* UserRentResponse.swift */; };
+		FAC27C9828D15357000C923D /* userRentAllView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC27C9728D15357000C923D /* userRentAllView.swift */; };
+		FAC27C9A28D172BE000C923D /* UserCancelRentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC27C9928D172BE000C923D /* UserCancelRentService.swift */; };
 		FAD4066528C50F7C0083320B /* DisplayRentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD4066428C50F7C0083320B /* DisplayRentService.swift */; };
 		FAD4067028C641E20083320B /* NavigationStack in Frameworks */ = {isa = PBXBuildFile; productRef = FAD4066F28C641E20083320B /* NavigationStack */; };
 		FAD4067328C641F70083320B /* NavigationStack in Frameworks */ = {isa = PBXBuildFile; productRef = FAD4067228C641F70083320B /* NavigationStack */; };
@@ -54,6 +59,11 @@
 		FA6B273B28AFD8D600507AA4 /* Comfortaa.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Comfortaa.ttf; sourceTree = "<group>"; };
 		FA6B273D28AFD8DF00507AA4 /* BungeeShade.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BungeeShade.ttf; sourceTree = "<group>"; };
 		FAC27C8F28D11664000C923D /* UserGetRentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGetRentService.swift; sourceTree = "<group>"; };
+		FAC27C9128D1429C000C923D /* UserRent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRent.swift; sourceTree = "<group>"; };
+		FAC27C9328D14433000C923D /* AllUserRentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllUserRentService.swift; sourceTree = "<group>"; };
+		FAC27C9528D147AD000C923D /* UserRentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRentResponse.swift; sourceTree = "<group>"; };
+		FAC27C9728D15357000C923D /* userRentAllView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userRentAllView.swift; sourceTree = "<group>"; };
+		FAC27C9928D172BE000C923D /* UserCancelRentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCancelRentService.swift; sourceTree = "<group>"; };
 		FAD4066428C50F7C0083320B /* DisplayRentService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayRentService.swift; sourceTree = "<group>"; };
 		FAD4067428C657E60083320B /* PlaceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceResponse.swift; sourceTree = "<group>"; };
 		FAD4067628C659120083320B /* ScheduleResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleResponse.swift; sourceTree = "<group>"; };
@@ -159,6 +169,7 @@
 				FAEE3CAB28BA82CF00A4A67D /* homePage.swift */,
 				FAEE3CAD28BA8ADC00A4A67D /* userProfile.swift */,
 				FAE2D95728C23FC000A47606 /* userEditProfile.swift */,
+				FAC27C9728D15357000C923D /* userRentAllView.swift */,
 				FAEE3CAF28BA8BD800A4A67D /* userRent.swift */,
 				FAEE3CB128BA8C4900A4A67D /* logout.swift */,
 				FAF013CF28CEB812001ACFC4 /* selectedPlace.swift */,
@@ -183,6 +194,8 @@
 				FAD4067428C657E60083320B /* PlaceResponse.swift */,
 				FAD4067628C659120083320B /* ScheduleResponse.swift */,
 				FAF013C828CE3693001ACFC4 /* RentResponse.swift */,
+				FAC27C9128D1429C000C923D /* UserRent.swift */,
+				FAC27C9528D147AD000C923D /* UserRentResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -197,6 +210,8 @@
 				FAD4066428C50F7C0083320B /* DisplayRentService.swift */,
 				FAE2D95D28C2497A00A47606 /* UserProfielupdateService.swift */,
 				FAC27C8F28D11664000C923D /* UserGetRentService.swift */,
+				FAC27C9328D14433000C923D /* AllUserRentService.swift */,
+				FAC27C9928D172BE000C923D /* UserCancelRentService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -308,10 +323,14 @@
 				FAEE3CA428BA71CB00A4A67D /* UserSignInService.swift in Sources */,
 				FAF013C928CE3693001ACFC4 /* RentResponse.swift in Sources */,
 				FAEE3CAC28BA82CF00A4A67D /* homePage.swift in Sources */,
+				FAC27C9228D1429C000C923D /* UserRent.swift in Sources */,
 				FAEE3C9D28B42B9400A4A67D /* APIService.swift in Sources */,
+				FAC27C9828D15357000C923D /* userRentAllView.swift in Sources */,
 				FAEE3C9528B37F1700A4A67D /* signUp.swift in Sources */,
+				FAC27C9A28D172BE000C923D /* UserCancelRentService.swift in Sources */,
 				FAD4067728C659120083320B /* ScheduleResponse.swift in Sources */,
 				FAE2D95828C23FC000A47606 /* userEditProfile.swift in Sources */,
+				FAC27C9628D147AD000C923D /* UserRentResponse.swift in Sources */,
 				FAEE3CAE28BA8ADC00A4A67D /* userProfile.swift in Sources */,
 				FAF013D028CEB812001ACFC4 /* selectedPlace.swift in Sources */,
 				FAC27C9028D11664000C923D /* UserGetRentService.swift in Sources */,
@@ -321,6 +340,7 @@
 				FAD4066528C50F7C0083320B /* DisplayRentService.swift in Sources */,
 				FAEE3C9F28B7D15000A4A67D /* ApiResponse.swift in Sources */,
 				FAEE3CAA28BA7BA700A4A67D /* buttonLandingStyle.swift in Sources */,
+				FAC27C9428D14433000C923D /* AllUserRentService.swift in Sources */,
 				FAD4067528C657E60083320B /* PlaceResponse.swift in Sources */,
 				FAEE3C9A28B3951600A4A67D /* UserSignUpService.swift in Sources */,
 				FAEE3C9128B3744000A4A67D /* signIn.swift in Sources */,

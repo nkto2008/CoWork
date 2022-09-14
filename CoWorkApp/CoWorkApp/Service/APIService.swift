@@ -12,6 +12,7 @@ class ApiService {
     static var TOKEN = ""
     static var USER: User? = nil
     static var PLACE: [RentResponse] = []
+    static var USER_RENT: [UserRentResponse] = []
     static let API_DEFAULT_RESPONSE: ApiResponse = ApiResponse(error: true, message: "An error has occured")
 }
 

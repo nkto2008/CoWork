@@ -12,6 +12,7 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjMyMGE5MGVi
 ###
 POST http://localhost:8081/getRentByIdUSer HTTP/1.1
 Content-Type: application/json
+
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjMwYTM1ZjFkYWMwMDQ4NjlhYjUxMjVhIiwiZW1haWwiOiJUZXN0QGdtYWlsLmNvbSIsImlhdCI6MTY2MzExODgyMywiZXhwIjoxNjYzMTQ0MDIzfQ.SdiQ0jDlUaHfopmXIgo0ihcwk7Z00DWJRfOmDOYXMCk
 
 {

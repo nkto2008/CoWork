@@ -1,18 +1,22 @@
 import 'package:flutter/material.dart';
 
 import '../../widgets/side_menu.dart';
-import 'components/service_content.dart';
+import 'components/new_service_content.dart';
 
-class ServiceScreen extends StatefulWidget {
-  const ServiceScreen({Key? key}) : super(key: key);
+class NewService extends StatefulWidget {
+
+  const NewService({
+    Key? key,
+  }) : super(key: key);
 
   @override
-  State<ServiceScreen> createState() => _ServiceScreenState();
+  State<NewService> createState() => _NewServiceState();
 }
 
-class _ServiceScreenState extends State<ServiceScreen> {
+class _NewServiceState extends State<NewService> {
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       body: SafeArea(
         child: Row(
@@ -21,7 +25,7 @@ class _ServiceScreenState extends State<ServiceScreen> {
             SideMenu(select: 4),
             Expanded(
               flex: 7,
-              child: ServiceContent(),
+              child: NewServiceContent(),
             ),
           ],
         ),

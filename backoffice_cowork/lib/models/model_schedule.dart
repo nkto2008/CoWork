@@ -1,8 +1,8 @@
 class Schedule {
-  final String idPlace;
-  final String day;
-  final String time;
-  final String id;
+  String idPlace;
+  String day;
+  String time;
+  String id;
 
   Schedule(
     this.idPlace,

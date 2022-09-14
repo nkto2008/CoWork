@@ -8,7 +8,7 @@ const ServiceSchema = new mongoose.Schema(
       },
       price: {
         type: Number,
-        default: ""
+        default: 0.0
       },
     }
   );

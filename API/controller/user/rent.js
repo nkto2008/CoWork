@@ -1,3 +1,4 @@
+
 const { Mongoose } = require("mongoose")
 const RentModel = require("../../model/rent.js")
 const slpModel = require('../../model/placelinkschedules.js')

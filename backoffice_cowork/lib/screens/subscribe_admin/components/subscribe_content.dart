@@ -1,27 +1,27 @@
-import 'package:backoffice_cowork/models/model_service.dart';
-import 'package:backoffice_cowork/requests/services.dart';
+import 'package:backoffice_cowork/models/model_user.dart';
+import 'package:backoffice_cowork/requests/users.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 
 import '../../../utils/constants.dart';
 import '../../../widgets/custom_appbar.dart';
-import '../../../widgets/services_data_row.dart';
-import '../new_service.dart';
+import '../../../widgets/users_data_row.dart';
+import '../new_subscribe.dart';
 
-class ServiceContent extends StatefulWidget {
-  const ServiceContent({Key? key}) : super(key: key);
+class SubscribeContent extends StatefulWidget {
+  const SubscribeContent({Key? key}) : super(key: key);
 
   @override
-  State<ServiceContent> createState() => _ServiceContentState();
+  State<SubscribeContent> createState() => _SubscribeContentState();
 }
 
-class _ServiceContentState extends State<ServiceContent> {
+class _SubscribeContentState extends State<SubscribeContent> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
         children: [
-          const CustomAppBar(title: "Services", backward: false),
+          const CustomAppBar(title: "Abonnements", backward: false),
           Expanded(
             child: Padding(
               padding: const EdgeInsets.all(defaultPadding),
@@ -36,7 +36,7 @@ class _ServiceContentState extends State<ServiceContent> {
                           context,
                           PageTransition(
                             type: PageTransitionType.fade,
-                            child: const NewService(),
+                            child: Container()/*const NewSubscribe()*/,
                           ),
                         );
                       },
@@ -52,7 +52,7 @@ class _ServiceContentState extends State<ServiceContent> {
                     child: SizedBox(
                       width: double.infinity,
                       child: FutureBuilder(
-                        future: Services.getAllServicesDesc(),
+                        future: Subscribes.getAllUsersDesc(),
                         builder: (BuildContext context, AsyncSnapshot snapshot) {
                           switch (snapshot.connectionState) {
                             case ConnectionState.waiting:
@@ -68,8 +68,8 @@ class _ServiceContentState extends State<ServiceContent> {
                                 );
                               }
                               if (snapshot.hasData) {
-                                final List<Service> services = snapshot.data;
-                                if (services.isEmpty) {
+                                final List<User> users = snapshot.data;
+                                if (users.isEmpty) {
                                   return const Center(
                                     child: Text(
                                       "Aucun utilisateur",
@@ -89,7 +89,7 @@ class _ServiceContentState extends State<ServiceContent> {
                                   columns: const [
                                     DataColumn(
                                       label: Text(
-                                        "ID",
+                                        "Prénom",
                                         style: TextStyle(
                                           fontFamily: "Comfortaa",
                                           fontWeight: FontWeight.bold,
@@ -107,7 +107,16 @@ class _ServiceContentState extends State<ServiceContent> {
                                     ),
                                     DataColumn(
                                       label: Text(
-                                        "Prix",
+                                        "Pseudo",
+                                        style: TextStyle(
+                                          fontFamily: "Comfortaa",
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                    ),
+                                    DataColumn(
+                                      label: Text(
+                                        "Email",
                                         style: TextStyle(
                                           fontFamily: "Comfortaa",
                                           fontWeight: FontWeight.bold,
@@ -119,8 +128,8 @@ class _ServiceContentState extends State<ServiceContent> {
                                     ),
                                   ],
                                   rows: List.generate(
-                                    services.length,
-                                        (index) => servicesDataRow(services[index], context),
+                                    users.length,
+                                        (index) => usersDataRow(users[index], context),
                                   ),
                                 );
                               } else {

@@ -58,25 +58,38 @@ const getPlaceById = async(body,res) => {
     }else{
         res.status(400).send("no place found")
     }
-
 }
 
 const updatePlace = async(body,res) => {
     const {id, name, city, cp, horaire} = body
     const place = await PlaceModel.findOne({_id: id})
+    const timesch = await slpModel.find({idPlace: id}).sort({_id: 1})
     if(place){
-        if(!name){
+        if(name){
             place.name = name
         }
-        if(!city){
+        if(city){
             place.city = city
         }
-        if(!cp){
+        if(cp){
             place.cp = cp
         }
-        if(!horaire){
-            
+        if(horaire){
+            const arrayTime = ["lundi","mardi","mercredi","jeudi","vendredi","samedi","dimanche"]
+            var counter = 0
+            for(i in timesch){
+                var day = arrayTime[counter]
+                if(horaire[day] != ""){
+                    timesch[i].time = horaire[day]
+                    timesch[i].rent = false
+                    await timesch[i].save()
+                }
+                counter++
+            }
         }
+        place.save()
+        res.status(200).send("update place")
+
             
     }else{
         res.status(400).send("no place found")

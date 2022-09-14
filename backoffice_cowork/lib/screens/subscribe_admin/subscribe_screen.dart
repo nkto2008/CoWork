@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
 import '../../widgets/side_menu.dart';
-import 'components/service_content.dart';
+import 'components/subscribe_content.dart';
 
-class ServiceScreen extends StatefulWidget {
-  const ServiceScreen({Key? key}) : super(key: key);
+class SubscribeScreen extends StatefulWidget {
+  const SubscribeScreen({Key? key}) : super(key: key);
 
   @override
-  State<ServiceScreen> createState() => _ServiceScreenState();
+  State<SubscribeScreen> createState() => _SubscribeScreenState();
 }
 
-class _ServiceScreenState extends State<ServiceScreen> {
+class _SubscribeScreenState extends State<SubscribeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,10 +18,10 @@ class _ServiceScreenState extends State<ServiceScreen> {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: const <Widget>[
-            SideMenu(select: 4),
+            SideMenu(select: 5),
             Expanded(
               flex: 7,
-              child: ServiceContent(),
+              child: SubscribeContent(),
             ),
           ],
         ),

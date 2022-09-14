@@ -1,10 +1,10 @@
 import 'model_schedule.dart';
 
 class Place {
-  final String name;
-  final String city;
-  final int cp;
-  final String id;
+  String name;
+  String city;
+  int cp;
+  String id;
 
   List<Schedule> schedules = [];
 

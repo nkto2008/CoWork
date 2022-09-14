@@ -1,4 +1,4 @@
-const bcrypt = require('bcrypt')
+
 const Mongoose = require('mongoose');
 const UserModel = require('../../model/user.js')
 const SubModel = require('../../model/sub.js')

@@ -22,7 +22,6 @@ class PlaceDetailsContent extends StatefulWidget {
 class _PlaceDetailsContentState extends State<PlaceDetailsContent> {
   @override
   Widget build(BuildContext context) {
-    final TextEditingController id = TextEditingController();
     final TextEditingController name = TextEditingController();
     final TextEditingController city = TextEditingController();
     final TextEditingController zip = TextEditingController();
@@ -57,6 +56,7 @@ class _PlaceDetailsContentState extends State<PlaceDetailsContent> {
                       Expanded(
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -67,17 +67,11 @@ class _PlaceDetailsContentState extends State<PlaceDetailsContent> {
                                   size: 20,
                                   align: TextAlign.left,
                                 ),
-                                TextFormField(
-                                  controller: id,
-                                  style: const TextStyle(
-                                    fontSize: 15,
-                                    fontFamily: "Comfortaa",
-                                  ),
-                                  decoration: InputDecoration(
-                                    hintText: widget.place.id,
-                                    border: InputBorder.none,
-                                    contentPadding: const EdgeInsets.all(0),
-                                  ),
+                                CustomText(
+                                  text: widget.place.id,
+                                  font: "Comfortaa",
+                                  size: 15,
+                                  align: TextAlign.left,
                                 ),
                               ],
                             ),
@@ -345,7 +339,7 @@ class _PlaceDetailsContentState extends State<PlaceDetailsContent> {
                     children: [
                       ModifyButtonPlace(
                         place: widget.place,
-                        id: id,
+                        id: widget.place.id,
                         name: name,
                         city: city,
                         zip: zip,

@@ -88,9 +88,7 @@ const updatePlace = async(body,res) => {
             }
         }
         place.save()
-        res.status(200).send("update place")
-
-            
+        res.status(200).send("update place")    
     }else{
         res.status(400).send("no place found")
     }

@@ -1,4 +1,4 @@
-const { Mongoose } = require("mongoose")
+const Mongoose = require("mongoose")
 const slpModel = require('../../model/placelinkschedules.js')
 const RentModel = require("../../model/rent.js")
 

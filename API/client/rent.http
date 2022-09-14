@@ -8,3 +8,12 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjMyMGE5MGVi
     "fk_place": "6320f8a2d245c86340c4bce6",
     "fk_user": "630a35f1dac004869ab5125a"
 }
+
+###
+POST http://localhost:8081/getRentByIdUSer HTTP/1.1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjMwYTM1ZjFkYWMwMDQ4NjlhYjUxMjVhIiwiZW1haWwiOiJUZXN0QGdtYWlsLmNvbSIsImlhdCI6MTY2MzEwOTgwNSwiZXhwIjoxNjYzMTM1MDA1fQ.Rkfo8lOjvWkRfQuiux8t54mLW1LX2LtYwzXvRmlspmg
+
+{
+    "id": "630a35f1dac004869ab5125a"
+}

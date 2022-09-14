@@ -77,7 +77,6 @@ const deleteService = async(body,res) => {
             res.status(400).send("No Service found")
         }
     }
-
 }
 
 

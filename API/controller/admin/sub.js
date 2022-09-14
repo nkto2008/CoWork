@@ -4,18 +4,23 @@ const SSModel = require('../../model/subandservice')
 const ServiceModel = require('../../model/service')
 
 const createSub = async(body,res) => {
-    console.log(body)
     if(!body.name || !body.services || !body.price){
         res.status(400).send("all input are required")
     }else{
         const newSub = new SubModel(body)
-        console.log(newSub)
         const sub = await SubModel.findOne({name: body.name})
         if(sub){
             res.status(400).send("sub already exist")
         }else{
-            const arrayService = await ServiceModel.find({})
-            await newSub.save()
+            if(newSub.save()){
+                const services = body.services
+                for(let i in services){
+                    let nameservice = await ServiceModel.findOne({_id: services[i].service})
+                    let arraySS = {"fk_sub": newSub._id, "fk_service": nameservice._id}
+                    let sands = new SSModel(arraySS)
+                    sands.save()
+                }
+            }
             res.status(200).json("sub created")
         }
     }
@@ -24,7 +29,19 @@ const createSub = async(body,res) => {
 const getSub = async(res) => {
         const subs = await SubModel.find()
         if(subs){
-            res.status(200).json(subs)
+            var tmp = []
+            var services = []
+            for(i in subs){
+                var sands = await SSModel.find({fk_sub: subs[i]._id}).sort({_id: 1})
+                for(j in sands){
+                    var service = await ServiceModel.findOne({_id: sands[j].fk_service})
+                    services.push(service)
+                }
+                var result = [{"sub":subs[i],"service": services}]
+                tmp = tmp.concat(result)
+                services = []
+            }
+            res.status(200).send(tmp)
         }else{
             res.status(400).send("no sub found")
         }

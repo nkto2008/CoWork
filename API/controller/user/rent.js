@@ -1,7 +1,6 @@
-const { Mongoose } = require("mongoose")
+const Mongoose = require("mongoose")
 const slpModel = require('../../model/placelinkschedules.js')
 const RentModel = require("../../model/rent.js")
-const slpModel = require('../../model/placelinkschedules.js')
 
 const createRent = async(body, res) => {
     if(!body.fk_user || !body.fk_pls || !body.fk_place){

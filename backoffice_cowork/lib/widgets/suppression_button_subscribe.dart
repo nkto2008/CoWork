@@ -1,34 +1,25 @@
-import 'package:backoffice_cowork/requests/services.dart';
-import 'package:backoffice_cowork/screens/service_admin/service_screen.dart';
-import 'package:flutter/foundation.dart';
+import 'package:backoffice_cowork/requests/subscribes.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 
-import '../models/model_service.dart';
-import '../screens/service_admin/service_details.dart';
+import '../models/model_subscribe.dart';
+import '../screens/place_admin/place_screen.dart';
 import '../utils/constants.dart';
 import 'custom_text.dart';
 
-class ModifyButtonService extends StatefulWidget {
-  Service service;
+class SuppressionButtonSubscribe extends StatefulWidget {
+  final Subscribe subscribe;
 
-  final String id;
-  final TextEditingController name;
-  final TextEditingController price;
-
-  ModifyButtonService({
+  const SuppressionButtonSubscribe({
     Key? key,
-    required this.service,
-    required this.id,
-    required this.name,
-    required this.price,
+    required this.subscribe,
   }) : super(key: key);
 
   @override
-  State<ModifyButtonService> createState() => _ModifyButtonServiceState();
+  State<SuppressionButtonSubscribe> createState() => _SuppressionButtonSubscribeState();
 }
 
-class _ModifyButtonServiceState extends State<ModifyButtonService> {
+class _SuppressionButtonSubscribeState extends State<SuppressionButtonSubscribe> {
   bool display = false;
 
   void confirm() {
@@ -66,23 +57,16 @@ class _ModifyButtonServiceState extends State<ModifyButtonService> {
           const SizedBox(width: defaultPadding),
           TextButton(
             onPressed: () async {
-              var res = Services.updateService(
-                widget.id,
-                widget.name.text,
-                widget.price.text,
-              );
-              if (await res == 1) {
+              var res = Subscribes.delSubscribe(widget.subscribe.id);
+              if (await res) {
+                Navigator.push(
+                    context,
+                    PageTransition(
+                        type: PageTransitionType.fade,
+                        child: const PlaceScreen()));
                 ScaffoldMessenger.of(context).showSnackBar(
                   const SnackBar(
-                    content: Text("Service modifié"),
-                  ),
-                );
-                Navigator.push(
-                  context,
-                  PageTransition(
-                    type: PageTransitionType.fade,
-                    child: const ServiceScreen(
-                    ),
+                    content: Text("Lieu supprimé"),
                   ),
                 );
               } else {
@@ -112,25 +96,16 @@ class _ModifyButtonServiceState extends State<ModifyButtonService> {
       )
           : TextButton(
         onPressed: () {
-          if (widget.name.text.isEmpty &&
-              widget.price.text.isEmpty) {
-            ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(
-                content: Text("Modifiez au moins 1 champ"),
-              ),
-            );
-          } else {
-            confirm();
-          }
+          confirm();
         },
         style: TextButton.styleFrom(
-          backgroundColor: primaryColor,
+          backgroundColor: redSup,
         ),
         child: Padding(
           padding: const EdgeInsets.symmetric(
               horizontal: defaultPadding, vertical: defaultPadding / 2),
           child: CustomText(
-            text: "MODIFIER",
+            text: "SUPPRIMER",
             color: lightCream,
             font: "Comfortaa",
             size: 20,

@@ -1,17 +1,15 @@
-import 'model_schedule.dart';
+import 'model_servforsub.dart';
 
 class Subscribe {
   String name;
-  String city;
-  int cp;
+  double price;
   String id;
 
-  List<Schedule> schedules = [];
+  List<ServiceSub> services = [];
 
-  Place(
+  Subscribe(
       this.name,
-      this.city,
-      this.cp,
+      this.price,
       this.id,
       );
 }

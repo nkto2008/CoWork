@@ -27,25 +27,24 @@ const createSub = async(body,res) => {
 }
 
 const getSub = async(res) => {
-        const subs = await SubModel.find()
-        if(subs){
-            var tmp = []
-            var services = []
-            for(i in subs){
-                var sands = await SSModel.find({fk_sub: subs[i]._id}).sort({_id: 1})
-                for(j in sands){
-                    var service = await ServiceModel.findOne({_id: sands[j].fk_service})
-                    services.push(service)
-                }
-                var result = [{"sub":subs[i],"service": services}]
-                tmp = tmp.concat(result)
-                services = []
+    const subs = await SubModel.find()
+    if(subs){
+        var tmp = []
+        var services = []
+        for(i in subs){
+            var sands = await SSModel.find({fk_sub: subs[i]._id}).sort({_id: 1})
+            for(j in sands){
+                var service = await ServiceModel.findOne({_id: sands[j].fk_service})
+                services.push(service)
             }
-            res.status(200).send(tmp)
-        }else{
-            res.status(400).send("no sub found")
+            var result = [{"sub":subs[i],"service": services}]
+            tmp = tmp.concat(result)
+            services = []
         }
         res.status(200).send(tmp)
+    }else{
+        res.status(400).send("no sub found")
+    }
 }
 
 const getSubById = async(body, res) => {

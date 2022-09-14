@@ -2,9 +2,12 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:backoffice_cowork/models/model_schedule.dart';
+import 'package:backoffice_cowork/models/model_service.dart';
 import 'package:http/http.dart' as http;
 
 import '../models/model_place.dart';
+import '../models/model_servforsub.dart';
+import '../models/model_subscribe.dart';
 import '../utils/token_preferences.dart';
 
 const getSubscribesUrl = "http://localhost:8081/getSub";
@@ -14,7 +17,7 @@ const updateSubscribeUrl = "http://localhost:8081/updatePlace";
 
 class Subscribes {
 
-  static Future<List<Place>?> getAllSubscribesDesc() async {
+  static Future<List<Subscribe>?> getAllSubscribesDesc() async {
     final response = await http.get(
       Uri.parse(getSubscribesUrl),
       headers: {
@@ -29,32 +32,30 @@ class Subscribes {
 
     final jsonBody = json.decode(response.body);
 
-    List<Place> places = [];
+    List<Subscribe> subscribe = [];
 
     for (int i = 0; i < jsonBody.length; i++) {
-      Place ptmp = Place(
-        jsonBody[i]["place"]["name"],
-        jsonBody[i]["place"]["city"],
-        jsonBody[i]["place"]["cp"],
-        jsonBody[i]["place"]["_id"],
+      Subscribe sbtmp = Subscribe(
+        jsonBody[i]["sub"]["name"],
+        jsonBody[i]["sub"]["price"],
+        jsonBody[i]["sub"]["_id"],
       );
       for (int j = 0; j < jsonBody[i]["schedules"].length; j++) {
-        Schedule stmp = Schedule(
-          jsonBody[i]["schedules"][j]["idPlace"],
-          jsonBody[i]["schedules"][j]["day"],
-          jsonBody[i]["schedules"][j]["time"],
-          jsonBody[i]["schedules"][j]["_id"],
+        ServiceSub svtmp = ServiceSub(
+          jsonBody[i]["service"][j]["_id"],
+          jsonBody[i]["service"][j]["name"],
+          jsonBody[i]["service"][j]["price"],
         );
-        ptmp.schedules.add(stmp);
+        sbtmp.services.add(svtmp);
       }
-      places.add(ptmp);
+      subscribe.add(sbtmp);
     }
-    return places;
+    return subscribe;
   }
 
   static Future countSubscribes() async {
     final response = await http.get(
-      Uri.parse(getPlacesUrl),
+      Uri.parse(getSubscribesUrl),
       headers: {
         HttpHeaders.authorizationHeader:
         TokenSimplePreferences.getToken('token').toString(),
@@ -71,10 +72,10 @@ class Subscribes {
     return counter;
   }
 
-  static Future<bool> delPlace(String id) async {
+  static Future<bool> delSubscribe(String id) async {
     var body = jsonEncode({"id": id});
     final response = await http.delete(
-      Uri.parse(delPlaceUrl),
+      Uri.parse(delSubscribeUrl),
       headers: {
         "Content-Type": "application/json",
         HttpHeaders.authorizationHeader:

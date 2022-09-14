@@ -104,26 +104,6 @@ class SideMenu extends StatelessWidget {
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(
-                horizontal: 0, vertical: defaultPadding),
-            child: MouseRegion(
-              cursor: MaterialStateMouseCursor.clickable,
-              child: GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                      context,
-                      PageTransition(
-                          type: PageTransitionType.fade,
-                          child: const SubscribeScreen()));
-                },
-                child: Icon(
-                  Icons.widgets,
-                  color: select == 5 ? lightCream : Colors.white38,
-                ),
-              ),
-            ),
-          ),
           const Spacer(),
           Padding(
             padding: const EdgeInsets.only(bottom: defaultPadding * 1.5),

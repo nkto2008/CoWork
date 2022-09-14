@@ -4,10 +4,10 @@ class Service {
   double price;
 
   Service(
-    this.id,
-    this.name,
-    this.price,
-  );
+      this.id,
+      this.name,
+      this.price,
+      );
 
   factory Service.fromJson(Map<String, dynamic> json) {
     return Service(

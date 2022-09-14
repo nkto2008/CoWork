@@ -1,3 +1,4 @@
+import 'package:backoffice_cowork/models/model_subscribe.dart';
 import 'package:backoffice_cowork/models/model_user.dart';
 import 'package:backoffice_cowork/requests/users.dart';
 import 'package:flutter/material.dart';
@@ -6,6 +7,7 @@ import 'package:page_transition/page_transition.dart';
 import '../../../requests/subscribes.dart';
 import '../../../utils/constants.dart';
 import '../../../widgets/custom_appbar.dart';
+import '../../../widgets/subscribes_data_row.dart';
 import '../../../widgets/users_data_row.dart';
 import '../new_subscribe.dart';
 
@@ -69,11 +71,11 @@ class _SubscribeContentState extends State<SubscribeContent> {
                                 );
                               }
                               if (snapshot.hasData) {
-                                final List<User> users = snapshot.data;
-                                if (users.isEmpty) {
+                                final List<Subscribe> subscribes = snapshot.data;
+                                if (subscribes.isEmpty) {
                                   return const Center(
                                     child: Text(
-                                      "Aucun utilisateur",
+                                      "Aucun abonnement",
                                       style: TextStyle(
                                         fontStyle: FontStyle.italic,
                                         fontFamily: 'Helvetica',
@@ -90,7 +92,7 @@ class _SubscribeContentState extends State<SubscribeContent> {
                                   columns: const [
                                     DataColumn(
                                       label: Text(
-                                        "Prénom",
+                                        "ID",
                                         style: TextStyle(
                                           fontFamily: "Comfortaa",
                                           fontWeight: FontWeight.bold,
@@ -108,16 +110,7 @@ class _SubscribeContentState extends State<SubscribeContent> {
                                     ),
                                     DataColumn(
                                       label: Text(
-                                        "Pseudo",
-                                        style: TextStyle(
-                                          fontFamily: "Comfortaa",
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                      ),
-                                    ),
-                                    DataColumn(
-                                      label: Text(
-                                        "Email",
+                                        "Prix",
                                         style: TextStyle(
                                           fontFamily: "Comfortaa",
                                           fontWeight: FontWeight.bold,
@@ -129,8 +122,8 @@ class _SubscribeContentState extends State<SubscribeContent> {
                                     ),
                                   ],
                                   rows: List.generate(
-                                    users.length,
-                                        (index) => usersDataRow(users[index], context),
+                                    subscribes.length,
+                                        (index) => subscribesDataRow(subscribes[index], context),
                                   ),
                                 );
                               } else {

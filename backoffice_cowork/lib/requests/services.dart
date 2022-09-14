@@ -60,7 +60,7 @@ class Services {
     return 1;
   }
 
-  static Future updateService(String id, String name, double price) async {
+  static Future updateService(String id, String name, String price) async {
     var body = jsonEncode(
       {
         "name": name,

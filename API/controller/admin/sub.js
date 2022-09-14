@@ -24,7 +24,7 @@ const createSub = async(body,res) => {
 const getSub = async(res) => {
         const subs = await SubModel.find()
         if(subs){
-            res.status(200).json(subs)
+            res.status(200).json([{sub: subs}])
         }else{
             res.status(400).send("no sub found")
         }

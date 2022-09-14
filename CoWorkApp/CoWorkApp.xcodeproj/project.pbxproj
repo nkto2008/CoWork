@@ -20,6 +20,10 @@
 		FAC27C9628D147AD000C923D /* UserRentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC27C9528D147AD000C923D /* UserRentResponse.swift */; };
 		FAC27C9828D15357000C923D /* userRentAllView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC27C9728D15357000C923D /* userRentAllView.swift */; };
 		FAC27C9A28D172BE000C923D /* UserCancelRentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC27C9928D172BE000C923D /* UserCancelRentService.swift */; };
+		FAC27C9C28D1843D000C923D /* Sub.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC27C9B28D1843D000C923D /* Sub.swift */; };
+		FAC27C9E28D18528000C923D /* DisplaySubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC27C9D28D18528000C923D /* DisplaySubService.swift */; };
+		FAC27CA028D188A7000C923D /* subPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC27C9F28D188A7000C923D /* subPage.swift */; };
+		FAC27CA228D195FD000C923D /* SubResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC27CA128D195FD000C923D /* SubResponse.swift */; };
 		FAD4066528C50F7C0083320B /* DisplayRentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD4066428C50F7C0083320B /* DisplayRentService.swift */; };
 		FAD4067028C641E20083320B /* NavigationStack in Frameworks */ = {isa = PBXBuildFile; productRef = FAD4066F28C641E20083320B /* NavigationStack */; };
 		FAD4067328C641F70083320B /* NavigationStack in Frameworks */ = {isa = PBXBuildFile; productRef = FAD4067228C641F70083320B /* NavigationStack */; };
@@ -64,6 +68,10 @@
 		FAC27C9528D147AD000C923D /* UserRentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRentResponse.swift; sourceTree = "<group>"; };
 		FAC27C9728D15357000C923D /* userRentAllView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userRentAllView.swift; sourceTree = "<group>"; };
 		FAC27C9928D172BE000C923D /* UserCancelRentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCancelRentService.swift; sourceTree = "<group>"; };
+		FAC27C9B28D1843D000C923D /* Sub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sub.swift; sourceTree = "<group>"; };
+		FAC27C9D28D18528000C923D /* DisplaySubService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplaySubService.swift; sourceTree = "<group>"; };
+		FAC27C9F28D188A7000C923D /* subPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = subPage.swift; sourceTree = "<group>"; };
+		FAC27CA128D195FD000C923D /* SubResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubResponse.swift; sourceTree = "<group>"; };
 		FAD4066428C50F7C0083320B /* DisplayRentService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayRentService.swift; sourceTree = "<group>"; };
 		FAD4067428C657E60083320B /* PlaceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceResponse.swift; sourceTree = "<group>"; };
 		FAD4067628C659120083320B /* ScheduleResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleResponse.swift; sourceTree = "<group>"; };
@@ -172,6 +180,7 @@
 				FAC27C9728D15357000C923D /* userRentAllView.swift */,
 				FAEE3CAF28BA8BD800A4A67D /* userRent.swift */,
 				FAEE3CB128BA8C4900A4A67D /* logout.swift */,
+				FAC27C9F28D188A7000C923D /* subPage.swift */,
 				FAF013CF28CEB812001ACFC4 /* selectedPlace.swift */,
 			);
 			path = View;
@@ -196,6 +205,8 @@
 				FAF013C828CE3693001ACFC4 /* RentResponse.swift */,
 				FAC27C9128D1429C000C923D /* UserRent.swift */,
 				FAC27C9528D147AD000C923D /* UserRentResponse.swift */,
+				FAC27C9B28D1843D000C923D /* Sub.swift */,
+				FAC27CA128D195FD000C923D /* SubResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -212,6 +223,7 @@
 				FAC27C8F28D11664000C923D /* UserGetRentService.swift */,
 				FAC27C9328D14433000C923D /* AllUserRentService.swift */,
 				FAC27C9928D172BE000C923D /* UserCancelRentService.swift */,
+				FAC27C9D28D18528000C923D /* DisplaySubService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -319,6 +331,7 @@
 				FAE2D95C28C2401400A47606 /* UserLogoutService.swift in Sources */,
 				FAEE3CA628BA78CD00A4A67D /* landingPage.swift in Sources */,
 				FA6B272928AFD09B00507AA4 /* ContentView.swift in Sources */,
+				FAC27C9E28D18528000C923D /* DisplaySubService.swift in Sources */,
 				FAE2D95E28C2497A00A47606 /* UserProfielupdateService.swift in Sources */,
 				FAEE3CA428BA71CB00A4A67D /* UserSignInService.swift in Sources */,
 				FAF013C928CE3693001ACFC4 /* RentResponse.swift in Sources */,
@@ -334,12 +347,15 @@
 				FAEE3CAE28BA8ADC00A4A67D /* userProfile.swift in Sources */,
 				FAF013D028CEB812001ACFC4 /* selectedPlace.swift in Sources */,
 				FAC27C9028D11664000C923D /* UserGetRentService.swift in Sources */,
+				FAC27CA228D195FD000C923D /* SubResponse.swift in Sources */,
 				FA6B272728AFD09B00507AA4 /* CoWorkAppApp.swift in Sources */,
+				FAC27C9C28D1843D000C923D /* Sub.swift in Sources */,
 				FAE2D95A28C2400D00A47606 /* UserProfileService.swift in Sources */,
 				FAEE3C9828B3904200A4A67D /* User.swift in Sources */,
 				FAD4066528C50F7C0083320B /* DisplayRentService.swift in Sources */,
 				FAEE3C9F28B7D15000A4A67D /* ApiResponse.swift in Sources */,
 				FAEE3CAA28BA7BA700A4A67D /* buttonLandingStyle.swift in Sources */,
+				FAC27CA028D188A7000C923D /* subPage.swift in Sources */,
 				FAC27C9428D14433000C923D /* AllUserRentService.swift in Sources */,
 				FAD4067528C657E60083320B /* PlaceResponse.swift in Sources */,
 				FAEE3C9A28B3951600A4A67D /* UserSignUpService.swift in Sources */,

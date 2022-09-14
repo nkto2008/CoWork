@@ -76,9 +76,23 @@ struct userProfile: View {
                     .padding(Edge.Set.trailing, 30)
                     .padding(Edge.Set.bottom, 30)
                     Button {
-                        
+                        DisplaySubService.display(){ res in
+                            print("res icicici : \(res)")
+                            if(res.isEmpty){
+                                print("Erreur lors du chargement")
+                                DispatchQueue.main.async {
+                                    self.navigationStack.push(MainView())
+                                }
+                            } else {
+                                print("res paséééééé : \(String(describing: res.first?.sub))")
+                                ApiService.SUBLIST = res
+                                DispatchQueue.main.async {
+                                    self.navigationStack.push(subPage())
+                                }
+                            }
+                        }
                     } label: {
-                        Text("Edit my subscription")
+                        Text("My subscription")
                             .font(.title3)
                             .foregroundColor(.white)
                             .frame(maxWidth: .infinity)
@@ -105,7 +119,7 @@ struct userProfile: View {
                             
                         }
                     } label: {
-                        Text("Edit my rent")
+                        Text("My rent")
                             .font(.title3)
                             .foregroundColor(.white)
                             .frame(maxWidth: .infinity)

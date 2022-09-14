@@ -34,7 +34,7 @@ class LogoutUser {
                 return
             }
             
-            completion(ApiResponse(error: false, message: message))
+            completion(ApiResponse(error: false, message: "Ok"))
             
         }
         req.resume()

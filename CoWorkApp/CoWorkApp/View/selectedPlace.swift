@@ -60,9 +60,10 @@ struct selectedPlace: View {
                                             if(res.error) {
                                                 print(res.message)
                                             } else {
+                                                //Errrrrror ICIIIII
                                                 DisplayRentUser.display() { res in
                                                     if(res.isEmpty){
-                                                        print("Error dude")
+                                                        print("errrrror")
                                                         DispatchQueue.main.async {
                                                             self.navigationStack.push(MainView())
                                                         }

@@ -46,9 +46,6 @@ const getSub = async(res) => {
             res.status(400).send("no sub found")
         }
         res.status(200).send(tmp)
-    }else{
-        res.status(400).send("no sub found")
-    }
 }
 
 const getSubById = async(body, res) => {

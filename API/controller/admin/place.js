@@ -58,7 +58,6 @@ const getPlaceById = async(body,res) => {
     }else{
         res.status(400).send("no place found")
     }
-
 }
 
 const updatePlace = async(body,res) => {

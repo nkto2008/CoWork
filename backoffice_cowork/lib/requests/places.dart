@@ -10,7 +10,7 @@ import '../utils/token_preferences.dart';
 const getPlacesUrl = "http://localhost:8081/getPlace";
 const delPlaceUrl = "http://localhost:8081/deletePlace";
 const createPlaceUrl = "http://localhost:8081/createPlace";
-const updatePlaceUrl = "";
+const updatePlaceUrl = "http://localhost:8081/updatePlace";
 
 class Places {
   static Future<List<Place>?> getAllPlacesDesc() async {
@@ -80,7 +80,56 @@ class Places {
     );
 
     final response = await http.post(
-      Uri.parse(createPlaceUrl),
+      Uri.parse(updatePlaceUrl),
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Content-Type": "application/json",
+        HttpHeaders.authorizationHeader:
+            TokenSimplePreferences.getToken('token').toString(),
+      },
+      body: body,
+      encoding: Encoding.getByName("utf-8"),
+    );
+
+    if (response.statusCode != 200) {
+      throw Error();
+    }
+
+    return 1;
+  }
+
+  static Future updatePlace(
+      String id,
+      String name,
+      String city,
+      String zip,
+      String monday,
+      String tuesday,
+      String wednesday,
+      String thursday,
+      String friday,
+      String saturday,
+      String sunday) async {
+    var body = jsonEncode(
+      {
+        "id": id,
+        "name": name,
+        "city": city,
+        "cp": zip,
+        "horaire": {
+          "lundi": monday,
+          "mardi": tuesday,
+          "mercredi": wednesday,
+          "jeudi": thursday,
+          "vendredi": friday,
+          "samedi": saturday,
+          "dimanche": sunday,
+        },
+      },
+    );
+
+    final response = await http.patch(
+      Uri.parse(updatePlaceUrl),
       headers: {
         "Access-Control-Allow-Origin": "*",
         "Content-Type": "application/json",

@@ -76,7 +76,6 @@ class _CreateButtonUserState extends State<CreateButtonUser> {
                         widget.fname.text,
                         widget.phone.text,
                         widget.rule);
-                    print(res);
                     if (await res == 1) {
                       Navigator.push(
                           context,

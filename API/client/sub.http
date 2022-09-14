@@ -6,13 +6,12 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjMyMGE5MGVi
 {
     "name": "Prenium",
     "price": 30,
-    "services": [
-        { "service": "62e7d867cd167f34887fe849"} ,
-        { "service": "632139f58edda1401435293c"} 
-    ]
+    "services": {
+        "service1": "62e7d867cd167f34887fe849"
+    }
 }
 
-###
-GET http://localhost:8081/getSub HTTP/1.1
+GET http://localhost:8081/ HTTP/1.1
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjMyMGE5MGViNGRmODQzODk0OWI1OTY0IiwiZW1haWwiOiJsYW1vdWNoZUBnbWFpbC5jb20iLCJpYXQiOjE2NjMxMjk3OTksImV4cCI6MTY2MzE1NDk5OX0.S0VnsMIWYYMkV3DEjOrdGajcrJdN8YEUHAzJy3wBlBI
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjMyMDlhYTdiMjg3MWQ0NWU4OWNhMmUwIiwiZW1haWwiOiJ0YXRhIiwiaWF0IjoxNjYzMDgxMTQzLCJleHAiOjE2NjMxMDYzNDN9.JSwfJ4hsr-3IYEGIP37OYOqcPdPhW2L7JVZTBhYCXZ4
+

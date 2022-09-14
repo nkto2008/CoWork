@@ -6,6 +6,7 @@ import '../requests/auth.dart';
 import '../screens/login/login_screen.dart';
 import '../screens/place_admin/place_screen.dart';
 import '../screens/service_admin/service_screen.dart';
+import '../screens/subscribe_admin/subscribe_screen.dart';
 import '../screens/user_admin/user_screen.dart';
 import '../utils/constants.dart';
 
@@ -35,7 +36,8 @@ class SideMenu extends StatelessWidget {
                   Navigator.push(
                       context,
                       PageTransition(
-                          type: PageTransitionType.fade, child: const HomeScreen()));
+                          type: PageTransitionType.fade,
+                          child: const HomeScreen()));
                 },
                 child: Icon(
                   Icons.home,
@@ -54,7 +56,7 @@ class SideMenu extends StatelessWidget {
                   Navigator.push(
                       context,
                       PageTransition(
-                          type: PageTransitionType.fade, child: UserScreen()));
+                          type: PageTransitionType.fade, child: const UserScreen()));
                 },
                 child: Icon(
                   Icons.person,
@@ -73,7 +75,7 @@ class SideMenu extends StatelessWidget {
                   Navigator.push(
                       context,
                       PageTransition(
-                          type: PageTransitionType.fade, child: PlaceScreen()));
+                          type: PageTransitionType.fade, child: const PlaceScreen()));
                 },
                 child: Icon(
                   Icons.apartment,
@@ -93,11 +95,31 @@ class SideMenu extends StatelessWidget {
                       context,
                       PageTransition(
                           type: PageTransitionType.fade,
-                          child: ServiceScreen()));
+                          child: const ServiceScreen()));
                 },
                 child: Icon(
                   Icons.widgets,
                   color: select == 4 ? lightCream : Colors.white38,
+                ),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(
+                horizontal: 0, vertical: defaultPadding),
+            child: MouseRegion(
+              cursor: MaterialStateMouseCursor.clickable,
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      PageTransition(
+                          type: PageTransitionType.fade,
+                          child: const SubscribeScreen()));
+                },
+                child: Icon(
+                  Icons.widgets,
+                  color: select == 5 ? lightCream : Colors.white38,
                 ),
               ),
             ),

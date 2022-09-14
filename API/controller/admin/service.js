@@ -46,19 +46,26 @@ const getServiceById = async(body,res) => {
 }
 
 const updateService = async(body,res) => {
-    const {name,price,id} = body
-    if(!id || !name || !price){
-        res.status(400).send("All input are required")
-    }else{
-        const Service = await ServiceModel.findOne({_id: id})
-        if(Service){
-            Service.name = name
-            Service.price = price
-            Service.save()
+
+    const id = body.id
+    if(id){
+        const idServ = Mongoose.Types.ObjectId(id)
+        const serv = await ServiceModel.findOne({_id: idServ})
+
+        if(!serv){
+            res.status(403).send("Something wrong with your request");
+        } else {
+            if(body.name) {
+                serv.name = body.name
+            }
+            if(body.price) {
+                serv.price = body.price
+            }
+            serv.save()
             res.status(200).send("update done")
-        }else{
-            res.status(400).send("No Service found")
         }
+    } else {
+        res.status(403).send("ID missed");
     }
 
 }
